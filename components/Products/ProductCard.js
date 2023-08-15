@@ -38,7 +38,7 @@ export const ProductCard = ({ e, index, club }) => {
         display={"flex"}
         flexDirection={"column"}
         alignItems={"center"}
-        onClick={() => push(`/football/${e.slug}`)}
+        onClick={() => push(`/products/${e.slug}`)}
       >
         <Card
           sx={{
