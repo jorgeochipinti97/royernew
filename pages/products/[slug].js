@@ -2,8 +2,8 @@ import { useProduct } from "@/Hooks/UseProducts";
 import { ShopLayout } from "@/components/Layout";
 import { ProductSlideshow } from "@/components/Products/ProductsSlide/ProductSlideshow";
 import { dbProducts } from "@/database";
-import PaymentIcon from '@mui/icons-material/Payment';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import PaymentIcon from "@mui/icons-material/Payment";
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import {
   Box,
   Button,
@@ -22,6 +22,7 @@ import { format } from "@/utils/currency";
 
 const ProductFootballPage = ({ product }) => {
   const [size, setSize] = useState("");
+  const [isInStock, setIsInStock] = useState();
   const [maxValueSize, setMaxValueSize] = useState();
   const [tempCartProduct, setTempCartProduct] = useState({
     _id: product._id,
@@ -43,6 +44,10 @@ const ProductFootballPage = ({ product }) => {
           setMaxValueSize(e.stock)
       );
   }, [size]);
+
+  useEffect(() => {
+    setIsInStock(product.talles.some((talle) => talle.stock > 0));
+  }, []);
 
   const onUpdateQuantity = (quantity) => {
     setTempCartProduct((currentProduct) => ({
@@ -102,7 +107,31 @@ const ProductFootballPage = ({ product }) => {
               </Box>
 
               <Divider sx={{ my: 4 }} />
-              <Box sx={{ display: "flex", mt: 5 }} justifyContent={"start"}>
+              {!isInStock && (
+                <>
+                  <Box display='flex' justifyContent={'center'}>
+                    <Typography
+                      sx={{
+                        color: "red",
+                        my: 5,
+                        textAlign: "center",
+                        border: "1px solid red",
+                        width:'content-fit',px:2,borderRadius:'9px'
+                      }}
+                    >
+                      Currently, there is no stock available.
+                    </Typography>
+                  </Box>
+                </>
+              )}
+              <Box
+                sx={{
+                  display: "flex",
+                  mt: 5,
+                  display: isInStock ? "auto" : "none",
+                }}
+                justifyContent={"start"}
+              >
                 {product.talles.map(
                   (e) =>
                     e.stock > 0 && (
@@ -119,7 +148,14 @@ const ProductFootballPage = ({ product }) => {
                     )
                 )}
               </Box>
-              <Box sx={{ display: "flex", my: 2 }} justifyContent={"start"}>
+              <Box
+                sx={{
+                  display: "flex",
+                  my: 2,
+                  display: isInStock ? "auto" : "none",
+                }}
+                justifyContent={"start"}
+              >
                 {size && (
                   <ItemCounter
                     currentValue={tempCartProduct.quantity}
@@ -136,27 +172,29 @@ const ProductFootballPage = ({ product }) => {
                   </Typography>
                 </Box>
               </Box>
-              <Box
-                sx={{ my: 5 }}
-                display={"flex"}
-                justifyContent={"space-around"}
-              >
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  sx={{ fontWeight: "800", fontSize: "20px", px: 2 }}
-                  startIcon={<PaymentIcon/>}
-                  >
-                  Buy now
-                </Button>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  startIcon={<AddShoppingCartIcon/>}
-                  sx={{ fontWeight: "800", fontSize: "20px", px: 2 }}
+              <Box sx={{ display: isInStock ? "auto" : "none" }}>
+                <Box
+                  sx={{ my: 5, display: "flex" }}
+                  display={"flex"}
+                  justifyContent={"space-around"}
                 >
-                  Add to cart
-                </Button>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    sx={{ fontWeight: "800", fontSize: "20px", px: 2 }}
+                    startIcon={<PaymentIcon />}
+                  >
+                    Buy now
+                  </Button>
+                  <Button
+                    variant="contained"
+                    color="secondary"
+                    startIcon={<AddShoppingCartIcon />}
+                    sx={{ fontWeight: "800", fontSize: "20px", px: 2 }}
+                  >
+                    Add to cart
+                  </Button>
+                </Box>
               </Box>
             </Grid>
           </Grid>
