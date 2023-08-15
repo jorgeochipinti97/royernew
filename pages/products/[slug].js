@@ -144,7 +144,7 @@ const ProductFootballPage = ({ product }) => {
                 <Button
                   variant="contained"
                   color="secondary"
-                  sx={{ fontWeight: "800", fontSize: "25px", px: 2 }}
+                  sx={{ fontWeight: "800", fontSize: "20px", px: 2 }}
                   startIcon={<PaymentIcon/>}
                   >
                   Buy now
@@ -153,7 +153,7 @@ const ProductFootballPage = ({ product }) => {
                   variant="contained"
                   color="secondary"
                   startIcon={<AddShoppingCartIcon/>}
-                  sx={{ fontWeight: "800", fontSize: "25px", px: 2 }}
+                  sx={{ fontWeight: "800", fontSize: "20px", px: 2 }}
                 >
                   Add to cart
                 </Button>
