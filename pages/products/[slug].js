@@ -2,6 +2,8 @@ import { useProduct } from "@/Hooks/UseProducts";
 import { ShopLayout } from "@/components/Layout";
 import { ProductSlideshow } from "@/components/Products/ProductsSlide/ProductSlideshow";
 import { dbProducts } from "@/database";
+import PaymentIcon from '@mui/icons-material/Payment';
+import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import {
   Box,
   Button,
@@ -143,12 +145,14 @@ const ProductFootballPage = ({ product }) => {
                   variant="contained"
                   color="secondary"
                   sx={{ fontWeight: "800", fontSize: "25px", px: 2 }}
-                >
+                  startIcon={<PaymentIcon/>}
+                  >
                   Buy now
                 </Button>
                 <Button
                   variant="contained"
                   color="secondary"
+                  startIcon={<AddShoppingCartIcon/>}
                   sx={{ fontWeight: "800", fontSize: "25px", px: 2 }}
                 >
                   Add to cart
