@@ -11,7 +11,7 @@ export const VideoHome = ({ url, border }) => {
       <video
         autoplay
         muted
-        controls
+
         loop
         style={{
           height: "content-fit",
