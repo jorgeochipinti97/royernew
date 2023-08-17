@@ -6,19 +6,28 @@ import { ProductCard } from "@/components/Products/ProductCard";
 import { gsap } from "gsap";
 import { useInView } from "react-intersection-observer";
 
-export const SectionRiver = ({ products }) => {
+export const SectionRiver = ({ products, isMobile }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
   });
   useEffect(() => {
-    inView && gsap.to(".divriver", { yPercent: -5, borderRadius: "90px" });
+    inView &&
+      gsap.to(".divriver", {
+        yPercent: isMobile ? -2 : -5,
+        borderRadius: "90px",
+      });
   }, [inView]);
 
   return (
     <>
       <Grid
         container
-        sx={{ height: "content-fit", width: "100%",borderRadius:'30px', backgroundColor:'#f0ecec' }}
+        sx={{
+          height: "content-fit",
+          width: "100%",
+          borderRadius: "30px",
+          backgroundColor: "#f0ecec",
+        }}
         ref={ref}
         className="divriver"
       >

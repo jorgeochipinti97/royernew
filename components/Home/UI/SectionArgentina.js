@@ -22,8 +22,9 @@ export const SectionArgentina = ({ products, isLoading }) => {
   });
 
   useEffect(() => {
-    inView && gsap.to(".divmerque", { opacity: 1, ease: Power1.easeIn, duration:2 });
+    inView && gsap.to(".divmerque", { opacity: 1, ease: Power1.easeIn, duration:1.5 });
   }, [inView]);
+  
   return (
     <>
       <Box sx={{ my: 5 }}>

@@ -8,7 +8,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 
-export const SectionShipping = () => {
+export const SectionShipping = ({ isMobile }) => {
   gsap.registerPlugin(ScrollTrigger);
   const { ref, inView } = useInView({
     threshold: 0.6,
@@ -39,11 +39,19 @@ export const SectionShipping = () => {
     inView4 && gsap.to(".shipping4", { transform: "scale(0.6)" });
   }, [inView4]);
   useEffect(() => {
-    inView5 && gsap.to(".divshipping", { yPercent: -5, borderRadius: "90px" });
+    inView5 &&
+      gsap.to(".divshipping", {
+        yPercent: isMobile ? -4 : -5,
+        borderRadius: isMobile ? "60px" : "90px",
+      });
   }, [inView5]);
   return (
     <>
-      <Box ref={ref5} sx={{ backgroundColor: "black" }} className="divshipping">
+      <Box
+        ref={ref5}
+        sx={{ backgroundColor: "black", py: isMobile ? 5 : 0 }}
+        className="divshipping"
+      >
         <Box
           display={"flex"}
           justifyContent={"start"}
@@ -54,9 +62,10 @@ export const SectionShipping = () => {
             <Typography
               variant="body1"
               sx={{
-                fontSize: "80px",
+                fontSize: isMobile ? "40px" : "80px",
                 textAlign: "center",
-                mt: 5,
+                mt: isMobile ? 2 : 5,
+                lineHeight: isMobile ? "40px" : "auto",
                 fontWeight: "700",
                 color: "white",
               }}
@@ -66,7 +75,7 @@ export const SectionShipping = () => {
           </Slide>
           <Typography
             variant="subtitle1"
-            fontSize={28}
+            fontSize={isMobile ? "20px" : 28}
             marginTop={3}
             color={"white"}
             textAlign={"center"}
@@ -78,7 +87,7 @@ export const SectionShipping = () => {
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Typography
               variant="body1"
-              fontSize={20}
+              fontSize={isMobile ? "14px" : 20}
               color={"white"}
               textAlign={"justify"}
               width={"80%"}
@@ -93,7 +102,7 @@ export const SectionShipping = () => {
             </Typography>
           </Box>
           <Box
-            sx={{ width: "50%", transform: "scale(0)" }}
+            sx={{ width: isMobile ? "100%" : "50%", transform: "scale(0)" }}
             className="shipping"
             ref={ref}
           >
@@ -102,8 +111,12 @@ export const SectionShipping = () => {
 
           <Typography
             variant="body1"
-            fontSize={28}
-            sx={{ fontWeight: "700", transform: "scale(0)" }}
+            fontSize={isMobile ? "20px" : 28}
+            sx={{
+              fontWeight: "700",
+              transform: "scale(0)",
+              lineHeight: "29px",
+            }}
             color={"white"}
             ref={ref2}
             className="shippping2"
@@ -115,7 +128,7 @@ export const SectionShipping = () => {
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Typography
               variant="body1"
-              fontSize={20}
+              fontSize={isMobile ? "14px" : 20}
               marginTop={3}
               color={"white"}
               textAlign={"justify"}
@@ -137,11 +150,11 @@ export const SectionShipping = () => {
           <Typography
             variant="body1"
             sx={{
-              fontSize: "80px",
+              fontSize: isMobile ? "20px" : "80px",
               textAlign: "center",
-              mt: 10,
+              mt: isMobile ? 2 : 10,
               fontWeight: "700",
-              lineHeight: "78px",
+              lineHeight: isMobile ? "29px" : "78px",
               color: "white",
             }}
           >
@@ -157,9 +170,9 @@ export const SectionShipping = () => {
         >
           <Typography
             ref={ref3}
-            sx={{ transform: "scale(0)" }}
+            sx={{ transform: "scale(0)", fontWeight: "300" }}
             variant="body1"
-            fontSize={20}
+            fontSize={isMobile ? "14px" : 20}
             marginTop={3}
             color={"white"}
             textAlign={"justify"}
@@ -179,14 +192,18 @@ export const SectionShipping = () => {
             online purchases as secure as they can be
           </Typography>
         </Box>
-        <Box display={"flex"} justifyContent={"center"} ref={ref4}>
+        <Box
+          display={"flex"}
+          justifyContent={"center"}
+          ref={ref4}
+          sx={{ py: 5 }}
+        >
           <Image
             src="/stripewhite.png"
             alt=""
-            width={808}
-            height={264}
-            className="shipping4"
-            style={{ transform: "scale(0)" }}
+            style={{ width: isMobile ? "90%" : "auto" }}
+            width={isMobile ? 404 : 808}
+            height={isMobile ? 132 : 264}
           />
         </Box>
       </Box>

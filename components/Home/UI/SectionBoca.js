@@ -6,12 +6,12 @@ import { VideoHome } from "./VideoHome";
 import { gsap } from "gsap";
 import { useInView } from "react-intersection-observer";
 
-export const SectionBoca = ({ products }) => {
+export const SectionBoca = ({ products, isMobile }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
   });
   useEffect(() => {
-    inView && gsap.to(".divboca", { yPercent: -5,borderRadius:'90px' });
+    inView && gsap.to(".divboca", { yPercent:isMobile ? -2: -5, borderRadius: "90px" });
   }, [inView]);
 
   return (
@@ -23,11 +23,29 @@ export const SectionBoca = ({ products }) => {
           width: "100%",
           borderRadius: "30px 30px",
           backgroundColor: "#103f79",
+
         }}
         className="divboca"
         ref={ref}
       >
-        <Grid item md={6} lg={6} xl={6}>
+        <Grid item md={6} lg={6} xl={6} xs={12}>
+          <Grid
+            item
+            md={6}
+            lg={6}
+            xl={6}
+            xs={12}
+            sx={{ display: isMobile ? "auto" : "none" }}
+          >
+            <Box
+              sx={{ height: "100%", width: "100%" }}
+              display={"flex"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              <VideoHome url={"boca"} border={"90px"} />
+            </Box>
+          </Grid>
           <Box sx={{ mt: 10 }}>
             <TextReveal textReveal={"Boca Juniors"} color={"#f3b229"} />
           </Box>
@@ -48,7 +66,14 @@ export const SectionBoca = ({ products }) => {
               ))}
           </Box>
         </Grid>
-        <Grid item md={6} lg={6} xl={6}>
+        <Grid
+          item
+          md={6}
+          lg={6}
+          xl={6}
+          xs={12}
+          sx={{ display: isMobile ? "none" : "auto" }}
+        >
           <Box
             sx={{ height: "100%", width: "100%" }}
             display={"flex"}
