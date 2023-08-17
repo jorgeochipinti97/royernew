@@ -3,14 +3,13 @@ import React, { useEffect, useRef } from "react";
 export const VideoHome = ({ url, border }) => {
   const ref = useRef();
 
-  useEffect(() => {
-    ref && ref.current.play();
-  }, [ref]);
+
   return (
     <>
       <video
         muted
         loop
+        autoPlay
         style={{
           height: "content-fit",
           width: "100%",
