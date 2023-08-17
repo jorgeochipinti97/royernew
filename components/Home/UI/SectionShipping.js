@@ -122,8 +122,7 @@ export const SectionShipping = ({ isMobile }) => {
             className="shippping2"
             textAlign={"center"}
           >
-            <span style={{ fontSize: "30px" }}> 69</span> Countries and Beyond:
-            Our Ongoing Expansion in Shipping Reach
+            69 Countries and Beyond: Our Ongoing Expansion in Shipping Reach
           </Typography>
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Typography
