@@ -39,8 +39,8 @@ const OrdersPage = ({ orders }) => {
   };
 
   useEffect(() => {
-    !order.isPaid && redirect_status == "succeeded" && updateOrder();
-    order.isPaid && redirect_status == "succeeded" && router.push(`/order/${order._id}`);
+   order && !order.isPaid && redirect_status == "succeeded" && updateOrder();
+   order && order.isPaid && redirect_status == "succeeded" && router.push(`/order?id=${order._id}`);
     console.log(order)
   }, [order]);
   return (
