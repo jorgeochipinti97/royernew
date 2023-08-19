@@ -32,7 +32,7 @@ const OrdersPage = ({ orders }) => {
         },
       });
       setOrder(data);
-      data && router.reload()
+
     } catch (err) {
       console.log(err);
     }
@@ -40,6 +40,7 @@ const OrdersPage = ({ orders }) => {
 
   useEffect(() => {
     !order.isPaid && redirect_status == "succeeded" && updateOrder();
+    order.isPaid && redirect_status == "succeeded" && router.push(`/order/${order._id}`);
     console.log(order)
   }, [order]);
   return (
