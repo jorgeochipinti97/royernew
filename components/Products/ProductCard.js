@@ -91,7 +91,10 @@ export const ProductCard = ({ e, index, club }) => {
           </Box>
         </Box>
         <Box display={"flex"} justifyContent={"center"} sx={{ my: 1 }}>
-          <Button color="primary" sx={{ fontWeight: "700" }}>
+          <Button
+            color={asPath == "/" ? "secondary" : "primary"}
+            sx={{ fontWeight: "700" }}
+          >
             {format(e.precio)}
           </Button>
         </Box>
