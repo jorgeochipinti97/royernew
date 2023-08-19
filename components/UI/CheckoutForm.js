@@ -22,7 +22,7 @@ export default function CheckoutForm({orderid}) {
     const data = await stripe.confirmPayment({
       elements,
       confirmParams: {
-        return_url: `https://royernew.vercel.app//order?id=${orderid}`,
+        return_url: `https://royernew.vercel.app/order?id=${orderid}`,
       },
     });
     console.log(data);
