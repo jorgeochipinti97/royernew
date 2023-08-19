@@ -11,21 +11,14 @@ import {
   ListItem,
   ListItemIcon,
   ListItemText,
-  ListSubheader,
 } from "@mui/material";
-import GradeIcon from "@mui/icons-material/Grade";
-
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { useRouter } from "next/router";
-import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import FitnessCenterIcon from "@mui/icons-material/FitnessCenter";
-import ConnectWithoutContactIcon from "@mui/icons-material/ConnectWithoutContact";
-import QuizIcon from "@mui/icons-material/Quiz";
-import ManIcon from "@mui/icons-material/Man";
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import HelpCenterIcon from '@mui/icons-material/HelpCenter';
 import HomeIcon from "@mui/icons-material/Home";
-
-import WomanIcon from "@mui/icons-material/Woman";
-
-import MonitorHeartIcon from "@mui/icons-material/MonitorHeart";
+import SportsSoccerIcon from '@mui/icons-material/SportsSoccer';
 import { UiContext } from "@/context/ui/UiContext";
 
 export const SideMenu = () => {
@@ -64,7 +57,7 @@ export const SideMenu = () => {
             onClick={() => navigateTo("/football")}
           >
             <ListItemIcon>
-              <ManIcon />
+              <SportsSoccerIcon />
             </ListItemIcon>
             <ListItemText primary={"Football"} />
           </ListItem>
@@ -75,7 +68,7 @@ export const SideMenu = () => {
             onClick={() => navigateTo("/regionals")}
           >
             <ListItemIcon>
-              <WomanIcon />
+              <LocationOnIcon />
             </ListItemIcon>
             <ListItemText primary={"Regionals"} />
           </ListItem>
@@ -85,7 +78,7 @@ export const SideMenu = () => {
             onClick={() => navigateTo("/contact")}
           >
             <ListItemIcon>
-              <FitnessCenterIcon />
+              <ConnectWithoutContactIcon />
             </ListItemIcon>
             <ListItemText primary={"Contact"} />
           </ListItem>
@@ -95,7 +88,7 @@ export const SideMenu = () => {
             onClick={() => navigateTo("/faqs")}
           >
             <ListItemIcon>
-              <FitnessCenterIcon />
+              <HelpCenterIcon />
             </ListItemIcon>
             <ListItemText primary={"FAQS"} />
           </ListItem>
