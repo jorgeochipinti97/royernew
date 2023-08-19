@@ -32,14 +32,14 @@ const OrdersPage = ({ orders }) => {
         },
       });
       setOrder(data);
-      data && router.push(`/products/${order._id}`)
+      data && router.reload()
     } catch (err) {
       console.log(err);
     }
   };
 
   useEffect(() => {
-    order && redirect_status == "succeeded" && updateOrder();
+    !order.isPaid && redirect_status == "succeeded" && updateOrder();
     console.log(order)
   }, [order]);
   return (
