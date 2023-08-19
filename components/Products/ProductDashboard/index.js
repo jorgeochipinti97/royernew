@@ -2,7 +2,7 @@ import { ProductSlideshow } from "@/components/Products/ProductsSlide/ProductSli
 import PaymentIcon from "@mui/icons-material/Payment";
 import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 import { Box, Button, Chip, Divider, Grid, Typography } from "@mui/material";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { ItemCounter } from "@/components/UI/ItemCounter";
 import { format, formattwo } from "@/utils/currency";
 import Image from "next/image";
@@ -13,17 +13,29 @@ import {
   jugadoresBoca,
   jugadoresRiver,
 } from "@/utils/players";
+import { FormCheckout } from "@/components/UI/FormCheckout";
+import { gsap } from "gsap";
+
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { CartList, OrderSummary } from "@/components/cart";
+import { CartContext } from "@/context/cart/CartContext";
+import { useRouter } from "next/router";
 
 export const ProductDashboard = ({
   product,
   productsSubcategoria,
   isMobile,
 }) => {
+  gsap.registerPlugin(ScrollTrigger);
+  const [isBuyNow, setIsBuyNow] = useState(false);
   const [size, setSize] = useState("");
   const [isInStock, setIsInStock] = useState();
   const [maxValueSize, setMaxValueSize] = useState();
+  const [quantity_, setQuantity_] = useState();
   const [selectedPlayer, setSelectedPlayer] = useState("");
   const [jugadores, setJugadores] = useState([]);
+  const { addProductToCart } = useContext(CartContext);
+  const { push } = useRouter();
   const isVisibleSelectPlayers =
     isInStock &&
     (product.slug.toLowerCase().includes("rdy") ||
@@ -32,15 +44,15 @@ export const ProductDashboard = ({
         .includes("boca_juniors_third_shirt_23_24_adidas_official"))
       ? "flex"
       : "none";
+
   const [tempCartProduct, setTempCartProduct] = useState({
     _id: product._id,
     image: product.images[0],
-    price: product.price,
-    size: undefined,
+    precio: product.precio,
+    size: size,
     personalization: selectedPlayer,
     slug: product.slug,
-    title: product.title,
-    gender: product.gender,
+    titulo: product.titulo,
     quantity: 1,
   });
 
@@ -51,7 +63,41 @@ export const ProductDashboard = ({
           e.nombre.toLowerCase() == size.toLowerCase() &&
           setMaxValueSize(e.stock)
       );
+
+    setTempCartProduct((currentProduct) => ({
+      ...currentProduct,
+      size,
+    }));
   }, [size]);
+
+  useEffect(() => {
+    setTempCartProduct((currentProduct) => ({
+      ...currentProduct,
+      personalization: selectedPlayer,
+    }));
+  }, [selectedPlayer]);
+
+  useEffect(() => {
+    isBuyNow &&
+      gsap.to(".productdash", {
+        opacity: 0,
+        duration: 0.4,
+      });
+    isBuyNow &&
+      gsap.to(".productdash", {
+        display: "none",
+      });
+    isBuyNow &&
+      gsap.to(".formcheckoutslug", {
+        display: "block",
+        delay: 1,
+      });
+    isBuyNow &&
+      gsap.to(".formcheckoutslug", {
+        transform: "scale(1)",
+        delay: 2,
+      });
+  }, [isBuyNow]);
 
   useEffect(() => {
     setIsInStock(product.talles.some((talle) => talle.stock > 0));
@@ -65,6 +111,7 @@ export const ProductDashboard = ({
   }, []);
 
   const onUpdateQuantity = (quantity) => {
+    setQuantity_(quantity);
     setTempCartProduct((currentProduct) => ({
       ...currentProduct,
       quantity,
@@ -74,19 +121,29 @@ export const ProductDashboard = ({
   const handlePlayerChange = (event) => {
     setSelectedPlayer(event.target.value);
   };
-
+  const onAddProduct = () => {
+    addProductToCart(tempCartProduct);
+    push("/cart");
+  };
   return (
     <>
-      <Box sx={{ my: 10 }}>
+      <Box sx={{ my: 10 }} className="productdash">
         <Grid container>
           <Grid item md={7} lg={7} xl={7} xs={12}>
-            <Box sx={{ width: isMobile ? "300" : "650" }}>
-              <ProductSlideshow
-                images={product.images}
-                height={isMobile ? "300" : "650"}
-                width={isMobile ? "300" : "650"}
-                seconds={1200}
-              />
+            <Box
+              sx={{
+                display: isMobile ? "auto" : "flex",
+                justifyContent: isMobile ? "" : "center",
+              }}
+            >
+              <Box sx={{ width: isMobile ? "300" : "500px" }}>
+                <ProductSlideshow
+                  images={product.images}
+                  height={isMobile ? "300" : "500"}
+                  width={isMobile ? "300" : "500"}
+                  seconds={1200}
+                />
+              </Box>
             </Box>
           </Grid>
           <Grid item md={5} lg={5} xl={5} xs={12}>
@@ -253,9 +310,9 @@ export const ProductDashboard = ({
                 display={"flex"}
                 flexDirection={isMobile ? "column" : "row"}
                 justifyContent={"space-around"}
-                alignItems={isMobile ?'center':'none'}
+                alignItems={isMobile ? "center" : "none"}
               >
-                <Box sx={{my:1}}>
+                {/* <Box sx={{ my: 1 }}>
                   <Button
                     variant="contained"
                     color="success"
@@ -266,17 +323,19 @@ export const ProductDashboard = ({
                       mx: 2,
                       color: "white",
                     }}
+                    onClick={() => setIsBuyNow(true)}
                     startIcon={<PaymentIcon />}
                   >
                     Buy now
                   </Button>
-                </Box>
-                <Box sx={{my:1}}>
+                </Box> */}
+                <Box sx={{ my: 1 }}>
                   <Button
                     variant="contained"
                     color="secondary"
                     startIcon={<AddShoppingCartIcon />}
                     sx={{ fontWeight: "800", fontSize: "20px", px: 2, mx: 2 }}
+                    onClick={onAddProduct}
                   >
                     Add to cart
                   </Button>
@@ -306,6 +365,31 @@ export const ProductDashboard = ({
           </Grid>
         </Grid>
       </Box>
+      <Box
+        className="formcheckoutslug"
+        sx={{ mt: 10, transform: "scale(0)", display: "none" }}
+      >
+        <CartList
+          products={[
+            {
+              _id: product._id,
+              image: product.images[0],
+              precio: product.precio,
+              size: size,
+              personalization: selectedPlayer,
+              slug: product.slug,
+              titulo: product.titulo,
+              gender: product.gender,
+              quantity: quantity_,
+            },
+          ]}
+        />
+        <FormCheckout />
+      </Box>
+      <Box
+        className="sluglis"
+        // sx={{ my: 6, transform: "scale(0)", display: "none" }}
+      ></Box>
     </>
   );
 };

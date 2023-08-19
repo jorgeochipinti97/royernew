@@ -1,8 +1,12 @@
 import Head from "next/head";
 import Navbar from "../Navbar";
 import { Footer } from "../Footer";
+import { SideMenu } from "../UI/SideMenu";
+import { useMediaQuery } from "@mui/material";
 
 export const ShopLayout = ({ children, title, pageDescription }) => {
+  const isMobile = useMediaQuery("(max-width:600px)");
+
   return (
     <>
       <Head>
@@ -12,9 +16,9 @@ export const ShopLayout = ({ children, title, pageDescription }) => {
         {/* {imageFullUrl && <meta name="og:image" content={imageFullUrl} />} */}
       </Head>
       <nav>
-        <Navbar />
+        <Navbar isMobile={isMobile} />
       </nav>
-      {/* <SideMenu /> */}
+      <SideMenu />
       <main
         style={{
           minHeight: "60vh",

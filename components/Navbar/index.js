@@ -11,13 +11,22 @@ import {
   Toolbar,
   Typography,
 } from "@mui/material";
-
+import {
+  ClearOutlined,
+  SearchOutlined,
+  ShoppingCartOutlined,
+} from "@mui/icons-material";
 import NextLink from "next/link";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { CartContext } from "@/context/cart/CartContext";
+import { useContext } from "react";
+import { UiContext } from "@/context/ui/UiContext";
 
-const Navbar = () => {
+const Navbar = ({ isMobile }) => {
   const { asPath, push } = useRouter();
+  const { toggleSideMenu } = useContext(UiContext);
+  const { numberOfItems } = useContext(CartContext);
 
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearchVisible, setIsSearchVisible] = useState(false);
@@ -69,8 +78,20 @@ const Navbar = () => {
           </NextLink>
         </Box>
         <Box flex={1} />
-        <Button>
-          cart
+
+        <IconButton onClick={() => push("/cart")}>
+          <Badge
+            badgeContent={numberOfItems > 9 ? "+9" : numberOfItems}
+            color="secondary"
+          >
+            <ShoppingCartOutlined />
+          </Badge>
+        </IconButton>
+        <Button
+          sx={{ display: isMobile ? "auto" : "none" }}
+          onClick={toggleSideMenu}
+        >
+          Menu
         </Button>
       </Toolbar>
     </AppBar>

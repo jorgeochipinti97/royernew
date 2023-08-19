@@ -4,7 +4,8 @@ import { dbProducts } from "@/database";
 import { ProductDashboard } from "@/components/Products/ProductDashboard";
 
 import { useEffect, useState } from "react";
-import { useMediaQuery } from "@mui/material";
+import { Box, useMediaQuery } from "@mui/material";
+import { FormCheckout } from "@/components/UI/FormCheckout";
 
 const ProductPage = ({ product, products }) => {
   const isMobile = useMediaQuery('(max-width:600px)');
@@ -23,11 +24,6 @@ const ProductPage = ({ product, products }) => {
       );
   }, []);
 
-  useEffect(() => {
-    
-  console.log(isMobile)
-
-  }, [isMobile])
   
 
   return (

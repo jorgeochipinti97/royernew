@@ -49,7 +49,7 @@ const FootballPage = () => {
         <Grid container>
           {products &&
             products.map((e) => (
-              <Grid xs={4} md={4} lg={4} item key={e.titulo}>
+              <Grid xs={12}  md={4} lg={4} xl={4} item key={e.titulo}>
                 <ProductCard e={e} />
               </Grid>
             ))}

@@ -4,10 +4,11 @@ import { red,  } from '@mui/material/colors';
 
 export const lightTheme = createTheme({
   fontFamily:"Lato",
+  color:'black',
   palette: {
     mode: 'light',
     primary: {
-      main: '#1E1E1E'
+      main: '#09446a'
     },
     secondary: {
       main: '#009ee3'
