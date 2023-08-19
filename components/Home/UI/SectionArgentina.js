@@ -56,8 +56,8 @@ export const SectionArgentina = ({ products, isLoading }) => {
             <Marquee>
               {products &&
                 products.map((e) => (
-                  <Link href={`/products/${e.slug}`}>
-                    <div key={e.name}>
+                  <Link href={`/products/${e.slug}`}  key={e.name}>
+                    <div>
                       <Box>
                         <Card
                           sx={{
