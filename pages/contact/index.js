@@ -1,12 +1,13 @@
 import { ShopLayout } from "@/components/Layout";
 import { SocialComponent } from "@/components/UI/SocialComponent";
 import { Box, Button, TextField, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 
-const index = () => {
-  const [email_, setEmail_] = useState("");
-  const [name_, setName_] = useState("");
-  const [query_, setQuery_] = useState("");
+
+const ContactPage = () => {
+  const [email_, setEmail_] = useState("")
+  const [name_, setName_] = useState("")
+  const [query_, setQuery_] = useState("")
 
   const handleClickQuery = async (name, email, query, product, e) => {
     try {
@@ -91,4 +92,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default ContactPage;
