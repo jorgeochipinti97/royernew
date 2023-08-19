@@ -32,6 +32,7 @@ const OrdersPage = ({ orders }) => {
         },
       });
       setOrder(data);
+      data && router.push(`/products/${order._id}`)
     } catch (err) {
       console.log(err);
     }
