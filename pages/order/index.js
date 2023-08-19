@@ -63,7 +63,7 @@ const OrdersPage = ({ orders }) => {
               email from us containing important information about your order,
               including shipping and tracking details.
               <br /> If you have any questions or need assistance, feel free to
-              contact our dedicated customer support team. We're here to ensure
+              contact our dedicated customer support team. We are here to ensure
               your shopping experience is as smooth as possible.
               <br /> Once again, thank you for choosing RoyerStore. We look
               forward to serving you again in the future! Best regards, <br />
