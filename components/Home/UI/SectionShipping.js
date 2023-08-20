@@ -145,7 +145,7 @@ export const SectionShipping = ({ isMobile }) => {
           </Box>
         </Box>
         <Divider sx={{ my: 6, backgroundColor: "white" }} />
-        <Slide triggerOnce direction="right">
+
           <Typography
             variant="body1"
             sx={{
@@ -160,7 +160,7 @@ export const SectionShipping = ({ isMobile }) => {
             Shop with Confidence: <br />
             Our Secure Payment Partner
           </Typography>
-        </Slide>
+
         <Box
           sx={{
             display: "flex",
