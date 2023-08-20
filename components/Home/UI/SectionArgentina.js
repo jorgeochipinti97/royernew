@@ -35,8 +35,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
   return (
     <>
       <Box sx={{ my: 5 }}>
-
-          <VideoHome url="messi" border={"auto"} />
+        <VideoHome url="messi" border={"auto"} />
         <Box
           sx={{
             my: 5,
@@ -67,8 +66,8 @@ export const SectionArgentina = ({ products, isMobile }) => {
             <Marquee>
               {products &&
                 products.map((e) => (
-                  <Suspense fallback={<Loading />}>
-                    <Link href={`/products/${e.slug}`} key={e.name}>
+                  <Link href={`/products/${e.slug}`} key={e.name}>
+                    <Suspense fallback={<Loading />}>
                       <div>
                         <Box>
                           <Card
@@ -104,8 +103,8 @@ export const SectionArgentina = ({ products, isMobile }) => {
                           </Card>
                         </Box>
                       </div>
-                    </Link>
-                  </Suspense>
+                    </Suspense>
+                  </Link>
                 ))}
             </Marquee>
           }
