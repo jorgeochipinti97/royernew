@@ -200,9 +200,9 @@ export const SectionShipping = ({ isMobile }) => {
           <Image
             src="/stripewhite.png"
             alt=""
-            style={{ width: isMobile ? "90%" : "808px" }}
-            width={isMobile ? 404 : 808}
-            height={isMobile ? 132 : 264}
+            style={{}}
+            width={ 808/2}
+            height={ 264/2}
           />
         </Box>
       </Box>

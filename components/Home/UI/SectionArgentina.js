@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import {
   Box,
   Button,
@@ -19,6 +19,7 @@ import { Power1, gsap } from "gsap";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import { Slide } from "react-awesome-reveal";
+import { Loading } from "@/components/Loading";
 
 export const SectionArgentina = ({ products, isMobile }) => {
   const [ref, inView] = useInView({
@@ -41,9 +42,16 @@ export const SectionArgentina = ({ products, isMobile }) => {
             display: "flex",
             justifyContent: "center",
             width: "100vw",
-          }}>
+          }}
+        >
           <Slide>
-            <Typography sx={{ color: "#75aadb",fontSize:isMobile?'20px':'30px',fontWeight:'600' }}>
+            <Typography
+              sx={{
+                color: "#75aadb",
+                fontSize: isMobile ? "20px" : "30px",
+                fontWeight: "600",
+              }}
+            >
               The Latest World Champions Haven
             </Typography>
           </Slide>
@@ -58,43 +66,45 @@ export const SectionArgentina = ({ products, isMobile }) => {
             <Marquee>
               {products &&
                 products.map((e) => (
-                  <Link href={`/products/${e.slug}`} key={e.name}>
-                    <div>
-                      <Box>
-                        <Card
-                          sx={{
-                            height: "fit-content",
-                            m: 2,
-                          }}
-                        >
-                          <CardActionArea>
-                            <CardMedia>
-                              <>
-                                <Image
-                                  src={e.images[0]}
-                                  alt=""
-                                  width={200}
-                                  height={200}
-                                />
-                              </>
-                            </CardMedia>
-                            <Box
-                              display={"flex"}
-                              justifyContent={"center"}
-                              sx={{ my: 1 }}
-                            >
-                              <Button
-                                color="primary"
-                                sx={{ fontWeight: "700" }}
+                  <Suspense fallback={<Loading />}>
+                    <Link href={`/products/${e.slug}`} key={e.name}>
+                      <div>
+                        <Box>
+                          <Card
+                            sx={{
+                              height: "fit-content",
+                              m: 2,
+                            }}
+                          >
+                            <CardActionArea>
+                              <CardMedia>
+                                <>
+                                  <Image
+                                    src={e.images[0]}
+                                    alt=""
+                                    width={200}
+                                    height={200}
+                                  />
+                                </>
+                              </CardMedia>
+                              <Box
+                                display={"flex"}
+                                justifyContent={"center"}
+                                sx={{ my: 1 }}
                               >
-                                ${e.precio}
-                              </Button>
-                            </Box>
-                          </CardActionArea>
-                        </Card>
-                      </Box>
-                    </div>
-                  </Link>
+                                <Button
+                                  color="primary"
+                                  sx={{ fontWeight: "700" }}
+                                >
+                                  ${e.precio}
+                                </Button>
+                              </Box>
+                            </CardActionArea>
+                          </Card>
+                        </Box>
+                      </div>
+                    </Link>
+                  </Suspense>
                 ))}
             </Marquee>
           }
