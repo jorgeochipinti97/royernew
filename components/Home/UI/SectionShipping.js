@@ -115,7 +115,8 @@ export const SectionShipping = ({ isMobile }) => {
             sx={{
               fontWeight: "700",
               transform: "scale(0)",
-              lineHeight: "29px",
+              lineHeight: isMobile ? '25px':"29px",
+              mx:isMobile ? 2:0
             }}
             color={"white"}
             ref={ref2}
@@ -146,20 +147,20 @@ export const SectionShipping = ({ isMobile }) => {
         </Box>
         <Divider sx={{ my: 6, backgroundColor: "white" }} />
 
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: isMobile ? "20px" : "80px",
-              textAlign: "center",
-              mt: isMobile ? 2 : 10,
-              fontWeight: "700",
-              lineHeight: isMobile ? "29px" : "78px",
-              color: "white",
-            }}
-          >
-            Shop with Confidence: <br />
-            Our Secure Payment Partner
-          </Typography>
+        <Typography
+          variant="body1"
+          sx={{
+            fontSize: isMobile ? "20px" : "80px",
+            textAlign: "center",
+            mt: isMobile ? 2 : 10,
+            fontWeight: "700",
+            lineHeight: isMobile ? "20px" : "78px",
+            color: "white",
+          }}
+        >
+          Shop with Confidence: 
+          Our Secure Payment Partner
+        </Typography>
 
         <Box
           sx={{
@@ -201,8 +202,8 @@ export const SectionShipping = ({ isMobile }) => {
             src="/stripewhite.png"
             alt=""
             style={{}}
-            width={ 808/2}
-            height={ 264/2}
+            width={isMobile ? 808 / 3 : 808 / 2}
+            height={isMobile ? 264 / 3 : 264 / 2}
           />
         </Box>
       </Box>

@@ -29,7 +29,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
 
   useEffect(() => {
     inView &&
-      gsap.to(".divmerque", { opacity: 1, ease: Power1.easeIn, duration: 1.5 });
+      gsap.to(".divmerque", { opacity: 1, ease: Power1.easeIn, duration: 1.8 });
   }, [inView]);
 
   return (
@@ -44,7 +44,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
             width: "100vw",
           }}
         >
-          <Slide>
+          <Slide triggerOnce={true}>
             <Typography
               sx={{
                 color: "#75aadb",
@@ -67,8 +67,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
               {products &&
                 products.map((e) => (
                   <Link href={`/products/${e.slug}`} key={e.name}>
-                    <Suspense fallback={<Loading />}>
-                      <div>
+<div>
                         <Box>
                           <Card
                             sx={{
@@ -103,7 +102,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
                           </Card>
                         </Box>
                       </div>
-                    </Suspense>
+
                   </Link>
                 ))}
             </Marquee>

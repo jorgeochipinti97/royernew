@@ -21,7 +21,7 @@ export const SectionBoca = ({ products, isMobile }) => {
 
   return (
     <>
-      <Suspense fallback={<Loading />}>
+
         <Grid
           container
           sx={{
@@ -89,7 +89,7 @@ export const SectionBoca = ({ products, isMobile }) => {
             </Box>
           </Grid>
         </Grid>
-      </Suspense>
+
     </>
   );
 };
