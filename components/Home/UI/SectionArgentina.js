@@ -6,6 +6,7 @@ import {
   CardActionArea,
   CardMedia,
   Grid,
+  Typography,
 } from "@mui/material";
 import { VideoHome } from "./VideoHome";
 import { TextReveal } from "@/components/TextReveal";
@@ -17,8 +18,9 @@ import { useInView } from "react-intersection-observer";
 import { Power1, gsap } from "gsap";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import { Slide } from "react-awesome-reveal";
 
-export const SectionArgentina = ({ products, isLoading }) => {
+export const SectionArgentina = ({ products, isMobile }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
   });
@@ -39,12 +41,12 @@ export const SectionArgentina = ({ products, isLoading }) => {
             display: "flex",
             justifyContent: "center",
             width: "100vw",
-          }}
-        >
-          <TextReveal
-            textReveal={"        The Latest World Champions Haven"}
-            color={"#75aadb"}
-          />
+          }}>
+          <Slide>
+            <Typography sx={{ color: "#75aadb",fontSize:isMobile?'20px':'30px',fontWeight:'600' }}>
+              The Latest World Champions Haven
+            </Typography>
+          </Slide>
         </Box>
         <Box
           sx={{ minHeight: "300px", opacity: 0 }}
@@ -56,7 +58,7 @@ export const SectionArgentina = ({ products, isLoading }) => {
             <Marquee>
               {products &&
                 products.map((e) => (
-                  <Link href={`/products/${e.slug}`}  key={e.name}>
+                  <Link href={`/products/${e.slug}`} key={e.name}>
                     <div>
                       <Box>
                         <Card

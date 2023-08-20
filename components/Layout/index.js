@@ -29,7 +29,7 @@ export const ShopLayout = ({ children, title, pageDescription }) => {
         {children}
       </main>
 
-      <Footer />
+      {/* <Footer /> */}
       {/* <Footer /> */}
     </>
   );

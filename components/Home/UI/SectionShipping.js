@@ -102,7 +102,7 @@ export const SectionShipping = ({ isMobile }) => {
             </Typography>
           </Box>
           <Box
-            sx={{ width: isMobile ? "100%" : "50%", transform: "scale(0)" }}
+            sx={{ width: isMobile ? "100vw" : "50vw", transform: "scale(0)" }}
             className="shipping"
             ref={ref}
           >
@@ -200,7 +200,7 @@ export const SectionShipping = ({ isMobile }) => {
           <Image
             src="/stripewhite.png"
             alt=""
-            style={{ width: isMobile ? "90%" : "auto" }}
+            style={{ width: isMobile ? "90%" : "808px" }}
             width={isMobile ? 404 : 808}
             height={isMobile ? 132 : 264}
           />

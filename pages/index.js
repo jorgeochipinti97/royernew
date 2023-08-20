@@ -18,7 +18,7 @@ export default function Home() {
     <>
       <ShopLayout title={"Royer Store"}>
         <Box sx={{ my: 0 }}>
-          <SectionArgentina products={filteredProducts3} />
+          <SectionArgentina products={filteredProducts3}isMobile={isMobile} />
           <SectionBoca products={filteredProducts1} isMobile={isMobile}/>
           <SectionRiver products={filteredProducts2}  isMobile={isMobile} />
           <SectionShipping isMobile={isMobile} />
