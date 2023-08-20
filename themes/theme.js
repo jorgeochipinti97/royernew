@@ -21,12 +21,14 @@ export const lightTheme = createTheme({
     MuiLink: {
       defaultProps: {
         underline: 'none',
+        fontStyle:'none'
       },
     },
     MuiAppBar: {
       defaultProps: {
         elevation: 0,
         position: 'fixed',
+        fontStyle:'none'
       },
       styleOverrides: {
         root: {
