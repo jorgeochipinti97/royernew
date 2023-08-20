@@ -18,19 +18,25 @@ export default function Home() {
   const { products: filteredProducts3 } = useProduct("argentina");
   return (
     <>
-      <ShopLayout title={"Royer Store"}>
-
-          <Box sx={{ my: 0 }}>
-            <SectionArgentina
-              products={filteredProducts3}
-              isMobile={isMobile}
-            />
-            <SectionBoca products={filteredProducts1} isMobile={isMobile} />
-            <SectionRiver products={filteredProducts2} isMobile={isMobile} />
-            <SectionShipping isMobile={isMobile} />
-          </Box>
-
-      </ShopLayout>
+      {filteredProducts1 ? (
+        <>
+          <ShopLayout title={"Royer Store"}>
+            <Box sx={{ my: 0 }}>
+              <SectionArgentina
+                products={filteredProducts3}
+                isMobile={isMobile}
+              />
+              <SectionBoca products={filteredProducts1} isMobile={isMobile} />
+              <SectionRiver products={filteredProducts2} isMobile={isMobile} />
+              <SectionShipping isMobile={isMobile} />
+            </Box>
+          </ShopLayout>
+        </>
+      ) : (
+        <>
+          <Loading />
+        </>
+      )}
     </>
   );
 }
