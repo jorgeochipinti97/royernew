@@ -55,7 +55,7 @@ export default function Home() {
     <>
       {productsBoca && productsBoca.length > 1 ? (
         <>
-          <ShopLayout title={"Royer Store"}>
+          <ShopLayout imageFullUrl={'/logoroyer.jpg"'} title={"Royer Store"}>
             <Box sx={{ my: 0 }}>
               <SectionArgentina
                 products={filteredProducts3}
