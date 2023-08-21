@@ -101,24 +101,44 @@ export const SectionBoca = ({ products, isMobile }) => {
           xs={12}
           sx={{ display: isMobile ? "none" : "auto" }}
         >
-          <Box
+      <Box
+            sx={{ height: "content-fit", width: "100%" }}
             display={"flex"}
             justifyContent={"center"}
-            sx={{ width: "100vw" }}
+            alignItems={"center"}
           >
-            <Suspense>
-              <Image
-                src={"/boca.gif"}
-                height={100}
-                width={100}
-                style={{
-                  height: "100%",
-                  width: "100%",
-                  borderRadius: "90px 90px",
-                }}
-                alt=""
-              />
-            </Suspense>
+            <Box
+              display={"flex"}
+              justifyContent={"center"}
+              sx={{ width: "100vw" }}
+            >
+
+                <Image
+                  src={"/boca.gif"}
+                  height={100}
+                  width={100}
+                  style={{
+                    height: isMobile ? "100%" : "100%",
+                    width: isMobile ? "100%" : "100%",
+                    borderRadius: "90px 90px",
+                  }}
+                  alt=""
+                />
+              </Box>
+
+            {/* <Box
+              display={"flex"}
+              justifyContent={"center"}
+              sx={{ width: "100vw" }}
+            >
+              <Box
+                display={"flex"}
+                justifyContent={"center"}
+                sx={{ width: "90vw" }}
+              >
+                <Lottie animationData={animation} loop={true} style={{}} />
+              </Box>
+            </Box> */}
           </Box>{" "}
         </Grid>
       </Grid>

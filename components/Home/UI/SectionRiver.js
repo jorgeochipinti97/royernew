@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import React, { useEffect } from "react";
+import React, { Suspense, useEffect } from "react";
 import { VideoHome } from "./VideoHome";
 import { TextReveal } from "@/components/TextReveal";
 import { ProductCard } from "@/components/Products/ProductCard";
@@ -47,7 +47,7 @@ export const SectionRiver = ({ products, isMobile }) => {
               justifyContent={"center"}
               sx={{ width: "100vw" }}
             >
-
+              <Suspense>
                 <Image
                   src={"/river.gif"}
                   height={100}
@@ -59,7 +59,8 @@ export const SectionRiver = ({ products, isMobile }) => {
                   }}
                   alt=""
                 />
-              </Box>
+              </Suspense>
+            </Box>
 
             {/* <Box
               display={"flex"}
