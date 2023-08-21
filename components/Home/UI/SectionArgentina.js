@@ -37,7 +37,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
 
   return (
     <>
-      <Box sx={{ my: 5 }}>
+      <Box sx={{ my: 10 }}>
         <Box display={"flex"} justifyContent={"space-around"} sx={{ width: "100vw" }}>
           <Box sx={{display:isMobile ?'none' :'auto'}}>
           <Suspense>

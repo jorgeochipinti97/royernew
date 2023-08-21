@@ -37,7 +37,7 @@ const Navbar = ({ isMobile }) => {
   };
   return (
     <AppBar>
-      <Toolbar>
+      <Toolbar sx={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
         <NextLink href="/" passHref style={{ textDecoration: "none" }}>
           <Typography
             variant="subtitle1"
@@ -50,41 +50,59 @@ const Navbar = ({ isMobile }) => {
 
         <Box flex={1} />
 
-        <Box
-          sx={{
-            display: isSearchVisible ? "none" : { xs: "none", sm: "block" },
-          }}
-          className="fadeIn"
-        >
+        <Box>
+          <NextLink href="/" passHref>
+            <Button
+              sx={{ fontWeight: "800", mx: 1 }}
+              color={asPath == "/" ? "primary" : "info"}
+            >
+              Home
+            </Button>
+          </NextLink>
           <NextLink href="/football" passHref>
-            <Button color={asPath.includes("football") ? "primary" : "info"}>
+            <Button
+              sx={{ fontWeight: "800", mx: 1 }}
+              color={asPath.includes("football") ? "primary" : "info"}
+            >
               Football
             </Button>
           </NextLink>
           <NextLink href="/regionals" passHref>
-            <Button color={asPath.includes("regionals") ? "primary" : "info"}>
+            <Button
+              sx={{ fontWeight: "800", mx: 1 }}
+              color={asPath.includes("regionals") ? "primary" : "info"}
+            >
               Regionals
             </Button>
           </NextLink>
           <NextLink href="/contact" passHref>
-            <Button color={asPath.includes("contact") ? "primary" : "info"}>
+            <Button
+              sx={{ fontWeight: "800", mx: 1 }}
+              color={asPath.includes("contact") ? "primary" : "info"}
+            >
               Contact
             </Button>
           </NextLink>
           <NextLink href="/faqs" passHref>
-            <Button color={asPath.includes("faqs") ? "primary" : "info"}>
+            <Button
+              sx={{ fontWeight: "800", mx: 1 }}
+              color={asPath.includes("faqs") ? "primary" : "info"}
+            >
               FAQS{" "}
             </Button>
           </NextLink>
         </Box>
         <Box flex={1} />
 
-        <IconButton onClick={() => push("/cart")}>
+        <IconButton
+          onClick={() => push("/cart")}
+          sx={{ backgroundColor: "white" }}
+        >
           <Badge
             badgeContent={numberOfItems > 9 ? "+9" : numberOfItems}
             color="secondary"
           >
-            <ShoppingCartOutlined />
+            <ShoppingCartOutlined sx={{ color: "#09446a" }} />
           </Badge>
         </IconButton>
         <Button
