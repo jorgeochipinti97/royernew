@@ -1,20 +1,22 @@
 import { useProduct } from "@/Hooks/UseProducts";
 import { ShopLayout } from "@/components/Layout";
+import { Loading } from "@/components/Loading";
 import { ProductCard } from "@/components/Products/ProductCard";
 import { Box, Button, Grid } from "@mui/material";
-import { useEffect, useState } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { Suspense, useEffect, useState } from "react";
 
 const FootballPage = () => {
-  const [categorie, setCategorie] = useState();
+  const [categorie, setCategorie] = useState("argentina");
   const [products, setProducts] = useState();
-  const { products: filteredProducts1 } = useProduct("boca"); // Productos filtrados por 'filtro1'
-  const { products: filteredProducts2 } = useProduct("river"); // Productos filtrados por 'filtro2'
+  const { products: filteredProducts1 } = useProduct("boca");
+  const { products: filteredProducts2 } = useProduct("river");
   const { products: filteredProducts3 } = useProduct("argentina");
 
   useEffect(() => {
-    setCategorie("argentina");
     setProducts(filteredProducts3);
-    console.log(filteredProducts3)
+
   }, [filteredProducts3]);
 
   useEffect(() => {
@@ -46,13 +48,18 @@ const FootballPage = () => {
             River
           </Button>
         </Box>
-        <Grid container>
-          {products &&
+        <Grid container >
+          {!products ? (
+            <>
+              <Loading />
+            </>
+          ) : (
             products.map((e) => (
-              <Grid xs={12}  md={4} lg={4} xl={4} item key={e.titulo}>
+              <Grid xs={12} md={4} lg={4} xl={4} item key={e.titulo}>
                 <ProductCard e={e} />
               </Grid>
-            ))}
+            ))
+          )}
         </Grid>
       </ShopLayout>
     </>

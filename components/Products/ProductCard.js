@@ -22,7 +22,7 @@ export const ProductCard = ({ e, index, club }) => {
   const { asPath, push } = useRouter();
   gsap.registerPlugin(ScrollTrigger);
   const { ref, inView, entry } = useInView({
-    threshold: 0.6,
+    threshold: 0.1,
     triggerOnce: true,
   });
 
