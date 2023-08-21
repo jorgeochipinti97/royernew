@@ -4,7 +4,12 @@ import { Footer } from "../Footer";
 import { SideMenu } from "../UI/SideMenu";
 import { useMediaQuery } from "@mui/material";
 
-export const ShopLayout = ({ children, title, pageDescription,imageFullUrl }) => {
+export const ShopLayout = ({
+  children,
+  title,
+  pageDescription,
+  imageFullUrl,
+}) => {
   const isMobile = useMediaQuery("(max-width:600px)");
 
   return (
@@ -15,7 +20,12 @@ export const ShopLayout = ({ children, title, pageDescription,imageFullUrl }) =>
         <meta name="og:title" content={title} />
         <link rel="icon" href="/logoroyer.jpg" sizes="any" />
 
-        {imageFullUrl && <meta name="og:image" content={imageFullUrl} />}
+        <meta
+          name="og:image"
+          content={
+            "https://raw.githubusercontent.com/jorgeochipinti97/royernew/main/public/logoroyer.jpg"
+          }
+        />
       </Head>
       <nav>
         <Navbar isMobile={isMobile} />
