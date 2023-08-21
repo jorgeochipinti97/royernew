@@ -57,7 +57,7 @@ export const SectionBoca = ({ products, isMobile }) => {
                 justifyContent={"center"}
                 sx={{ width: "100vw" }}
               >
-                <Suspense >
+                <Suspense>
                   <Image
                     src={"/boca.gif"}
                     height={100}
@@ -102,13 +102,24 @@ export const SectionBoca = ({ products, isMobile }) => {
           sx={{ display: isMobile ? "none" : "auto" }}
         >
           <Box
-            sx={{ height: "100%", width: "100%" }}
             display={"flex"}
             justifyContent={"center"}
-            alignItems={"center"}
+            sx={{ width: "100vw" }}
           >
-            <VideoHome url={"boca"} border={"90px"} />
-          </Box>
+            <Suspense>
+              <Image
+                src={"/boca.gif"}
+                height={100}
+                width={100}
+                style={{
+                  height: "100%",
+                  width: "100%",
+                  borderRadius: "90px 90px",
+                }}
+                alt=""
+              />
+            </Suspense>
+          </Box>{" "}
         </Grid>
       </Grid>
     </>
