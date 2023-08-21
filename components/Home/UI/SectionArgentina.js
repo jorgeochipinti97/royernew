@@ -35,7 +35,12 @@ export const SectionArgentina = ({ products, isMobile }) => {
   return (
     <>
       <Box sx={{ my: 5 }}>
-        <VideoHome url="argentina" border={"auto"} />
+        {isMobile ? <><VideoHome url="messi1" border={"auto"} /></> :(
+        
+
+        <VideoHome url="messi1" border={"auto"} height={'80vh'} />
+        
+        )}
         <Box
           sx={{
             my: 5,
@@ -67,42 +72,41 @@ export const SectionArgentina = ({ products, isMobile }) => {
               {products &&
                 products.map((e) => (
                   <Link href={`/products/${e.slug}`} key={e.name}>
-<div>
-                        <Box>
-                          <Card
-                            sx={{
-                              height: "fit-content",
-                              m: 2,
-                            }}
-                          >
-                            <CardActionArea>
-                              <CardMedia>
-                                <>
-                                  <Image
-                                    src={e.images[0]}
-                                    alt=""
-                                    width={200}
-                                    height={200}
-                                  />
-                                </>
-                              </CardMedia>
-                              <Box
-                                display={"flex"}
-                                justifyContent={"center"}
-                                sx={{ my: 1 }}
+                    <div>
+                      <Box>
+                        <Card
+                          sx={{
+                            height: "fit-content",
+                            m: 2,
+                          }}
+                        >
+                          <CardActionArea>
+                            <CardMedia>
+                              <>
+                                <Image
+                                  src={e.images[0]}
+                                  alt=""
+                                  width={200}
+                                  height={200}
+                                />
+                              </>
+                            </CardMedia>
+                            <Box
+                              display={"flex"}
+                              justifyContent={"center"}
+                              sx={{ my: 1 }}
+                            >
+                              <Button
+                                color="primary"
+                                sx={{ fontWeight: "700" }}
                               >
-                                <Button
-                                  color="primary"
-                                  sx={{ fontWeight: "700" }}
-                                >
-                                  ${e.precio}
-                                </Button>
-                              </Box>
-                            </CardActionArea>
-                          </Card>
-                        </Box>
-                      </div>
-
+                                ${e.precio}
+                              </Button>
+                            </Box>
+                          </CardActionArea>
+                        </Card>
+                      </Box>
+                    </div>
                   </Link>
                 ))}
             </Marquee>

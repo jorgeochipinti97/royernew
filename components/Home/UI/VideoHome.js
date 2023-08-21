@@ -1,7 +1,7 @@
 
 import React, { Suspense, useEffect, useRef } from "react";
 
-export const VideoHome = ({ url, border }) => {
+export const VideoHome = ({ url, border, height }) => {
   const ref = useRef();
 
   return (
@@ -11,7 +11,7 @@ export const VideoHome = ({ url, border }) => {
           loop
           autoPlay
           style={{
-            height: "content-fit",
+            height: height ? height : "content-fit",
             width: "100%",
             boxSizing: "border-box",
             borderRadius: border,
