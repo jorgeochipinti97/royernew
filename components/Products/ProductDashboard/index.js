@@ -374,7 +374,10 @@ export const ProductDashboard = ({
             {
               _id: product._id,
               image: product.images[0],
-              precio: product.precio,
+              precio:
+                selectedPlayer.length > 3
+                  ? product.precio + 20
+                  : product.precio,
               size: size,
               personalization: selectedPlayer,
               slug: product.slug,
