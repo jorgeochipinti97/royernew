@@ -43,7 +43,9 @@ export const SectionArgentina = ({ products, isMobile }) => {
           justifyContent={"center"}
           sx={{  width: "100vw" }}
         >
-          <Box
+
+          <Image src={'/argentina.gif'} height={100} width={100} style={{height: isMobile?'100%' :'auto',width:isMobile ? '100%':'auto'}} alt=''/>
+          {/* <Box
             display={"flex"}
             justifyContent={"center"}
             sx={{ width: "90vw" }}
@@ -55,7 +57,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
 
               }}
             />
-          </Box>
+          </Box> */}
         </Box>
         <Box
           sx={{

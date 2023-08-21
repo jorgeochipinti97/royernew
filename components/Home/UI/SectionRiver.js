@@ -5,6 +5,10 @@ import { TextReveal } from "@/components/TextReveal";
 import { ProductCard } from "@/components/Products/ProductCard";
 import { gsap } from "gsap";
 import { useInView } from "react-intersection-observer";
+import animation from "../../../animations/riverlottie.json";
+
+import Lottie from "lottie-react";
+import Image from "next/image";
 
 export const SectionRiver = ({ products, isMobile }) => {
   const [ref, inView] = useInView({
@@ -38,7 +42,38 @@ export const SectionRiver = ({ products, isMobile }) => {
             justifyContent={"center"}
             alignItems={"center"}
           >
-            <VideoHome url={"river"} border="90px" />
+            <Box
+              display={"flex"}
+              justifyContent={"center"}
+              sx={{ width: "100vw" }}
+            >
+
+                <Image
+                  src={"/river.gif"}
+                  height={100}
+                  width={100}
+                  style={{
+                    height: isMobile ? "100%" : "100%",
+                    width: isMobile ? "100%" : "100%",
+                    borderRadius: "90px 90px",
+                  }}
+                  alt=""
+                />
+              </Box>
+
+            {/* <Box
+              display={"flex"}
+              justifyContent={"center"}
+              sx={{ width: "100vw" }}
+            >
+              <Box
+                display={"flex"}
+                justifyContent={"center"}
+                sx={{ width: "90vw" }}
+              >
+                <Lottie animationData={animation} loop={true} style={{}} />
+              </Box>
+            </Box> */}
           </Box>{" "}
         </Grid>
         <Grid item md={6} lg={6} xl={6}>
