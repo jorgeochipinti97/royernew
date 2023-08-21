@@ -35,7 +35,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
   return (
     <>
       <Box sx={{ my: 5 }}>
-        <VideoHome url="messi" border={"auto"} />
+        <VideoHome url="argentina" border={"auto"} />
         <Box
           sx={{
             my: 5,
