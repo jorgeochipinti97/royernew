@@ -61,7 +61,7 @@ export default function Home() {
                 products={filteredProducts3}
                 isMobile={isMobile}
               />
-              <SectionBoca
+              {/* <SectionBoca
                 products={
                   productsBoca[0] != undefined && productsBoca.length > 0
                     ? productsBoca
@@ -70,7 +70,7 @@ export default function Home() {
                 isMobile={isMobile}
               />
               <SectionRiver products={filteredProducts2} isMobile={isMobile} />
-              <SectionShipping isMobile={isMobile} />
+              <SectionShipping isMobile={isMobile} /> */}
             </Box>
           </ShopLayout>
         </>

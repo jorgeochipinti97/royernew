@@ -20,6 +20,9 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { Slide } from "react-awesome-reveal";
 import { Loading } from "@/components/Loading";
+import animation from "../../../animations/messi1lottie.json";
+
+import Lottie from "lottie-react";
 
 export const SectionArgentina = ({ products, isMobile }) => {
   const [ref, inView] = useInView({
@@ -35,15 +38,28 @@ export const SectionArgentina = ({ products, isMobile }) => {
   return (
     <>
       <Box sx={{ my: 5 }}>
-        {isMobile ? <><VideoHome url="messi1" border={"auto"} /></> :(
-        
+        <Box
+          display={"flex"}
+          justifyContent={"center"}
+          sx={{  width: "100vw" }}
+        >
+          <Box
+            display={"flex"}
+            justifyContent={"center"}
+            sx={{ width: "90vw" }}
+          >
+            <Lottie
+              animationData={animation}
+              loop={true}
+              style={{
 
-        <VideoHome url="messi1" border={"auto"} height={'80vh'} />
-        
-        )}
+              }}
+            />
+          </Box>
+        </Box>
         <Box
           sx={{
-            my: 5,
+            my: 2,
             display: "flex",
             justifyContent: "center",
             width: "100vw",
