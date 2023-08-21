@@ -37,22 +37,26 @@ export const SectionArgentina = ({ products, isMobile }) => {
 
   return (
     <>
-      <Box sx={{ my: 10 }}>
-        <Box display={"flex"} justifyContent={"space-around"} sx={{ width: "100vw" }}>
-          <Box sx={{display:isMobile ?'none' :'auto'}}>
-          <Suspense>
-            <Image
-              src={"/argentina.gif"}
-              height={1000}
-              width={100}
-              style={{
-                height: isMobile ? "100%" : "auto",
-                width: isMobile ? "100%" : "auto",
-                filter: "grayscale(100%)",
-              }}
-              alt=""
-            />
-          </Suspense>
+      <Box sx={{ my: isMobile ? 0 : 10 }}>
+        <Box
+          display={"flex"}
+          justifyContent={"space-around"}
+          sx={{ width: "100vw" }}
+        >
+          <Box sx={{ display: isMobile ? "none" : "auto" }}>
+            <Suspense>
+              <Image
+                src={"/argentina.gif"}
+                height={1000}
+                width={100}
+                style={{
+                  height: isMobile ? "100%" : "auto",
+                  width: isMobile ? "100%" : "auto",
+                  filter: "grayscale(100%)",
+                }}
+                alt=""
+              />
+            </Suspense>
           </Box>
           <Suspense>
             <Image
@@ -66,20 +70,20 @@ export const SectionArgentina = ({ products, isMobile }) => {
               alt=""
             />
           </Suspense>
-          <Box sx={{display:isMobile ?'none' :'auto'}}>
-          <Suspense>
-            <Image
-              src={"/argentina.gif"}
-              height={1000}
-              width={100}
-              style={{
-                height: isMobile ? "100%" : "auto",
-                width: isMobile ? "100%" : "auto",
-                filter: "grayscale(100%)",
-              }}
-              alt=""
-            />
-          </Suspense>
+          <Box sx={{ display: isMobile ? "none" : "auto" }}>
+            <Suspense>
+              <Image
+                src={"/argentina.gif"}
+                height={1000}
+                width={100}
+                style={{
+                  height: isMobile ? "100%" : "auto",
+                  width: isMobile ? "100%" : "auto",
+                  filter: "grayscale(100%)",
+                }}
+                alt=""
+              />
+            </Suspense>
           </Box>
           {/*
             display={"flex"}
