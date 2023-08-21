@@ -2,7 +2,7 @@ import { NextResponse, NextRequest } from "next/server";
 import Stripe from "stripe";
 
 const stripe = new Stripe(
-  "sk_test_51MZbufFUPmM9VmmiNzRMzExGfjnvFaVDZFJjZJbzjaMbWI6w5kNjBk8meFO0FTqwGE7sXCaJYot2YXdGawas1qk000JmRwuyVj" ||
+  "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" ||
     "",
   {
     apiVersion: "2022-11-15",
