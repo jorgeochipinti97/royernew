@@ -15,7 +15,7 @@ import { useInView } from "react-intersection-observer";
 import { Elastic, gsap, Power4, Power1, Back } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRouter } from "next/router";
-import { format } from "@/utils/currency";
+import { format, formattwo } from "@/utils/currency";
 import { Loading } from "../Loading";
 
 export const ProductCard = ({ e, index, club }) => {
@@ -94,7 +94,7 @@ export const ProductCard = ({ e, index, club }) => {
           </Box>
           <Box display={"flex"} justifyContent={"center"} sx={{ my: 1 }}>
             <Button color={"secondary"} sx={{ fontWeight: "700" }}>
-              {format(e.precio)}
+              {formattwo(e.precio)}
             </Button>
           </Box>
         </Box>
