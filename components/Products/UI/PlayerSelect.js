@@ -1,28 +1,23 @@
 import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
 import React from "react";
 
-export const PlayerSelect = ({ jugadores, onSelect,isMobile }) => {
+export const PlayerSelect = ({ jugadores, onSelect, isMobile }) => {
   return (
     <>
       <Box
         sx={{
           display: "flex",
-          width:'100%',
-          justifyContent: isMobile ? 'center':"start",
-
-
+          width: "100%",
+          justifyContent: isMobile ? "center" : "start",
         }}
       >
-        <FormControl
-        >
-          <InputLabel id="player-select-label">
-            Selecciona un jugador
-          </InputLabel>
+        <FormControl>
+          <InputLabel id="player-select-label">Choose player</InputLabel>
           <Select
-          variant="standard"
+            variant="standard"
             labelId="player-select-label"
             id="player-select"
-            sx={{ width: isMobile?'80vw':"30vw" }}
+            sx={{ width: isMobile ? "80vw" : "30vw" }}
             onChange={onSelect}
           >
             {jugadores.map((player, index) => (
