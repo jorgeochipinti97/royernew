@@ -18,18 +18,16 @@ export const ShopLayout = ({
         <title>{title}</title>
         <meta name="description" content={pageDescription} />
         <meta name="og:title" content={title} />
-        <meta name="theme-color" content="#000000"/>
-        <link rel="icon" href="/logoroyer.jpg" sizes="any" />
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <meta name="viewport" content="viewport-fit=cover"/>
-        <meta name="mobile-web-app-capable" content="yes"/>
-        <meta name="apple-mobile-web-app-capable" content="yes"/> 
-        <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
-        <meta name="apple-mobile-web-app-title" content="Royer Store"/>
-        <link rel="apple-touch-icon" href="/logoroyer.jpg"/>
-        <meta name="apple-mobile-web-app-capable" content="yes"/>
-        <meta name="apple-touch-startup-image" content="/logoroyer.jpg"/>
-        <meta name="apple-touch-fullscreen" content="yes"/>
+        <meta name="theme-color" content="#000000" />
+        <link rel="icon" href="/royerpwa.png" sizes="any" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="apple-mobile-web-app-title" content="Royer Store" />
+        <link rel="apple-touch-icon" href="/royerpwa.png" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-touch-startup-image" content="/royerpwa.png" />
+        <meta name="apple-touch-fullscreen" content="yes" />
 
         <meta
           name="og:image"
