@@ -20,18 +20,16 @@ export default function Home() {
   useEffect(() => {
     const productBoca1 = filteredProducts1.filter(
       (e) =>
-        e.slug == "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
+        e.slug == "boca_juniors_adidas_official_home_shirt_22-23_-_heat.rdy"
     );
     const productBoca2 = filteredProducts1.filter(
-      (e) => e.slug == "boca_juniors_training_shirt_23_24_-_adidas_official"
+      (e) => e.slug == "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
     );
     const productBoca3 = filteredProducts1.filter(
-      (e) =>
-        e.slug ==
-        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy_woman"
+      (e) => e.slug == "boca_juniors_home_shorts_23-24_adidas_official"
     );
     const productBoca4 = filteredProducts1.filter(
-      (e) => e.slug == "boca_juniors_home_shorts_23-24_adidas_official"
+      (e) => e.slug == "boca_juniors_third_shirt_23_24_adidas_official"
     );
 
     console.log(
