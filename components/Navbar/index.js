@@ -36,21 +36,23 @@ const Navbar = ({ isMobile }) => {
     push("/search");
   };
   return (
-    <AppBar sx={{ display: isMobile ? "none" : "auto" }}>
+    <AppBar sx={{ backgroundColor: isMobile ? "rgba(0, 0, 0, 0.1)" : "auto" }}>
       <Toolbar sx={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
-        <NextLink href="/" passHref style={{ textDecoration: "none" }}>
-          <Typography
-            variant="subtitle1"
-            sx={{ textDecoration: "none", color: "black" }}
-          >
-            Royer <span style={{ fontWeight: "200" }}>|</span>{" "}
-            <span style={{ fontWeight: "200" }}>Store</span>
-          </Typography>
-        </NextLink>
+        <Box sx={{ borderRadius: "9px", backgroundColor: "white",p:1 }}>
+          <NextLink href="/" passHref style={{ textDecoration: "none" }}>
+            <Typography
+              variant="subtitle1"
+              sx={{ textDecoration: "none", color: "black" }}
+            >
+              Royer <span style={{ fontWeight: "200" }}>|</span>{" "}
+              <span style={{ fontWeight: "200" }}>Store</span>
+            </Typography>
+          </NextLink>
+        </Box>
 
         <Box flex={1} />
 
-        <Box>
+        <Box sx={{ display: isMobile ? "none" : "auto" }}>
           <NextLink href="/" passHref>
             <Button
               sx={{ fontWeight: "800", mx: 1 }}
@@ -92,11 +94,11 @@ const Navbar = ({ isMobile }) => {
             </Button>
           </NextLink>
         </Box>
-        <Box flex={1} />
+        <Box flex={1} sx={{ display: isMobile ? "none" : "auto" }} />
 
         <IconButton
           onClick={() => push("/cart")}
-          sx={{ backgroundColor: "white" }}
+          sx={{ backgroundColor: "white", display: isMobile ? "none" : "auto" }}
         >
           <Badge
             badgeContent={numberOfItems > 9 ? "+9" : numberOfItems}
