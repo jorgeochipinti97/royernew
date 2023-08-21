@@ -15,7 +15,7 @@ export const CheckoutPage = ({ price, orderid }) => {
   useEffect(() => {
     setStripePromise(
       loadStripe(
-        "pk_test_51MZbufFUPmM9VmmihJQydK2H2w25gsYZxEaZzFipAtF2bMvLguzrmSWUekCtRUd49WaiFPNpXk50HsGrqGVhvZ0I00sqwp5z9c" ||
+        "pk_live_51MZbufFUPmM9VmmimREk7sWuZ9DPvwhabDTHyAtRhNmLlST2Z57uaVSmYoFwGfrHPmaXC01BolPJDj6ZcAM1K0Bf00UANPinJT" ||
           ""
       )
     );
