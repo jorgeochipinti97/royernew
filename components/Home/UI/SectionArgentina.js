@@ -38,13 +38,19 @@ export const SectionArgentina = ({ products, isMobile }) => {
   return (
     <>
       <Box sx={{ my: 5 }}>
-        <Box
-          display={"flex"}
-          justifyContent={"center"}
-          sx={{  width: "100vw" }}
-        >
-
-          <Image src={'/argentina.gif'} height={100} width={100} style={{height: isMobile?'100%' :'auto',width:isMobile ? '100%':'auto'}} alt=''/>
+        <Box display={"flex"} justifyContent={"center"} sx={{ width: "100vw" }}>
+          <Suspense>
+            <Image
+              src={"/argentina.gif"}
+              height={1000}
+              width={100}
+              style={{
+                height: isMobile ? "100%" : "auto",
+                width: isMobile ? "100%" : "auto",
+              }}
+              alt=""
+            />
+          </Suspense>
           {/* <Box
             display={"flex"}
             justifyContent={"center"}

@@ -1,7 +1,7 @@
 import { ProductCard } from "@/components/Products/ProductCard";
 import { TextReveal } from "@/components/TextReveal";
 import { Box, Grid } from "@mui/material";
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { VideoHome } from "./VideoHome";
 import { gsap } from "gsap";
 import { useInView } from "react-intersection-observer";
@@ -12,6 +12,7 @@ import Lottie from "lottie-react";
 import Image from "next/image";
 
 export const SectionBoca = ({ products, isMobile }) => {
+  const [isImageReady, setIsImageReady] = useState(false);
   const [ref, inView] = useInView({
     threshold: 0.1,
   });
@@ -54,23 +55,21 @@ export const SectionBoca = ({ products, isMobile }) => {
               <Box
                 display={"flex"}
                 justifyContent={"center"}
-                sx={{ width: "100vw", }}
+                sx={{ width: "100vw" }}
               >
-                <Box
-                  display={"flex"}
-                  justifyContent={"center"}
-                  sx={{ width: "90vw" }}
-
-
-                >
+                <Suspense >
                   <Image
                     src={"/boca.gif"}
                     height={100}
                     width={100}
-                    style={{ height: "100%", width: "100%",borderRadius:'90px 90px', }}
+                    style={{
+                      height: "100%",
+                      width: "100%",
+                      borderRadius: "90px 90px",
+                    }}
                     alt=""
                   />
-                </Box>
+                </Suspense>
               </Box>{" "}
             </Box>
           </Grid>
