@@ -13,6 +13,8 @@ export const ShopLayout = ({ children, title, pageDescription }) => {
         <title>{title}</title>
         <meta name="description" content={pageDescription} />
         <meta name="og:title" content={title} />
+        <link rel="icon" href="/logoroyer.jpg" sizes="any" />
+
         {/* {imageFullUrl && <meta name="og:image" content={imageFullUrl} />} */}
       </Head>
       <nav>
