@@ -65,9 +65,6 @@ export const jugadoresRiver =  [
 ];
 
 export const jugadoresArgentina =  [
-  "23 Emiliano Martínez",
-  "12 Gerónimo Rulli",
-  "1 Franco Armani",
   "26 Nahuel Molina",
   "4 Gonzalo Montiel",
   "13 Cristian Romero",
