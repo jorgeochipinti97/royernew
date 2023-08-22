@@ -114,6 +114,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
                 fontSize: isMobile ? "20px" : "30px",
                 fontWeight: "600",
               }}
+              textAlign={"center"}
             >
               The Latest World Champions Haven
             </Typography>
