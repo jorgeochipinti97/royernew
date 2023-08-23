@@ -63,6 +63,85 @@ export const SectionShipping = ({ isMobile }) => {
         sx={{ backgroundColor: "black", py: isMobile ? 5 : 0 }}
         className="divshipping"
       >
+        
+        <Slide triggerOnce>
+          <Typography
+            variant="body1"
+            sx={{
+              fontSize: isMobile ? "40px" : "80px",
+              textAlign: "center",
+              mt: isMobile ? 2 : 5,
+              mb: isMobile ? 2 : 0,
+              lineHeight: isMobile ? "40px" : "auto",
+              fontWeight: "700",
+              color: "white",
+            }}
+          >
+            Discover Us on
+          </Typography>
+        </Slide>
+        <Box className="divebay" ref={ref6} sx={{ opacity: 0 }}>
+          <Box sx={{ display: "flex", justifyContent: "center" }}>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                backgroundColor: "white",
+                borderRadius: "9px",
+              }}
+            >
+              <Image
+                src={"/ebaylogo.png"}
+                width={1200 / 4}
+                height={630 / 4}
+                alt=""
+              />
+            </Box>
+          </Box>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              my: 4,
+            }}
+            
+          >
+            <Typography
+              variant="body1"
+              fontSize={isMobile ? "14px" : 20}
+              color={"white"}
+              textAlign={"justify"}
+              width={"80%"}
+              sx={{ textAlign: isMobile ? "justify" : "center" }}
+            >
+              Explore our curated selection of products, from cutting-edge
+              electronics to trendy fashion and home essentials. Shop with
+              confidence on eBay, where you will find the same reliability and
+              exceptional service that you have come to expect from us.
+            </Typography>
+          </Box>
+        </Box>
+        <Box display={"flex"} justifyContent={"center"}>
+          <Button
+            variant="contained"
+            size="large"
+            color="primary"
+            sx={{
+              p: 1,
+              fontSize: isMobile ? "20px" : "30px",
+              fontWeight: "800",
+            }}
+            onClick={() =>
+              router.push(
+                "https://www.ebay.com/str/royerstorellc?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=mdaoayratde&sssrc=3418065&ssuid=mdaoayratde&widget_ver=artemis&media=COPY"
+              )
+            }
+          >
+            Browse our eBay store now!
+          </Button>
+        </Box>
+        <Divider sx={{mt:5,backgroundColor:'white'}}/>
+
         <Box
           display={"flex"}
           justifyContent={"start"}
@@ -75,82 +154,7 @@ export const SectionShipping = ({ isMobile }) => {
               sx={{
                 fontSize: isMobile ? "40px" : "80px",
                 textAlign: "center",
-                mt: isMobile ? 2 : 5,
-                mb: isMobile ? 2 : 0,
-                lineHeight: isMobile ? "40px" : "auto",
-                fontWeight: "700",
-                color: "white",
-              }}
-            >
-              Discover Us on
-            </Typography>
-          </Slide>
-          <Box className="divebay" ref={ref6} sx={{ opacity: 0 }}>
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  backgroundColor: "white",
-                  borderRadius: "9px",
-                }}
-              >
-                <Image
-                  src={"/ebaylogo.png"}
-                  width={1200 / 4}
-                  height={630 / 4}
-                  alt=""
-                />
-              </Box>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "center",
-                my: 4,
-              }}
-            >
-              <Typography
-                variant="body1"
-                fontSize={isMobile ? "14px" : 20}
-                color={"white"}
-                textAlign={"justify"}
-                width={"80%"}
-                sx={{ textAlign: isMobile ? "justify" : "center" }}
-              >
-                Explore our curated selection of products, from cutting-edge
-                electronics to trendy fashion and home essentials. Shop with
-                confidence on eBay, where you will find the same reliability and
-                exceptional service that you have come to expect from us.
-              </Typography>
-            </Box>
-          </Box>
-          <Box display={"flex"} justifyContent={"center"}>
-            <Button
-              variant="contained"
-              size="large"
-              color="primary"
-              sx={{ p: 1, fontSize: isMobile ? "20px" : "30px",fontWeight:'800' }}
-              onClick={() =>
-                router.push(
-                  "https://www.ebay.com/str/royerstorellc?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=mdaoayratde&sssrc=3418065&ssuid=mdaoayratde&widget_ver=artemis&media=COPY"
-                )
-              }
-            >
-              Browse our eBay store now!
-            </Button>
-          </Box>
-          <Box>
-            <Divider sx={{ my: 6, backgroundColor: "white" }} />
-          </Box>
-
-          <Slide triggerOnce>
-            <Typography
-              variant="body1"
-              sx={{
-                fontSize: isMobile ? "40px" : "80px",
-                textAlign: "center",
-                mt: isMobile ? 2 : 5,
+                mt: isMobile ? 2 : 2,
                 lineHeight: isMobile ? "40px" : "auto",
                 fontWeight: "700",
                 color: "white",
