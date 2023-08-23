@@ -120,7 +120,7 @@ export const SectionShipping = ({ isMobile }) => {
               >
                 Explore our curated selection of products, from cutting-edge
                 electronics to trendy fashion and home essentials. Shop with
-                confidence on eBay, where you'll find the same reliability and
+                confidence on eBay, where you will find the same reliability and
                 exceptional service that you have come to expect from us.
               </Typography>
             </Box>
