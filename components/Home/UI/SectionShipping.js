@@ -127,9 +127,10 @@ export const SectionShipping = ({ isMobile }) => {
           </Box>
           <Box display={"flex"} justifyContent={"center"}>
             <Button
-              variant="outlined"
+              variant="contained"
               size="large"
-              sx={{ p: 1, fontSize: isMobile ? "20px" : "30px" }}
+              color="primary"
+              sx={{ p: 1, fontSize: isMobile ? "20px" : "30px",fontWeight:'800' }}
               onClick={() =>
                 router.push(
                   "https://www.ebay.com/str/royerstorellc?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=mdaoayratde&sssrc=3418065&ssuid=mdaoayratde&widget_ver=artemis&media=COPY"
