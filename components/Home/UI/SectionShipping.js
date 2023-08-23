@@ -114,8 +114,7 @@ export const SectionShipping = ({ isMobile }) => {
               width={"80%"}
               sx={{ textAlign: isMobile ? "justify" : "center" }}
             >
-              Explore our curated selection of products, from cutting-edge
-              electronics to trendy fashion and home essentials. Shop with
+              Explore our curated selection of products. Shop with
               confidence on eBay, where you will find the same reliability and
               exceptional service that you have come to expect from us.
             </Typography>
