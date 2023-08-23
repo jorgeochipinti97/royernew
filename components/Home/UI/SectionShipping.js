@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import groovyWalkAnimation from "../../../animations/shippingtwo.json";
 import Lottie from "lottie-react";
-import { Box, Divider, Typography } from "@mui/material";
+import { Box, Button, Divider, Typography } from "@mui/material";
 import { Slide } from "react-awesome-reveal";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useInView } from "react-intersection-observer";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 export const SectionShipping = ({ isMobile }) => {
+  const router = useRouter();
   gsap.registerPlugin(ScrollTrigger);
   const { ref, inView } = useInView({
     threshold: 0.6,
@@ -23,6 +25,9 @@ export const SectionShipping = ({ isMobile }) => {
     threshold: 0.6,
   });
   const [ref5, inView5] = useInView({
+    threshold: 0.1,
+  });
+  const [ref6, inView6] = useInView({
     threshold: 0.1,
   });
 
@@ -41,10 +46,16 @@ export const SectionShipping = ({ isMobile }) => {
   useEffect(() => {
     inView5 &&
       gsap.to(".divshipping", {
-        yPercent: isMobile ? -4 : -5,
+        yPercent: isMobile ? -3 : -5,
         borderRadius: isMobile ? "60px" : "90px",
       });
   }, [inView5]);
+  useEffect(() => {
+    inView6 &&
+      gsap.to(".divebay", {
+        opacity: 1,
+      });
+  }, [inView6]);
   return (
     <>
       <Box
@@ -65,6 +76,80 @@ export const SectionShipping = ({ isMobile }) => {
                 fontSize: isMobile ? "40px" : "80px",
                 textAlign: "center",
                 mt: isMobile ? 2 : 5,
+                mb: isMobile ? 2 : 0,
+                lineHeight: isMobile ? "40px" : "auto",
+                fontWeight: "700",
+                color: "white",
+              }}
+            >
+              Discover Us on
+            </Typography>
+          </Slide>
+          <Box className="divebay" ref={ref6} sx={{ opacity: 0 }}>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  backgroundColor: "white",
+                  borderRadius: "9px",
+                }}
+              >
+                <Image
+                  src={"/ebaylogo.png"}
+                  width={1200 / 4}
+                  height={630 / 4}
+                  alt=""
+                />
+              </Box>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                my: 4,
+              }}
+            >
+              <Typography
+                variant="body1"
+                fontSize={isMobile ? "14px" : 20}
+                color={"white"}
+                textAlign={"justify"}
+                width={"80%"}
+                sx={{ textAlign: isMobile ? "justify" : "center" }}
+              >
+                Explore our curated selection of products, from cutting-edge
+                electronics to trendy fashion and home essentials. Shop with
+                confidence on eBay, where you'll find the same reliability and
+                exceptional service that you have come to expect from us.
+              </Typography>
+            </Box>
+          </Box>
+          <Box display={"flex"} justifyContent={"center"}>
+            <Button
+              variant="outlined"
+              size="large"
+              sx={{ p: 1, fontSize: isMobile ? "20px" : "30px" }}
+              onClick={() =>
+                router.push(
+                  "https://www.ebay.com/str/royerstorellc?mkcid=16&mkevt=1&mkrid=711-127632-2357-0&ssspo=mdaoayratde&sssrc=3418065&ssuid=mdaoayratde&widget_ver=artemis&media=COPY"
+                )
+              }
+            >
+              Browse our eBay store now!
+            </Button>
+          </Box>
+          <Box>
+            <Divider sx={{ my: 6, backgroundColor: "white" }} />
+          </Box>
+
+          <Slide triggerOnce>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: isMobile ? "40px" : "80px",
+                textAlign: "center",
+                mt: isMobile ? 2 : 5,
                 lineHeight: isMobile ? "40px" : "auto",
                 fontWeight: "700",
                 color: "white",
@@ -73,6 +158,7 @@ export const SectionShipping = ({ isMobile }) => {
               Worldwide Free Shipping
             </Typography>
           </Slide>
+
           <Typography
             variant="subtitle1"
             fontSize={isMobile ? "20px" : 28}
@@ -115,8 +201,8 @@ export const SectionShipping = ({ isMobile }) => {
             sx={{
               fontWeight: "700",
               transform: "scale(0)",
-              lineHeight: isMobile ? '25px':"29px",
-              mx:isMobile ? 2:0
+              lineHeight: isMobile ? "25px" : "29px",
+              mx: isMobile ? 2 : 0,
             }}
             color={"white"}
             ref={ref2}
@@ -158,8 +244,7 @@ export const SectionShipping = ({ isMobile }) => {
             color: "white",
           }}
         >
-          Shop with Confidence: 
-          Our Secure Payment Partner
+          Shop with Confidence: Our Secure Payment Partner
         </Typography>
 
         <Box

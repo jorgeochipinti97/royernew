@@ -9,6 +9,7 @@ import { SectionRiver } from "@/components/Home/UI/SectionRiver";
 import { Box, useMediaQuery } from "@mui/material";
 import { Loading } from "@/components/Loading";
 import { Suspense, useEffect, useState } from "react";
+import { SectionEbay } from "@/components/Home/UI/SectionEbay";
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -68,6 +69,7 @@ export default function Home() {
                 isMobile={isMobile}
               />
               <SectionRiver products={filteredProducts2} isMobile={isMobile} />
+
               <SectionShipping isMobile={isMobile} />
             </Box>
           </ShopLayout>
