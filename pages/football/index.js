@@ -17,7 +17,7 @@ const FootballPage = () => {
 
   useEffect(() => {
     setProducts(filteredProducts3);
-  }, [filteredProducts1]);
+  }, []);
 
   useEffect(() => {
     const one =
