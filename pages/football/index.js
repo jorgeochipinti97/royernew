@@ -17,7 +17,6 @@ const FootballPage = () => {
 
   useEffect(() => {
     setProducts(filteredProducts3);
-
   }, [filteredProducts3]);
 
   useEffect(() => {
@@ -31,7 +30,7 @@ const FootballPage = () => {
       filteredProducts1 &&
       sortProductsByTerm(
         one,
-        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy_woman"
+        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
       );
     const three =
       filteredProducts1 &&
@@ -43,7 +42,7 @@ const FootballPage = () => {
       filteredProducts1 &&
       sortProductsByTerm(
         three,
-        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
+        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy_woman"
       );
 
     categorie == "boca" && setProducts(four);
