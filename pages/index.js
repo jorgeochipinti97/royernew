@@ -47,22 +47,29 @@ export default function Home() {
       productBoca4[0],
     ]);
   }, [filteredProducts1]);
+
   useEffect(() => {
     const productBoca1 = filteredProducts2.filter(
-      (e) =>
-        e.slug == "river_plate_adidas_official_home_shirt_22-23_-_heat.rdy"
+      (e) => e.slug == "river_plate_adidas_official_home_shirt_22-23_-_heat.rdy"
     );
     const productBoca2 = filteredProducts2.filter(
       (e) =>
         e.slug == "river_plate_basketball_shorts_2023_-_adidas_oficial_-_white"
     );
     const productBoca3 = filteredProducts2.filter(
-      (e) => e.slug == "boca_juniors_home_shorts_23-24_adidas_official"
+      (e) => e.slug == "river_plate_adidas_official_away_shirt_22-23_-_heat.rdy"
     );
     const productBoca4 = filteredProducts2.filter(
-      (e) => e.slug == "boca_juniors_third_shirt_23_24_adidas_official"
+      (e) =>
+        e.slug == "river_plate_basketball_shorts_2023_-_adidas_oficial_-_red"
     );
 
+    console.log(
+      productBoca1[0],
+      productBoca2[0],
+      productBoca3[0],
+      productBoca4[0]
+    );
     setProductsRiver([
       productBoca1[0],
       productBoca2[0],
@@ -83,13 +90,20 @@ export default function Home() {
               />
               <SectionBoca
                 products={
+                  productsRiver[0] != undefined && productsRiver.length > 0
+                    ? productsRiver
+                    : filteredProducts1
+                }
+                isMobile={isMobile}
+              />
+              <SectionRiver
+                products={
                   productsBoca[0] != undefined && productsBoca.length > 0
                     ? productsBoca
                     : filteredProducts1
                 }
                 isMobile={isMobile}
               />
-              <SectionRiver products={filteredProducts2} isMobile={isMobile} />
 
               <SectionShipping isMobile={isMobile} />
             </Box>
