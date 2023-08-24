@@ -2,6 +2,7 @@ import { useProduct } from "@/Hooks/UseProducts";
 import { ShopLayout } from "@/components/Layout";
 import { Loading } from "@/components/Loading";
 import { ProductCard } from "@/components/Products/ProductCard";
+import { sortProductsByTerm } from "@/utils/sort";
 import { Box, Button, Grid } from "@mui/material";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -16,11 +17,35 @@ const FootballPage = () => {
 
   useEffect(() => {
     setProducts(filteredProducts3);
-
-  }, [filteredProducts3]);
+  }, [filteredProducts1]);
 
   useEffect(() => {
-    categorie == "boca" && setProducts(filteredProducts1);
+    const one =
+      filteredProducts2 &&
+      sortProductsByTerm(
+        filteredProducts2,
+        "boca_juniors_training_shirt_23_24_-_adidas_official"
+      );
+    const two =
+      filteredProducts2 &&
+      sortProductsByTerm(
+        one,
+        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy_woman"
+      );
+    const three =
+      filteredProducts2 &&
+      sortProductsByTerm(
+        two,
+        "boca_junior_downtime_short_23_24_adidas_official"
+      );
+    const four =
+      filteredProducts2 &&
+      sortProductsByTerm(
+        three,
+        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
+      );
+
+    categorie == "boca" && setProducts(four);
     categorie == "river" && setProducts(filteredProducts2);
     categorie == "argentina" && setProducts(filteredProducts3);
   }, [categorie]);
@@ -48,7 +73,7 @@ const FootballPage = () => {
             River
           </Button>
         </Box>
-        <Grid container >
+        <Grid container>
           {!products ? (
             <>
               <Loading />

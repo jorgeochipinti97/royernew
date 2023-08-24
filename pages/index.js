@@ -18,6 +18,7 @@ export default function Home() {
   const { products: filteredProducts3 } = useProduct("argentina");
   const [productsBoca, setProductsBoca] = useState([]);
   useEffect(() => {
+    
     const productBoca1 = filteredProducts1.filter(
       (e) =>
         e.slug == "boca_juniors_adidas_official_home_shirt_22-23_-_heat.rdy"
