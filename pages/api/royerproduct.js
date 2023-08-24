@@ -42,7 +42,7 @@ export default async function handler(req, res) {
   } else if (req.method === "GET") {
     // Obtener todos los productos
     try {
-      const productos = await ProductRoyer.find();
+      const productos = await ProductRoyer.find().sort({ createdAt: 1 });
       res.status(200).json(productos);
     } catch (error) {
       console.error("Error al obtener los productos:", error);
