@@ -49,6 +49,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
                 src={"/argentina.gif"}
                 height={1000}
                 width={100}
+                loading = 'lazy'
                 style={{
                   height: isMobile ? "100%" : "auto",
                   width: isMobile ? "100%" : "auto",

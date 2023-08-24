@@ -117,6 +117,8 @@ export const SectionBoca = ({ products, isMobile }) => {
                   src={"/boca.gif"}
                   height={100}
                   width={100}
+                  loading = 'lazy'
+
                   style={{
                     height: isMobile ? "100%" : "100%",
                     width: isMobile ? "100%" : "100%",
