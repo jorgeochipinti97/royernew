@@ -20,17 +20,23 @@ const FootballPage = () => {
   }, [filteredProducts3]);
 
   useEffect(() => {
-    const one =
+    const cero =
       filteredProducts1 &&
       sortProductsByTerm(
         filteredProducts1,
+        "boca_juniors_home_shorts_23-24_adidas_official"
+      );
+    const one =
+      filteredProducts1 &&
+      sortProductsByTerm(
+        cero,
         "boca_juniors_training_shirt_23_24_-_adidas_official"
       );
     const two =
       filteredProducts1 &&
       sortProductsByTerm(
         one,
-        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
+        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy_woman"
       );
     const three =
       filteredProducts1 &&
@@ -42,7 +48,7 @@ const FootballPage = () => {
       filteredProducts1 &&
       sortProductsByTerm(
         three,
-        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy_woman"
+        "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
       );
 
     categorie == "boca" && setProducts(four);
