@@ -21,25 +21,25 @@ const FootballPage = () => {
 
   useEffect(() => {
     const one =
-      filteredProducts2 &&
+      filteredProducts1 &&
       sortProductsByTerm(
-        filteredProducts2,
+        filteredProducts1,
         "boca_juniors_training_shirt_23_24_-_adidas_official"
       );
     const two =
-      filteredProducts2 &&
+      filteredProducts1 &&
       sortProductsByTerm(
         one,
         "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy_woman"
       );
     const three =
-      filteredProducts2 &&
+      filteredProducts1 &&
       sortProductsByTerm(
         two,
         "boca_junior_downtime_short_23_24_adidas_official"
       );
     const four =
-      filteredProducts2 &&
+      filteredProducts1 &&
       sortProductsByTerm(
         three,
         "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"

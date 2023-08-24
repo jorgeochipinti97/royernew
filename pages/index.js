@@ -17,14 +17,15 @@ export default function Home() {
   const { products: filteredProducts2 } = useProduct("river");
   const { products: filteredProducts3 } = useProduct("argentina");
   const [productsBoca, setProductsBoca] = useState([]);
+  const [productsRiver, setProductsRiver] = useState([]);
   useEffect(() => {
-    
     const productBoca1 = filteredProducts1.filter(
       (e) =>
         e.slug == "boca_juniors_adidas_official_home_shirt_22-23_-_heat.rdy"
     );
     const productBoca2 = filteredProducts1.filter(
-      (e) => e.slug == "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
+      (e) =>
+        e.slug == "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
     );
     const productBoca3 = filteredProducts1.filter(
       (e) => e.slug == "boca_juniors_home_shorts_23-24_adidas_official"
@@ -47,8 +48,28 @@ export default function Home() {
     ]);
   }, [filteredProducts1]);
   useEffect(() => {
-    console.log(productsBoca);
-  }, [productsBoca]);
+    const productBoca1 = filteredProducts2.filter(
+      (e) =>
+        e.slug == "river_plate_adidas_official_home_shirt_22-23_-_heat.rdy"
+    );
+    const productBoca2 = filteredProducts2.filter(
+      (e) =>
+        e.slug == "river_plate_basketball_shorts_2023_-_adidas_oficial_-_white"
+    );
+    const productBoca3 = filteredProducts2.filter(
+      (e) => e.slug == "boca_juniors_home_shorts_23-24_adidas_official"
+    );
+    const productBoca4 = filteredProducts2.filter(
+      (e) => e.slug == "boca_juniors_third_shirt_23_24_adidas_official"
+    );
+
+    setProductsRiver([
+      productBoca1[0],
+      productBoca2[0],
+      productBoca3[0],
+      productBoca4[0],
+    ]);
+  }, [filteredProducts2]);
 
   return (
     <>
