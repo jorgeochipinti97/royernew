@@ -20,6 +20,30 @@ const FootballPage = () => {
   }, [filteredProducts3]);
 
   useEffect(() => {
+    const menosUno =
+      filteredProducts2 &&
+      sortProductsByTerm(
+        filteredProducts2,
+        "river_plate_adidas_official_home_short_23_24"
+      );
+    const ceroRiver =
+      filteredProducts2 &&
+      sortProductsByTerm(
+        menosUno,
+        'river_plate_adidas_oficial_home_shirt_23-24_woman_-_aero.rdy'
+      );
+    const oneRiver =
+      filteredProducts2 &&
+      sortProductsByTerm(
+        ceroRiver,
+        "river_plate_training_shirt_23_24_-_adidas_official"
+      );
+    const twoRiver =
+      filteredProducts2 &&
+      sortProductsByTerm(
+        oneRiver,
+        "river_plate_adidas_oficial_home_shirt_23-24_-_aero.rdy"
+      );
     const cero =
       filteredProducts1 &&
       sortProductsByTerm(
@@ -52,7 +76,7 @@ const FootballPage = () => {
       );
 
     categorie == "boca" && setProducts(four);
-    categorie == "river" && setProducts(filteredProducts2);
+    categorie == "river" && setProducts(twoRiver);
     categorie == "argentina" && setProducts(filteredProducts3);
   }, [categorie]);
 
