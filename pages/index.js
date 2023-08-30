@@ -48,36 +48,31 @@ export default function Home() {
     ]);
   }, [filteredProducts1]);
 
-
   useEffect(() => {
-    const productBoca1 = filteredProducts2.filter(
-      (e) =>
-        e.slug == "river_plate_adidas_official_home_shirt_22-23_-_heat.rdy"
+    const productRiver1 = filteredProducts2.filter(
+      (e) => e.slug == "river_plate_adidas_oficial_home_shirt_23-24_-_aero.rdy"
     );
-    const productBoca2 = filteredProducts2.filter(
-      (e) =>
-        e.slug == "river_plate_basketball_shorts_2023_-_adidas_oficial_-_white"
+    const productRiver2 = filteredProducts2.filter(
+      (e) => e.slug == "river_plate_adidas_official_home_short_23_24"
     );
-    const productBoca3 = filteredProducts2.filter(
-      (e) => e.slug == "river_plate_adidas_official_away_shirt_22-23_-_heat.rdy"
-
+    const productRiver3 = filteredProducts2.filter(
+      (e) => e.slug == "river_plate_training_shirt_23_24_-_adidas_official"
     );
-    const productBoca4 = filteredProducts2.filter(
-      (e) => e.slug == "river_plate_basketball_shorts_2023_-_adidas_oficial_-_red"
-
+    const productRiver4 = filteredProducts2.filter(
+      (e) => e.slug == "river_plate_adidas_official_alternative_short_23_24"
     );
 
     console.log(
-      productBoca1[0],
-      productBoca2[0],
-      productBoca3[0],
-      productBoca4[0]
+      productRiver1[0],
+      productRiver2[0],
+      productRiver3[0],
+      productRiver4[0]
     );
     setProductsRiver([
-      productBoca1[0],
-      productBoca2[0],
-      productBoca3[0],
-      productBoca4[0],
+      productRiver1[0],
+      productRiver2[0],
+      productRiver3[0],
+      productRiver4[0],
     ]);
   }, [filteredProducts2]);
 
@@ -99,9 +94,14 @@ export default function Home() {
                 }
                 isMobile={isMobile}
               />
-              <SectionRiver products={   productsRiver[0] != undefined && productsRiver.length > 0
+              <SectionRiver
+                products={
+                  productsRiver[0] != undefined && productsRiver.length > 0
                     ? productsRiver
-                    : filteredProducts1} isMobile={isMobile} />
+                    : filteredProducts1
+                }
+                isMobile={isMobile}
+              />
 
               <SectionShipping isMobile={isMobile} />
             </Box>

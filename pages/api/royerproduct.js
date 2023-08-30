@@ -3,7 +3,7 @@ import { db } from "@/database";
 
 // Conexión a la base de datos
 db.connectDB();
-
+//1557615835
 export default async function handler(req, res) {
   if (req.method === "POST") {
     try {
@@ -19,7 +19,6 @@ export default async function handler(req, res) {
         subcategoria,
         tags,
       } = req.body;
-
 
       const nuevoProducto = new ProductRoyer({
         titulo,
@@ -59,7 +58,7 @@ export default async function handler(req, res) {
         talles: req.body.talles,
         categoria: req.body.categoria,
         subcategoria: req.body.subcategoria,
-        tags:req.body.tags
+        tags: req.body.tags,
       };
       const product = await ProductRoyer.findOneAndUpdate(
         {
@@ -68,13 +67,11 @@ export default async function handler(req, res) {
         fieldsToUpdate,
         { new: true }
       );
-      console.log(product)
-    res.status(200).json({ message: "Producto actualizado exitosamente" });
-
+      console.log(product);
+      res.status(200).json({ message: "Producto actualizado exitosamente" });
     } catch (err) {
-      console.log('error',err);
+      console.log("error", err);
       res.status(500).json({ error: "Error al actualizar los productos" });
-
     }
   } else {
     res.status(405).json({ error: "Método no permitido" });
