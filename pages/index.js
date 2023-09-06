@@ -3,13 +3,20 @@ import { useProduct } from "@/Hooks/UseProducts";
 import { ShopLayout } from "@/components/Layout";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-const SectionBoca = lazy(async()=> await import("../components/Home/UI/SectionBoca"))
-const SectionRiver = lazy(async()=>await import("../components/Home/UI/SectionRiver"))
-const SectionArgentina = lazy(async()=>await import("../components/Home/UI/SectionArgentina"))
-const SectionShipping = lazy(async()=>await import("../components/Home/UI/SectionShipping"))
-// import { SectionShipping } from "@/components/Home/UI/SectionShipping";
-// import { SectionBoca } from "@/components/Home/UI/SectionBoca";
-// import { SectionRiver } from "@/components/Home/UI/SectionRiver"
+
+const SectionBoca = lazy(
+  async () => await import("../components/Home/UI/SectionBoca")
+);
+const SectionRiver = lazy(
+  async () => await import("../components/Home/UI/SectionRiver")
+);
+const SectionArgentina = lazy(
+  async () => await import("../components/Home/UI/SectionArgentina")
+);
+const SectionShipping = lazy(
+  async () => await import("../components/Home/UI/SectionShipping")
+);
+
 import { Box, useMediaQuery } from "@mui/material";
 import { Loading } from "@/components/Loading";
 import { Suspense, lazy, useEffect, useState } from "react";
@@ -86,28 +93,35 @@ export default function Home() {
         <>
           <ShopLayout imageFullUrl={'/logoroyer.jpg"'} title={"Royer Store"}>
             <Box sx={{ my: 0 }}>
-              <SectionArgentina
-                products={filteredProducts3.slice(0,7)}
-                isMobile={isMobile}
-              />
-              <SectionBoca
-                products={
-                  productsBoca[0] != undefined && productsBoca.length > 0
-                    ? productsBoca
-                    : filteredProducts1
-                }
-                isMobile={isMobile}
-              />
-              <SectionRiver
-                products={
-                  productsRiver[0] != undefined && productsRiver.length > 0
-                    ? productsRiver
-                    : filteredProducts1
-                }
-                isMobile={isMobile}
-              />
-
-              <SectionShipping isMobile={isMobile} />
+              <Suspense>
+                <SectionArgentina
+                  products={filteredProducts3.slice(0, 7)}
+                  isMobile={isMobile}
+                />
+              </Suspense>
+              <Suspense>
+                <SectionBoca
+                  products={
+                    productsBoca[0] != undefined && productsBoca.length > 0
+                      ? productsBoca
+                      : filteredProducts1
+                  }
+                  isMobile={isMobile}
+                />
+              </Suspense>
+              <Suspense>
+                <SectionRiver
+                  products={
+                    productsRiver[0] != undefined && productsRiver.length > 0
+                      ? productsRiver
+                      : filteredProducts1
+                  }
+                  isMobile={isMobile}
+                />
+              </Suspense>
+              <Suspense>
+                <SectionShipping isMobile={isMobile} />
+              </Suspense>
             </Box>
           </ShopLayout>
         </>
