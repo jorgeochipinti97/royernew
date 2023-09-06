@@ -56,7 +56,7 @@ export const SectionRiver = ({ products, isMobile }) => {
 
                 <video
                   ref={refVideo}
-                  src="/river.webm"
+                  src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010230/lqer9bgw76llmk5a4ujl.webm"
                   autoPlay
                   muted
                   loop
@@ -70,7 +70,7 @@ export const SectionRiver = ({ products, isMobile }) => {
                   }}
                 />
                 <Image
-                  src={"/river.jpg"}
+                  src={"https://res.cloudinary.com/djk4q3tys/image/upload/v1694010205/sqjs0ah33dnitte8jx4z.jpg"}
                   height={100}
                   width={100}
                   loading="lazy"

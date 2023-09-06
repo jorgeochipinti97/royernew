@@ -63,11 +63,11 @@ export const SectionBoca = ({ products, isMobile }) => {
                 justifyContent={"center"}
                 sx={{ width: "100vw" }}
               >
-<Image src='/boca.jpg' width={500} height={500} style={{display:isMobile?'auto':'none', width:'100%',height:'100%',borderRadius:'90px 90px'}}/>
+<Image src='https://res.cloudinary.com/djk4q3tys/image/upload/v1694010205/leccbzqjmrgppp8qu2ny.jpg' width={500} height={500} style={{display:isMobile?'auto':'none', width:'100%',height:'100%',borderRadius:'90px 90px'}}/>
 
                   <video
                     ref={refVideo}
-                    src="/boca.webm"
+                    src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010242/pwxy621cd6xrxdu1mzfs.webm"
                     autoPlay
                     muted
                     loop
