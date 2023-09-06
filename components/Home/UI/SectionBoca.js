@@ -125,6 +125,7 @@ refVideo.current.play()
                 autoPlay
                 muted
                 loop
+                playsInline
                 style={{
                   height: isMobile ? "100%" : "100%",
                   width: isMobile ? "100%" : "100%",
