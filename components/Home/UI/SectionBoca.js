@@ -65,17 +65,19 @@ refVideo.current.play()
                 sx={{ width: "100vw" }}
               >
                 <Suspense>
-                  <Image
-                    src={"/boca.gif"}
-                    height={100}
-                    width={100}
-                    style={{
-                      height: "100%",
-                      width: "100%",
-                      borderRadius: "90px 90px",
-                    }}
-                    alt=""
-                  />
+                <video
+              ref={refVideo}
+                src="/boca.webm"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  height: isMobile ? "100%" : "100%",
+                  width: isMobile ? "100%" : "100%",
+                  borderRadius: "90px 90px",
+                }}
+              />
                 </Suspense>
               </Box>{" "}
             </Box>
