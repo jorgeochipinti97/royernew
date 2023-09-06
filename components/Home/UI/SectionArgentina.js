@@ -63,8 +63,8 @@ export const SectionArgentina = ({ products, isMobile }) => {
               </Box>
 
           </Grid>
-          <Grid item md={3}>
-
+          <Grid item md={3} xs={12} sm={12}>
+<Image src='/argentina.jpg' width={500} height={8000} style={{display:isMobile?'auto':'none', width:'100%',height:'100%'}}/>
               <video
                 ref={refVideo}
                 src="/argentina.webm"
@@ -73,6 +73,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
                 loop
                 playsInline
                 style={{
+                  display:isMobile?'none':'auto',
                   height: "100%",
                   width: "100%",
                   borderRadius: "90px 90px",

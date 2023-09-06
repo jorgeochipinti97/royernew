@@ -38,7 +38,7 @@ export const SectionBoca = ({ products, isMobile }) => {
           height: "100%",
           width: "100%",
           borderRadius: "30px 30px",
-          backgroundColor: "#103f79",
+          backgroundColor: "#103f79",mt:6
         }}
         className="divboca"
         ref={ref}
@@ -63,6 +63,7 @@ export const SectionBoca = ({ products, isMobile }) => {
                 justifyContent={"center"}
                 sx={{ width: "100vw" }}
               >
+<Image src='/boca.jpg' width={500} height={500} style={{display:isMobile?'auto':'none', width:'100%',height:'100%',borderRadius:'90px 90px'}}/>
 
                   <video
                     ref={refVideo}
@@ -75,6 +76,8 @@ export const SectionBoca = ({ products, isMobile }) => {
                       height: isMobile ? "100%" : "100%",
                       width: isMobile ? "100%" : "100%",
                       borderRadius: "90px 90px",
+                      display:isMobile?'none':'auto',
+
                     }}
                   />
 

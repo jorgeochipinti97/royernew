@@ -65,20 +65,23 @@ export const SectionRiver = ({ products, isMobile }) => {
                     height: isMobile ? "100%" : "100%",
                     width: isMobile ? "100%" : "100%",
                     borderRadius: "90px 90px",
+                    display:isMobile?'none':'auto',
+
                   }}
                 />
-                {/* <Image
-                  src={"/river.gif"}
+                <Image
+                  src={"/river.jpg"}
                   height={100}
                   width={100}
                   loading="lazy"
                   style={{
-                    height: isMobile ? "100%" : "100%",
-                    width: isMobile ? "100%" : "100%",
+                    height:  "100%",
+                    width: "100%",
                     borderRadius: "90px 90px",
+                    display:isMobile ?'auto' :'none'
                   }}
                   alt=""
-                /> */}
+                />
 
             </Box>
 
