@@ -10,7 +10,7 @@ import animation from "../../../animations/riverlottie.json";
 import Lottie from "lottie-react";
 import Image from "next/image";
 
-export const SectionRiver = ({ products, isMobile }) => {
+export default  function SectionRiver  ({ products, isMobile })  {
   const refVideo = useRef();
 
   useEffect(() => {

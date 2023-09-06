@@ -24,7 +24,7 @@ import animation from "../../../animations/messi1lottie.json";
 
 import Lottie from "lottie-react";
 
-export const SectionArgentina = ({ products, isMobile }) => {
+export default function SectionArgentina ({ products, isMobile }) {
   const [ref, inView] = useInView({
     threshold: 0.1,
   });

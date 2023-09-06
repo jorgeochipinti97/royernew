@@ -1,14 +1,18 @@
 import { useProduct } from "@/Hooks/UseProducts";
-import { SectionShipping } from "@/components/Home/UI/SectionShipping";
-import { SectionArgentina } from "@/components/Home/UI/SectionArgentina";
+// import { SectionArgentina } from "@/components/Home/UI/SectionArgentina";
 import { ShopLayout } from "@/components/Layout";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { SectionBoca } from "@/components/Home/UI/SectionBoca";
-import { SectionRiver } from "@/components/Home/UI/SectionRiver";
+const SectionBoca = lazy(async()=> await import("../components/Home/UI/SectionBoca"))
+const SectionRiver = lazy(async()=>await import("../components/Home/UI/SectionRiver"))
+const SectionArgentina = lazy(async()=>await import("../components/Home/UI/SectionArgentina"))
+const SectionShipping = lazy(async()=>await import("../components/Home/UI/SectionShipping"))
+// import { SectionShipping } from "@/components/Home/UI/SectionShipping";
+// import { SectionBoca } from "@/components/Home/UI/SectionBoca";
+// import { SectionRiver } from "@/components/Home/UI/SectionRiver"
 import { Box, useMediaQuery } from "@mui/material";
 import { Loading } from "@/components/Loading";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:600px)");

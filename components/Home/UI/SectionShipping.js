@@ -9,7 +9,7 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-export const SectionShipping = ({ isMobile }) => {
+export default function SectionShipping ({ isMobile }){
   const router = useRouter();
   gsap.registerPlugin(ScrollTrigger);
   const { ref, inView } = useInView({

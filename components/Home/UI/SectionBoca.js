@@ -11,7 +11,7 @@ import animation from "../../../animations/bocalottie.json";
 import Lottie from "lottie-react";
 import Image from "next/image";
 
-export const SectionBoca = ({ products, isMobile }) => {
+export default function SectionBoca({ products, isMobile }){
   const refVideo = useRef();
 
   useEffect(() => {
