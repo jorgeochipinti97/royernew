@@ -1,5 +1,5 @@
 import { Box, Grid } from "@mui/material";
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import { VideoHome } from "./VideoHome";
 import { TextReveal } from "@/components/TextReveal";
 import { ProductCard } from "@/components/Products/ProductCard";
@@ -11,6 +11,12 @@ import Lottie from "lottie-react";
 import Image from "next/image";
 
 export const SectionRiver = ({ products, isMobile }) => {
+  const refVideo = useRef();
+
+  useEffect(() => {
+    refVideo.current.play();
+  }, [refVideo]);
+
   const [ref, inView] = useInView({
     threshold: 0.1,
   });
@@ -48,19 +54,31 @@ export const SectionRiver = ({ products, isMobile }) => {
               sx={{ width: "100vw" }}
             >
               <Suspense>
-                <Image
+                <video
+                  ref={refVideo}
+                  src="/river.webm"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{
+                    height: isMobile ? "100%" : "100%",
+                    width: isMobile ? "100%" : "100%",
+                    borderRadius: "90px 90px",
+                  }}
+                />
+                {/* <Image
                   src={"/river.gif"}
                   height={100}
                   width={100}
-                  loading = 'lazy'
-
+                  loading="lazy"
                   style={{
                     height: isMobile ? "100%" : "100%",
                     width: isMobile ? "100%" : "100%",
                     borderRadius: "90px 90px",
                   }}
                   alt=""
-                />
+                /> */}
               </Suspense>
             </Box>
 

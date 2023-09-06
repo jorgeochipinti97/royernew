@@ -1,4 +1,4 @@
-import React, { Suspense, useEffect } from "react";
+import React, { Suspense, useEffect, useRef } from "react";
 import {
   Box,
   Button,
@@ -28,8 +28,12 @@ export const SectionArgentina = ({ products, isMobile }) => {
   const [ref, inView] = useInView({
     threshold: 0.1,
   });
-  const router = useRouter();
 
+  const refVideo = useRef();
+
+  useEffect(() => {
+    refVideo.current.play();
+  }, [refVideo]);
   useEffect(() => {
     inView &&
       gsap.to(".divmerque", { opacity: 1, ease: Power1.easeIn, duration: 1.8 });
@@ -38,68 +42,111 @@ export const SectionArgentina = ({ products, isMobile }) => {
   return (
     <>
       <Box sx={{ my: isMobile ? 0 : 10 }}>
-        <Box
+        <Grid container justifyContent={'center'}>
+          <Grid item md={3}  sx={{display:isMobile? 'none':'auto'}}>
+            <Suspense>
+              <Box display={'flex'} justifyContent={'center'}>
+
+              <video
+                ref={refVideo}
+                src="/argentina.webm"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  height: isMobile ? "100%" : "80%",
+                  width: isMobile ? "100%" : "80%",
+                  borderRadius: "90px 90px",
+                  filter: "grayscale(100%)",
+                }}
+                />
+                </Box>
+            </Suspense>
+          </Grid>
+          <Grid item md={3}  >
+            <Suspense>
+              <video
+                ref={refVideo}
+                src="/argentina.webm"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  height: isMobile ? "100%" : "100%",
+                  width: isMobile ? "100%" : "100%",
+                  borderRadius: "90px 90px",
+
+                }}
+              />
+            </Suspense>
+          </Grid>
+          <Grid item md={3} sx={{display:isMobile? 'none':'auto'}}>
+            <Suspense>
+            <Box display={'flex'} justifyContent={'center'}>
+
+<video
+  ref={refVideo}
+  src="/argentina.webm"
+  autoPlay
+  muted
+  loop
+  playsInline
+  style={{
+    height: isMobile ? "100%" : "80%",
+    width: isMobile ? "100%" : "80%",
+    borderRadius: "90px 90px",
+    filter: "grayscale(100%)",
+  }}
+  />
+  </Box>
+            </Suspense>
+          </Grid>
+        </Grid>
+        {/* <Box
           display={"flex"}
-          justifyContent={"space-around"}
+
           sx={{ width: "100vw" }}
         >
           <Box sx={{ display: isMobile ? "none" : "auto" }}>
-            <Suspense>
-              <Image
-                src={"/argentina.gif"}
-                height={1000}
-                width={100}
-                loading = 'lazy'
-                style={{
-                  height: isMobile ? "100%" : "auto",
-                  width: isMobile ? "100%" : "auto",
-                  filter: "grayscale(100%)",
-                }}
-                alt=""
-              />
-            </Suspense>
+        
           </Box>
           <Suspense>
-            <Image
-              src={"/argentina.gif"}
-              height={1000}
-              width={100}
+            <video
+              ref={refVideo}
+              src="/argentina.webm"
+              autoPlay
+              muted
+              loop
+              playsInline
               style={{
                 height: isMobile ? "100%" : "auto",
                 width: isMobile ? "100%" : "auto",
+                borderRadius: "90px 90px",
               }}
-              alt=""
             />
           </Suspense>
           <Box sx={{ display: isMobile ? "none" : "auto" }}>
             <Suspense>
-              <Image
-                src={"/argentina.gif"}
-                height={1000}
-                width={100}
+              <video
+                ref={refVideo}
+                src="/argentina.webm"
+                autoPlay
+                muted
+                loop
+                playsInline
                 style={{
                   height: isMobile ? "100%" : "auto",
                   width: isMobile ? "100%" : "auto",
+                  borderRadius: "90px 90px",
                   filter: "grayscale(100%)",
                 }}
-                alt=""
               />
             </Suspense>
           </Box>
-          {/*
-            display={"flex"}
-            justifyContent={"center"}
-            sx={{ width: "90vw" }}
-          >
-            <Lottie
-              animationData={animation}
-              loop={true}
-              style={{
 
-              }}
-            />
-          </Box> */}
-        </Box>
+        </Box> */}
         <Box
           sx={{
             my: 2,
