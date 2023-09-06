@@ -22,7 +22,7 @@ const orderSchema = new mongoose.Schema({
     phone: { type: String},
     taxId: { type: String },
     email: { type: String},
-  },
+  }, 
   numberOfItems: { type: Number, required: true },
   total: { type: Number, required: true },
   isPaid: { type: Boolean, required: true, default: false },

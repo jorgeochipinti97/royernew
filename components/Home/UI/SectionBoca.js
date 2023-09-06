@@ -1,7 +1,7 @@
 import { ProductCard } from "@/components/Products/ProductCard";
 import { TextReveal } from "@/components/TextReveal";
 import { Box, Grid } from "@mui/material";
-import React, { Suspense, useEffect, useState } from "react";
+import React, { Suspense, useEffect, useRef, useState } from "react";
 import { VideoHome } from "./VideoHome";
 import { gsap } from "gsap";
 import { useInView } from "react-intersection-observer";
@@ -12,6 +12,13 @@ import Lottie from "lottie-react";
 import Image from "next/image";
 
 export const SectionBoca = ({ products, isMobile }) => {
+  const refVideo = useRef();
+
+  useEffect(() => {
+refVideo.current.play()
+  }, [refVideo]);
+
+
   const [isImageReady, setIsImageReady] = useState(false);
   const [ref, inView] = useInView({
     threshold: 0.1,
@@ -101,7 +108,7 @@ export const SectionBoca = ({ products, isMobile }) => {
           xs={12}
           sx={{ display: isMobile ? "none" : "auto" }}
         >
-      <Box
+          <Box
             sx={{ height: "content-fit", width: "100%" }}
             display={"flex"}
             justifyContent={"center"}
@@ -112,7 +119,19 @@ export const SectionBoca = ({ products, isMobile }) => {
               justifyContent={"center"}
               sx={{ width: "100vw" }}
             >
-
+              <video
+              ref={refVideo}
+                src="/boca.webm"
+                autoPlay
+                muted
+                loop
+                style={{
+                  height: isMobile ? "100%" : "100%",
+                  width: isMobile ? "100%" : "100%",
+                  borderRadius: "90px 90px",
+                }}
+              />
+              {/* 
                 <Image
                   src={"/boca.gif"}
                   height={100}
@@ -125,8 +144,8 @@ export const SectionBoca = ({ products, isMobile }) => {
                     borderRadius: "90px 90px",
                   }}
                   alt=""
-                />
-              </Box>
+                /> */}
+            </Box>
 
             {/* <Box
               display={"flex"}
