@@ -15,9 +15,8 @@ export const SectionBoca = ({ products, isMobile }) => {
   const refVideo = useRef();
 
   useEffect(() => {
-refVideo.current.play()
+    refVideo.current.play();
   }, [refVideo]);
-
 
   const [isImageReady, setIsImageReady] = useState(false);
   const [ref, inView] = useInView({
@@ -44,7 +43,7 @@ refVideo.current.play()
         className="divboca"
         ref={ref}
       >
-        <Grid item md={6} lg={6} xl={6} xs={12}>
+        <Grid item md={6} lg={6} xl={6} xs={12} className="divboca">
           <Grid
             item
             md={6}
@@ -64,21 +63,21 @@ refVideo.current.play()
                 justifyContent={"center"}
                 sx={{ width: "100vw" }}
               >
-                <Suspense>
-                <video
-              ref={refVideo}
-                src="/boca.webm"
-                autoPlay
-                muted
-                loop
-                playsInline
-                style={{
-                  height: isMobile ? "100%" : "100%",
-                  width: isMobile ? "100%" : "100%",
-                  borderRadius: "90px 90px",
-                }}
-              />
-                </Suspense>
+
+                  <video
+                    ref={refVideo}
+                    src="/boca.webm"
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{
+                      height: isMobile ? "100%" : "100%",
+                      width: isMobile ? "100%" : "100%",
+                      borderRadius: "90px 90px",
+                    }}
+                  />
+
               </Box>{" "}
             </Box>
           </Grid>
@@ -122,7 +121,7 @@ refVideo.current.play()
               sx={{ width: "100vw" }}
             >
               <video
-              ref={refVideo}
+                ref={refVideo}
                 src="/boca.webm"
                 autoPlay
                 muted

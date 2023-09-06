@@ -44,7 +44,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
       <Box sx={{ my: isMobile ? 0 : 10 }}>
         <Grid container justifyContent={"center"}>
           <Grid item md={3} sx={{ display: isMobile ? "none" : "auto" }}>
-            <Suspense>
+
               <Box display={"flex"} justifyContent={"center"}>
                 <video
                   ref={refVideo}
@@ -61,10 +61,10 @@ export const SectionArgentina = ({ products, isMobile }) => {
                   }}
                 />
               </Box>
-            </Suspense>
+
           </Grid>
           <Grid item md={3}>
-            <Suspense>
+
               <video
                 ref={refVideo}
                 src="/argentina.webm"
@@ -78,10 +78,10 @@ export const SectionArgentina = ({ products, isMobile }) => {
                   borderRadius: "90px 90px",
                 }}
               />
-            </Suspense>
+
           </Grid>
           <Grid item md={3} sx={{ display: isMobile ? "none" : "auto" }}>
-            <Suspense>
+
               <Box display={"flex"} justifyContent={"center"}>
                 <video
                   ref={refVideo}
@@ -98,7 +98,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
                   }}
                 />
               </Box>
-            </Suspense>
+
           </Grid>
         </Grid>
 

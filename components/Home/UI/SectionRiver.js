@@ -53,7 +53,7 @@ export const SectionRiver = ({ products, isMobile }) => {
               justifyContent={"center"}
               sx={{ width: "100vw" }}
             >
-              <Suspense>
+
                 <video
                   ref={refVideo}
                   src="/river.webm"
@@ -79,7 +79,7 @@ export const SectionRiver = ({ products, isMobile }) => {
                   }}
                   alt=""
                 /> */}
-              </Suspense>
+
             </Box>
 
             {/* <Box
