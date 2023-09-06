@@ -125,7 +125,7 @@ export const SectionBoca = ({ products, isMobile }) => {
             >
               <video
                 ref={refVideo}
-                src="/boca.webm"
+                src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010242/pwxy621cd6xrxdu1mzfs.webm"
                 autoPlay
                 muted
                 loop

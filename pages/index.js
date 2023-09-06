@@ -83,7 +83,7 @@ export default function Home() {
           <ShopLayout imageFullUrl={'/logoroyer.jpg"'} title={"Royer Store"}>
             <Box sx={{ my: 0 }}>
               <SectionArgentina
-                products={filteredProducts3}
+                products={filteredProducts3.slice(0,7)}
                 isMobile={isMobile}
               />
               <SectionBoca

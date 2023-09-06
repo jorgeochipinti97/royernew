@@ -32,11 +32,12 @@ export const SectionArgentina = ({ products, isMobile }) => {
   const refVideo = useRef();
 
   useEffect(() => {
-    refVideo.current.play();
+    !isMobile && refVideo && refVideo.current.play();
   }, [refVideo]);
   useEffect(() => {
     inView &&
       gsap.to(".divmerque", { opacity: 1, ease: Power1.easeIn, duration: 1.8 });
+      console.log(products)
   }, [inView]);
 
   return (
@@ -44,27 +45,7 @@ export const SectionArgentina = ({ products, isMobile }) => {
       <Box sx={{ my: isMobile ? 0 : 10 }}>
         <Grid container justifyContent={"center"}>
           <Grid item md={3} sx={{ display: isMobile ? "none" : "auto" }}>
-
-              <Box display={"flex"} justifyContent={"center"}>
-                <video
-                  ref={refVideo}
-                  src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010225/upfejeayumrfn6omerom.webm"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{
-                    height: "80%",
-                    width: "80%",
-                    borderRadius: "90px 90px",
-                    filter: "grayscale(100%)",
-                  }}
-                />
-              </Box>
-
-          </Grid>
-          <Grid item md={3} xs={12} sm={12}>
-<Image src='https://res.cloudinary.com/djk4q3tys/image/upload/v1694010205/sapxq7ewzqdcgxnanrup.jpg' width={500} height={8000} style={{display:isMobile?'auto':'none', width:'100%',height:'100%'}}/>
+            <Box display={"flex"} justifyContent={"center"}>
               <video
                 ref={refVideo}
                 src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010225/upfejeayumrfn6omerom.webm"
@@ -73,33 +54,57 @@ export const SectionArgentina = ({ products, isMobile }) => {
                 loop
                 playsInline
                 style={{
-                  display:isMobile?'none':'auto',
-                  height: "100%",
-                  width: "100%",
+                  height: "80%",
+                  width: "80%",
                   borderRadius: "90px 90px",
+                  filter: "grayscale(100%)",
                 }}
               />
-
+            </Box>
+          </Grid>
+          <Grid item md={3} xs={12} sm={12}>
+            <Image
+              src="https://res.cloudinary.com/djk4q3tys/image/upload/v1694010205/sapxq7ewzqdcgxnanrup.jpg"
+              width={500}
+              height={8000}
+              style={{
+                display: isMobile ? "auto" : "none",
+                width: "100%",
+                height: "100%",
+              }}
+            />
+            <video
+              ref={refVideo}
+              src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010225/upfejeayumrfn6omerom.webm"
+              autoPlay
+              muted
+              loop
+              playsInline
+              style={{
+                display: isMobile ? "none" : "auto",
+                height: "100%",
+                width: "100%",
+                borderRadius: "90px 90px",
+              }}
+            />
           </Grid>
           <Grid item md={3} sx={{ display: isMobile ? "none" : "auto" }}>
-
-              <Box display={"flex"} justifyContent={"center"}>
-                <video
-                  ref={refVideo}
-                  src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010225/upfejeayumrfn6omerom.webm"
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{
-                    height: "80%",
-                    width: "80%",
-                    borderRadius: "90px 90px",
-                    filter: "grayscale(100%)",
-                  }}
-                />
-              </Box>
-
+            <Box display={"flex"} justifyContent={"center"}>
+              <video
+                ref={refVideo}
+                src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010225/upfejeayumrfn6omerom.webm"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  height: "80%",
+                  width: "80%",
+                  borderRadius: "90px 90px",
+                  filter: "grayscale(100%)",
+                }}
+              />
+            </Box>
           </Grid>
         </Grid>
 
