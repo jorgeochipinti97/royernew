@@ -114,7 +114,7 @@ const FootballPage = () => {
   }, [categorie]);
   const estiloBoca = `linear-gradient(90deg,  #103f79,  #f3b229  )`;
 
-  const estiloRiver = `linear-gradient(to top left,  #eb192e,#ffffff )`;
+  const estiloRiver = `linear-gradient(to top left,  #eb192e,#eb192e,#ffffff )`;
 
   const estiloArgentina = `linear-gradient(to top right,   #ffffff , #75aadb  )`;
   return (
