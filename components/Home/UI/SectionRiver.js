@@ -78,9 +78,17 @@ export default function SectionRiver({ products, isMobile }) {
           </Box>{" "}
         </Grid>
         <Grid item md={6} lg={6} xl={6}>
-          <Box direction="left" style={{ display: isMobile ? "auto" : "none",maxWidth:'100vw' }}>
+          <Box
+            direction="left"
+            style={{ display: isMobile ? "auto" : "none", maxWidth: "100vw" }}
+          >
             <Marquee direction="right">
-              {products && products.map((e) => <ProductCard e={e} />)}
+              {products &&
+                products.map((e) => (
+                  <Box key={index}>
+                    <ProductCard e={e} />
+                  </Box>
+                ))}
             </Marquee>
           </Box>
           <Box sx={{ my: 4, mx: 2, display: isMobile ? "none" : "auto" }}>
@@ -95,9 +103,9 @@ export default function SectionRiver({ products, isMobile }) {
               >
                 {products &&
                   products.slice(0, 4).map((e, index) => (
-                    <>
+                    <Box key={index}>
                       <ProductCard e={e} index={index} club="river" />
-                    </>
+                    </Box>
                   ))}
               </Box>
             }

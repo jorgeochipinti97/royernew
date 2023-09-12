@@ -19,9 +19,9 @@ export default function SectionBoca({ products, isMobile }) {
       <Grid
         container
         sx={{
-          height: isMobile? 'fit-content': "100vh",
+          height: isMobile ? "fit-content" : "100vh",
           width: "100vw",
-          pb:isMobile?4:0,
+          pb: isMobile ? 4 : 0,
           scrollSnapAlign: "start",
           backgroundImage: `linear-gradient(
   to bottom,
@@ -60,40 +60,34 @@ export default function SectionBoca({ products, isMobile }) {
                     display: isMobile ? "auto" : "none",
                     width: "100%",
                     height: "100%",
-
                   }}
                 />
               </Box>{" "}
             </Box>
           </Grid>
-          <Box direction="left" style={{display:isMobile?'auto':'none'}}>
-          <Marquee direction="left" >
-                  {products &&
-            products.map((e) => (
-
+          <Box direction="left" style={{ display: isMobile ? "auto" : "none" }}>
+            <Marquee direction="left">
+              <Box key={index}>
                 <ProductCard e={e} />
-
-            ))
-            }
+              </Box>
             </Marquee>
-            </Box>
+          </Box>
 
           <Box
-
             justifyContent={"center"}
-            alignItems={'center'}
+            alignItems={"center"}
             flexWrap={"wrap"}
-            sx={{height:'100vh'}}
+            sx={{ height: "100vh" }}
             width={"100%"}
-            display={isMobile?'none':'flex'}
+            display={isMobile ? "none" : "flex"}
           >
             {products &&
               products.slice(0, 4).map((e, index) => (
-                <>
+                <Box key={index}>
                   <Box sx={{ mx: 1 }}>
                     <ProductCard e={e} index={index} club={"boca"} />
                   </Box>
-                </>
+                </Box>
               ))}
           </Box>
         </Grid>
@@ -114,8 +108,8 @@ export default function SectionBoca({ products, isMobile }) {
             <Box
               display={"flex"}
               justifyContent={"center"}
-              alignItems={'center'}
-              sx={{ width: "100vw",height:'100vh' }}
+              alignItems={"center"}
+              sx={{ width: "100vw", height: "100vh" }}
             >
               <video
                 ref={refVideo}

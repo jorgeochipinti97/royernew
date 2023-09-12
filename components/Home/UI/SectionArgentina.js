@@ -22,8 +22,6 @@ import { Slide } from "react-awesome-reveal";
 import { Loading } from "@/components/Loading";
 import animation from "../../../animations/messi1lottie.json";
 
-
-
 export default function SectionArgentina({ products, isMobile }) {
   const [ref, inView] = useInView({
     threshold: 0.1,
@@ -42,7 +40,14 @@ export default function SectionArgentina({ products, isMobile }) {
 
   return (
     <>
-      <Box sx={{ py: isMobile ? 0 : 10, backgroundImage:`url('/argentina.jpg')`,backgroundSize:'cover',scrollSnapAlign: "start",}}>
+      <Box
+        sx={{
+          py: isMobile ? 0 : 10,
+          backgroundImage: `url('/argentina.jpg')`,
+          backgroundSize: "cover",
+          scrollSnapAlign: "start",
+        }}
+      >
         <Grid container justifyContent={"center"}>
           <Grid item md={3} sx={{ display: isMobile ? "none" : "auto" }}>
             <Box display={"flex"} justifyContent={"center"}>
@@ -115,8 +120,7 @@ export default function SectionArgentina({ products, isMobile }) {
             justifyContent: "center",
             width: "100vw",
           }}
-        >
-        </Box>
+        ></Box>
         <Box
           sx={{ minHeight: "300px", opacity: 0 }}
           ref={ref}
@@ -125,17 +129,11 @@ export default function SectionArgentina({ products, isMobile }) {
           {" "}
           {
             <Marquee>
-                  {!products ? (
-            <>
-              <Loading />
-            </>
-          ) : (
-            products.map((e) => (
-
-                <ProductCard e={e} />
-
-            ))
-          )}
+              {products && (
+                <Box key={index}>
+                  <ProductCard e={e} />
+                </Box>
+              )}
             </Marquee>
           }
         </Box>
