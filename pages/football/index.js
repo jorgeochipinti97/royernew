@@ -97,7 +97,7 @@ const FootballPage = () => {
     categorie == "argentina" && setBackgroundcolorClub(estiloArgentina)
   }, [categorie]);
 
-const estiloBoca= `linear-gradient(#ffffff , #103f79  )`
+const estiloBoca= `linear-gradient(#ffffff , #103f79,#103f79  )`
 
 const estiloRiver=`linear-gradient(#ffffff , #eb192e )`
 
