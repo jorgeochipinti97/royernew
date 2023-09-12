@@ -92,14 +92,14 @@ const FootballPage = () => {
     categorie == "boca" &&
       gsap.to(".degrade", {
         background: estiloBoca,
-ease:Power4.easeIn,duration:1,delay:.5
+ease:Power4.easeIn,duration:1,
       });
 
     categorie == "river" && setProducts(twoRiver);
     categorie == "river" &&
       gsap.to(".degrade", {
         background: estiloRiver,
-ease:Power4.easeIn,duration:1,delay:.5
+ease:Power4.easeIn,duration:1,
 
       });
 
@@ -107,7 +107,7 @@ ease:Power4.easeIn,duration:1,delay:.5
     categorie == "argentina" &&
       gsap.to(".degrade", {
         background: estiloArgentina,
-ease:Power4.easeIn,duration:1,delay:.5
+ease:Power4.easeIn,duration:1,
       });
   }, [categorie]);
   const estiloBoca = `linear-gradient(#ffffff , #103f79,#103f79  )`;
