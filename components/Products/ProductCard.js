@@ -10,7 +10,7 @@ import Image from "next/image";
 import React, { Suspense, useEffect } from "react";
 
 import { useInView } from "react-intersection-observer";
-import { gsap } from "gsap";
+import { Power4, gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useRouter } from "next/router";
 import { formattwo } from "@/utils/currency";
@@ -37,7 +37,8 @@ export const ProductCard = ({ e, index, club }) => {
   useEffect(() => {
     inView &&
       gsap.to(`.${club}${index}`, {
-        transform: "scale(1)",
+        // transform: "scale(1)",
+        opacity:'1', ease: Power4.easeIn, duration:0.3
       });
   }, [inView]);
 
@@ -48,7 +49,10 @@ export const ProductCard = ({ e, index, club }) => {
           ref={ref}
           display={"flex"}
           flexDirection={"column"}
-          sx={{ transform: "scale(0)" }}
+          sx={{
+            opacity:0
+            //  transform: "scale(0)"
+             }}
           alignItems={"center"}
           onClick={() => push(`/products/${e.slug}`)}
           className={`${club}${index}`}

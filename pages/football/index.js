@@ -4,34 +4,33 @@ import { Loading } from "@/components/Loading";
 import { ProductCard } from "@/components/Products/ProductCard";
 import { sortProductsByTerm } from "@/utils/sort";
 import { Box, Button, Grid } from "@mui/material";
-import { gsap } from "gsap";
+import { Power4, gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-import { Suspense, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const FootballPage = () => {
   const [categorie, setCategorie] = useState("argentina");
   const [products, setProducts] = useState();
   const [backgroundcolorClub, setBackgroundcolorClub] = useState();
   const { argentinaProducts, bocaProducts, riverProducts } = useProduct();
+  gsap.registerPlugin(ScrollTrigger);
 
   useEffect(() => {
     const one =
-    argentinaProducts &&
-    sortProductsByTerm(
-      argentinaProducts,
-      "coverall_adidas_official_tiro_23_pro"
-    );
+      argentinaProducts &&
+      sortProductsByTerm(
+        argentinaProducts,
+        "coverall_adidas_official_tiro_23_pro"
+      );
     const two =
-    one &&
-    sortProductsByTerm(
-      argentinaProducts,
-      "condivo_22_parka_jacket_adidas_official"
-    );
-
+      one &&
+      sortProductsByTerm(
+        argentinaProducts,
+        "condivo_22_parka_jacket_adidas_official"
+      );
 
     two && setProducts(two);
   }, [argentinaProducts]);
-
 
   useEffect(() => {
     const menosUno =
@@ -90,20 +89,32 @@ const FootballPage = () => {
       );
 
     categorie == "boca" && setProducts(four);
-    categorie == "boca" && setBackgroundcolorClub(estiloBoca)
+    categorie == "boca" &&
+      gsap.to(".degrade", {
+        background: estiloBoca,
+ease:Power4.easeIn,duration:1,delay:.5
+      });
+
     categorie == "river" && setProducts(twoRiver);
-    categorie == "river" && setBackgroundcolorClub(estiloRiver)
+    categorie == "river" &&
+      gsap.to(".degrade", {
+        background: estiloRiver,
+ease:Power4.easeIn,duration:1,delay:.5
+
+      });
+
     categorie == "argentina" && setProducts(argentinaProducts);
-    categorie == "argentina" && setBackgroundcolorClub(estiloArgentina)
+    categorie == "argentina" &&
+      gsap.to(".degrade", {
+        background: estiloArgentina,
+ease:Power4.easeIn,duration:1,delay:.5
+      });
   }, [categorie]);
+  const estiloBoca = `linear-gradient(#ffffff , #103f79,#103f79  )`;
 
-const estiloBoca= `linear-gradient(#ffffff , #103f79,#103f79  )`
+  const estiloRiver = `linear-gradient(#ffffff , #eb192e )`;
 
-const estiloRiver=`linear-gradient(#ffffff , #eb192e )`
-
-const estiloArgentina= `linear-gradient(#ffffff, #75aadb,#75aadb, #75aadb )`
-
-
+  const estiloArgentina = `linear-gradient(#ffffff, #75aadb,#75aadb, #75aadb )`;
   return (
     <>
       <ShopLayout title={"Royer - Football"}>
@@ -127,7 +138,7 @@ const estiloArgentina= `linear-gradient(#ffffff, #75aadb,#75aadb, #75aadb )`
             River
           </Button>
         </Box>
-        <Grid container sx={{background: backgroundcolorClub,py:5}}>
+        <Grid container sx={{ py: 5 }} className="degrade">
           {!products ? (
             <>
               <Loading />
