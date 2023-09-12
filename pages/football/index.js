@@ -11,6 +11,7 @@ import { Suspense, useEffect, useState } from "react";
 const FootballPage = () => {
   const [categorie, setCategorie] = useState("argentina");
   const [products, setProducts] = useState();
+  const [backgroundcolorClub, setBackgroundcolorClub] = useState();
   const { argentinaProducts, bocaProducts, riverProducts } = useProduct();
 
   useEffect(() => {
@@ -89,14 +90,24 @@ const FootballPage = () => {
       );
 
     categorie == "boca" && setProducts(four);
+    categorie == "boca" && setBackgroundcolorClub(estiloBoca)
     categorie == "river" && setProducts(twoRiver);
+    categorie == "river" && setBackgroundcolorClub(estiloRiver)
     categorie == "argentina" && setProducts(argentinaProducts);
+    categorie == "argentina" && setBackgroundcolorClub(estiloArgentina)
   }, [categorie]);
+
+const estiloBoca= `linear-gradient(#ffffff , #103f79 , #f3b229 )`
+
+const estiloRiver=`linear-gradient(#ffffff , #eb192e )`
+
+const estiloArgentina= `linear-gradient(#ffffff, #75aadb,#75aadb, #75aadb )`
+
 
   return (
     <>
       <ShopLayout title={"Royer - Football"}>
-        <Box display={"flex"} justifyContent={"center"} sx={{ my: 10 }}>
+        <Box display={"flex"} justifyContent={"center"} sx={{ mt: 10 }}>
           <Button
             color={categorie == "argentina" ? "primary" : "info"}
             onClick={() => setCategorie("argentina")}
@@ -116,7 +127,7 @@ const FootballPage = () => {
             River
           </Button>
         </Box>
-        <Grid container>
+        <Grid container sx={{background: backgroundcolorClub,py:5}}>
           {!products ? (
             <>
               <Loading />
