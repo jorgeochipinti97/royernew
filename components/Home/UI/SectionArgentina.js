@@ -59,7 +59,7 @@ export default function SectionArgentina ({ products, isMobile }) {
                   borderRadius: "90px 90px",
                   filter: "grayscale(100%)",
                 }}
-              />
+              /> 
             </Box>
           </Grid>
           <Grid item md={3} xs={12} sm={12}>
