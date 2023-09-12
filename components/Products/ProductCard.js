@@ -74,13 +74,13 @@ export const ProductCard = ({ e, index, club }) => {
               </CardMedia>
               <CardContent>
                 <Typography
-                  variant="body2"
+                  variant="body1"
                   sx={{
                     fontFamily: "Lato",
-                    fontWeight: "700",
-
+                    fontSize: "12px",
+fontWeight:'600',
                     color: "white",
-                    display: asPath == "/" ? "none" : "auto",
+                    // display: asPath == "/" ? "none" : "auto",
                     textAlign: "center",
                   }}
                 >
@@ -102,7 +102,7 @@ export const ProductCard = ({ e, index, club }) => {
                         color: "white",
                         fontSize: asPath == "/" ? "17px" : "16px",
                         px: 2,
-                        fontWeight:'700',
+                        fontWeight: "700",
                       }}
                     >
                       {formattwo(e.precio)}

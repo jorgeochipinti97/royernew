@@ -65,7 +65,7 @@ export default function SectionBoca({ products, isMobile }) {
               </Box>{" "}
             </Box>
           </Grid>
-          <Box direction="left" style={{ display: isMobile ? "auto" : "none" }}>
+          <Box direction="left" style={{ display: isMobile ? "auto" : "none", scrollSnapAlign:'end' }}>
             <Marquee direction="left">
             {products &&
                 products.map((e) => (

@@ -80,7 +80,7 @@ export default function SectionRiver({ products, isMobile }) {
         <Grid item md={6} lg={6} xl={6}>
           <Box
             direction="left"
-            style={{ display: isMobile ? "auto" : "none", maxWidth: "100vw" }}
+            style={{ display: isMobile ? "auto" : "none", maxWidth: "100vw",scrollSnapAlign:'end' }}
           >
             <Marquee direction="right">
               {products &&
