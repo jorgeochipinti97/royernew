@@ -36,8 +36,8 @@ const Navbar = ({ isMobile }) => {
     push("/search");
   };
   return (
-    <AppBar sx={{ backgroundColor: isMobile ? "rgba(0, 0, 0, 0.1)" : "auto" }}>
-      <Toolbar sx={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+    <AppBar sx={{ background: 'transparent', boxShadow: 'none'}}>
+      <Toolbar sx={{ backgroundColor: "rgba(0, 0, 0, 0.1)" }}>
         <Box sx={{ borderRadius: "9px", backgroundColor: "white",p:1 }}>
           <NextLink href="/" passHref style={{ textDecoration: "none" }}>
             <Typography

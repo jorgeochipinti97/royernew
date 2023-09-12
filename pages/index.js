@@ -26,10 +26,8 @@ export default function Home() {
   gsap.registerPlugin(ScrollTrigger);
   const { argentinaProducts, bocaProducts, riverProducts } = useProduct();
 
-
   const [productsBoca, setProductsBoca] = useState([]);
   const [productsRiver, setProductsRiver] = useState([]);
-
 
   useEffect(() => {
     const productBoca1 = bocaProducts.filter(
@@ -89,7 +87,6 @@ export default function Home() {
     ]);
   }, [riverProducts]);
 
-
   return (
     <>
       {productsBoca && productsBoca.length > 1 ? (
@@ -102,6 +99,7 @@ export default function Home() {
                   isMobile={isMobile}
                 />
               </Suspense>
+
               <Suspense>
                 <SectionBoca
                   products={
@@ -112,6 +110,7 @@ export default function Home() {
                   isMobile={isMobile}
                 />
               </Suspense>
+
               <Suspense>
                 <SectionRiver
                   products={
@@ -122,6 +121,7 @@ export default function Home() {
                   isMobile={isMobile}
                 />
               </Suspense>
+
               <Suspense>
                 <SectionShipping isMobile={isMobile} />
               </Suspense>

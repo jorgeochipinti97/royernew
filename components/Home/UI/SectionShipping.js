@@ -9,7 +9,7 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
-export default function SectionShipping ({ isMobile }){
+export default function SectionShipping({ isMobile }) {
   const router = useRouter();
   gsap.registerPlugin(ScrollTrigger);
   const { ref, inView } = useInView({
@@ -43,13 +43,13 @@ export default function SectionShipping ({ isMobile }){
   useEffect(() => {
     inView4 && gsap.to(".shipping4", { transform: "scale(0.6)" });
   }, [inView4]);
-  useEffect(() => {
-    inView5 &&
-      gsap.to(".divshipping", {
-        yPercent: isMobile ? -3 : -5,
-        borderRadius: isMobile ? "60px" : "90px",
-      });
-  }, [inView5]);
+  // useEffect(() => {
+  //   inView5 &&
+  //     gsap.to(".divshipping", {
+  //       yPercent: isMobile ? -3 : -5,
+  //       borderRadius: isMobile ? "60px" : "90px",
+  //     });
+  // }, [inView5]);
   useEffect(() => {
     inView6 &&
       gsap.to(".divebay", {
@@ -60,26 +60,32 @@ export default function SectionShipping ({ isMobile }){
     <>
       <Box
         ref={ref5}
-        sx={{ backgroundColor: "black", py: isMobile ? 5 : 0 }}
-        className="divshipping"
+        sx={{
+          backgroundColor: "black",
+          py: isMobile ? 5 : 0,
+          scrollSnapAlign: "start",
+        }}
+        // className="divshipping"
       >
-        
-        <Slide triggerOnce>
-          <Typography
-            variant="body1"
-            sx={{
-              fontSize: isMobile ? "40px" : "80px",
-              textAlign: "center",
-              mt: isMobile ? 2 : 5,
-              mb: isMobile ? 2 : 0,
-              lineHeight: isMobile ? "40px" : "auto",
-              fontWeight: "700",
-              color: "white",
-            }}
-          >
-            Discover Us on
-          </Typography>
-        </Slide>
+        <Box sx={{ scrollSnapAlign: "start" }}>
+          <Slide triggerOnce>
+            <Typography
+              variant="body1"
+              sx={{
+                fontSize: isMobile ? "40px" : "80px",
+                textAlign: "center",
+
+                pt: isMobile ? 2 : 5,
+                mb: isMobile ? 2 : 0,
+                lineHeight: isMobile ? "40px" : "auto",
+                fontWeight: "700",
+                color: "white",
+              }}
+            >
+              Discover Us on
+            </Typography>
+          </Slide>
+        </Box>
         <Box className="divebay" ref={ref6} sx={{ opacity: 0 }}>
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Box
@@ -104,7 +110,6 @@ export default function SectionShipping ({ isMobile }){
               justifyContent: "center",
               my: 4,
             }}
-            
           >
             <Typography
               variant="body1"
@@ -114,9 +119,9 @@ export default function SectionShipping ({ isMobile }){
               width={"80%"}
               sx={{ textAlign: isMobile ? "justify" : "center" }}
             >
-              Explore our curated selection of products. Shop with
-              confidence on eBay, where you will find the same reliability and
-              exceptional service that you have come to expect from us.
+              Explore our curated selection of products. Shop with confidence on
+              eBay, where you will find the same reliability and exceptional
+              service that you have come to expect from us.
             </Typography>
           </Box>
         </Box>
@@ -139,13 +144,14 @@ export default function SectionShipping ({ isMobile }){
             Browse our eBay store now!
           </Button>
         </Box>
-        <Divider sx={{mt:5,backgroundColor:'white'}}/>
+        <Divider sx={{ mt: 5, backgroundColor: "white" }} />
 
         <Box
           display={"flex"}
           justifyContent={"start"}
           alignItems={"center"}
           flexDirection={"column"}
+           sx={{scrollSnapAlign: "start",scrollMarginTop:'50px'}}
         >
           <Slide triggerOnce>
             <Typography
@@ -245,7 +251,7 @@ export default function SectionShipping ({ isMobile }){
             mt: isMobile ? 2 : 10,
             fontWeight: "700",
             lineHeight: isMobile ? "20px" : "78px",
-            color: "white",
+            color: "white",scrollSnapAlign: "start"
           }}
         >
           Shop with Confidence: Our Secure Payment Partner
@@ -298,4 +304,4 @@ export default function SectionShipping ({ isMobile }){
       </Box>
     </>
   );
-};
+}

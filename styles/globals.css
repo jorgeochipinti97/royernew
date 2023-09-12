@@ -1,8 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@100;300;700;900&display=swap');
+html{
+  scroll-snap-type: y mandatory;
+
+
+}
+
 
 body {
   margin: 0px;
   font-family: 'Lato', sans-serif;}
+
 .video {   
   object-fit: cover;   
   width: 100%;

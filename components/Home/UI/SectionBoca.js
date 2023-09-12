@@ -1,49 +1,38 @@
 import { ProductCard } from "@/components/Products/ProductCard";
-import { TextReveal } from "@/components/TextReveal";
 import { Box, Grid } from "@mui/material";
-import React, { Suspense, useEffect, useRef, useState } from "react";
-import { VideoHome } from "./VideoHome";
+import React, { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { useInView } from "react-intersection-observer";
-import { Loading } from "@/components/Loading";
-import animation from "../../../animations/bocalottie.json";
 
-import Lottie from "lottie-react";
 import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
-export default function SectionBoca({ products, isMobile }){
+export default function SectionBoca({ products, isMobile }) {
   const refVideo = useRef();
 
   useEffect(() => {
     refVideo.current.play();
   }, [refVideo]);
 
-  const [isImageReady, setIsImageReady] = useState(false);
-  const [ref, inView] = useInView({
-    threshold: 0.1,
-  });
-  useEffect(() => {
-    inView &&
-      gsap.to(".divboca", {
-        yPercent: isMobile ? -2 : -5,
-        borderRadius: "90px",
-      });
-  }, [inView]);
-
   return (
     <>
       <Grid
         container
         sx={{
-          height: "100%",
-          width: "100%",
-          borderRadius: "30px 30px",
-          backgroundColor: "#103f79",mt:6
+          height: isMobile? 'fit-content': "100vh",
+          width: "100vw",
+          pb:isMobile?4:0,
+          scrollSnapAlign: "start",
+          backgroundImage: `linear-gradient(
+  to bottom,
+  rgba(243, 178, 41, 0.5),
+  rgba(16, 63, 121, 0.5)
+), url('/boca.webp');`,
+
+          backgroundSize: "cover",
         }}
-        className="divboca"
-        ref={ref}
       >
-        <Grid item md={6} lg={6} xl={6} xs={12} className="divboca">
+        <Grid item md={6} lg={6} xl={6} xs={12}>
           <Grid
             item
             md={6}
@@ -63,36 +52,40 @@ export default function SectionBoca({ products, isMobile }){
                 justifyContent={"center"}
                 sx={{ width: "100vw" }}
               >
-<Image src='https://res.cloudinary.com/djk4q3tys/image/upload/v1694010205/leccbzqjmrgppp8qu2ny.jpg' width={500} height={500} style={{display:isMobile?'auto':'none', width:'100%',height:'100%',borderRadius:'90px 90px'}}/>
+                <Image
+                  src="https://res.cloudinary.com/djk4q3tys/image/upload/v1694010205/leccbzqjmrgppp8qu2ny.jpg"
+                  width={500}
+                  height={500}
+                  style={{
+                    display: isMobile ? "auto" : "none",
+                    width: "100%",
+                    height: "100%",
 
-                  <video
-                    ref={refVideo}
-                    src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010242/pwxy621cd6xrxdu1mzfs.webm"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    style={{
-                      height: isMobile ? "100%" : "100%",
-                      width: isMobile ? "100%" : "100%",
-                      borderRadius: "90px 90px",
-                      display:isMobile?'none':'auto',
-
-                    }}
-                  />
-
+                  }}
+                />
               </Box>{" "}
             </Box>
           </Grid>
-          <Box sx={{ mt: 10 }}>
-            <TextReveal textReveal={"Boca Juniors"} color={"#f3b229"} />
-          </Box>
+          <Box direction="left" style={{display:isMobile?'auto':'none'}}>
+          <Marquee direction="left" >
+                  {products &&
+            products.map((e) => (
+
+                <ProductCard e={e} />
+
+            ))
+            }
+            </Marquee>
+            </Box>
+
           <Box
-            display={"flex"}
+
             justifyContent={"center"}
+            alignItems={'center'}
             flexWrap={"wrap"}
+            sx={{height:'100vh'}}
             width={"100%"}
-            marginTop={10}
+            display={isMobile?'none':'flex'}
           >
             {products &&
               products.slice(0, 4).map((e, index) => (
@@ -121,7 +114,8 @@ export default function SectionBoca({ products, isMobile }){
             <Box
               display={"flex"}
               justifyContent={"center"}
-              sx={{ width: "100vw" }}
+              alignItems={'center'}
+              sx={{ width: "100vw",height:'100vh' }}
             >
               <video
                 ref={refVideo}
@@ -131,29 +125,18 @@ export default function SectionBoca({ products, isMobile }){
                 loop
                 playsInline
                 style={{
-                  height: isMobile ? "100%" : "100%",
-                  width: isMobile ? "100%" : "100%",
+                  height: isMobile ? "100%" : "80vh",
+                  width: isMobile ? "100%" : "50%",
                   borderRadius: "90px 90px",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
+                  display: isMobile ? "none" : "auto",
                 }}
               />
             </Box>
-
-            {/* <Box
-              display={"flex"}
-              justifyContent={"center"}
-              sx={{ width: "100vw" }}
-            >
-              <Box
-                display={"flex"}
-                justifyContent={"center"}
-                sx={{ width: "90vw" }}
-              >
-                <Lottie animationData={animation} loop={true} style={{}} />
-              </Box>
-            </Box> */}
           </Box>{" "}
         </Grid>
       </Grid>
     </>
   );
-};
+}
