@@ -85,7 +85,7 @@ export default function SectionRiver({ products, isMobile }) {
             <Marquee direction="right">
               {products &&
                 products.map((e) => (
-                  <Box key={index}>
+                  <Box key={e.slug}>
                     <ProductCard e={e} />
                   </Box>
                 ))}

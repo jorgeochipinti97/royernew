@@ -67,9 +67,12 @@ export default function SectionBoca({ products, isMobile }) {
           </Grid>
           <Box direction="left" style={{ display: isMobile ? "auto" : "none" }}>
             <Marquee direction="left">
-              <Box key={index}>
-                <ProductCard e={e} />
-              </Box>
+            {products &&
+                products.map((e) => (
+                  <Box key={e.slug}>
+                    <ProductCard e={e} />
+                  </Box>
+                ))}
             </Marquee>
           </Box>
 

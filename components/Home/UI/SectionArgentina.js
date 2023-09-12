@@ -16,11 +16,7 @@ import Marquee from "react-fast-marquee";
 import Image from "next/image";
 import { useInView } from "react-intersection-observer";
 import { Power1, gsap } from "gsap";
-import { useRouter } from "next/router";
-import Link from "next/link";
-import { Slide } from "react-awesome-reveal";
-import { Loading } from "@/components/Loading";
-import animation from "../../../animations/messi1lottie.json";
+
 
 export default function SectionArgentina({ products, isMobile }) {
   const [ref, inView] = useInView({
@@ -129,11 +125,12 @@ export default function SectionArgentina({ products, isMobile }) {
           {" "}
           {
             <Marquee>
-              {products && (
-                <Box key={index}>
-                  <ProductCard e={e} />
-                </Box>
-              )}
+       {products &&
+                products.map((e) => (
+                  <Box key={e.slug}>
+                    <ProductCard e={e} />
+                  </Box>
+                ))}
             </Marquee>
           }
         </Box>
