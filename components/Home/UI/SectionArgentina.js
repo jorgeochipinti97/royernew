@@ -39,7 +39,13 @@ export default function SectionArgentina({ products, isMobile }) {
       <Box
         sx={{
           py: isMobile ? 0 : 10,
-          backgroundImage: `url('/argentina.jpg')`,
+          // backgroundImage: `url('/argentina.jpg')`,
+          backgroundImage: `linear-gradient(
+            to bottom,
+            rgba(117, 170, 219, 0.5),
+            rgba(255, 255, 255, 0.5)
+          ), url('/argentina.jpg');`,
+
           backgroundSize: "cover",
           scrollSnapAlign: "start",
         }}
@@ -118,7 +124,7 @@ export default function SectionArgentina({ products, isMobile }) {
           }}
         ></Box>
         <Box
-          sx={{ minHeight: "300px", opacity: 0 }}
+          sx={{ minHeight: "300px", opacity: 0, scrollSnapAlign:'end' }}
           ref={ref}
           className="divmerque"
         >
