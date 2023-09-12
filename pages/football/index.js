@@ -3,7 +3,7 @@ import { ShopLayout } from "@/components/Layout";
 import { Loading } from "@/components/Loading";
 import { ProductCard } from "@/components/Products/ProductCard";
 import { sortProductsByTerm } from "@/utils/sort";
-import { Box, Button, Grid } from "@mui/material";
+import { Box, Button, Divider, Grid } from "@mui/material";
 import { Power4, gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useEffect, useState } from "react";
@@ -92,29 +92,31 @@ const FootballPage = () => {
     categorie == "boca" &&
       gsap.to(".degrade", {
         background: estiloBoca,
-ease:Power4.easeIn,duration:1,
+        ease: Power4.easeIn,
+        duration: 1,
       });
 
     categorie == "river" && setProducts(twoRiver);
     categorie == "river" &&
       gsap.to(".degrade", {
         background: estiloRiver,
-ease:Power4.easeIn,duration:1,
-
+        ease: Power4.easeIn,
+        duration: 1,
       });
 
     categorie == "argentina" && setProducts(argentinaProducts);
     categorie == "argentina" &&
       gsap.to(".degrade", {
         background: estiloArgentina,
-ease:Power4.easeIn,duration:1,
+        ease: Power4.easeIn,
+        duration: 1,
       });
   }, [categorie]);
-  const estiloBoca = `linear-gradient(#ffffff , #103f79,#103f79  )`;
+  const estiloBoca = `linear-gradient(90deg,  #103f79,  #f3b229  )`;
 
-  const estiloRiver = `linear-gradient(#ffffff , #eb192e )`;
+  const estiloRiver = `linear-gradient(to top left,  #eb192e,#ffffff )`;
 
-  const estiloArgentina = `linear-gradient(#ffffff, #75aadb,#75aadb, #75aadb )`;
+  const estiloArgentina = `linear-gradient(to top right,   #ffffff , #75aadb  )`;
   return (
     <>
       <ShopLayout title={"Royer - Football"}>
@@ -138,6 +140,7 @@ ease:Power4.easeIn,duration:1,
             River
           </Button>
         </Box>
+        <Divider sx={{ mt: 2 }} />
         <Grid container sx={{ py: 5 }} className="degrade">
           {!products ? (
             <>
