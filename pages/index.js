@@ -24,24 +24,26 @@ import { Suspense, lazy, useEffect, useState } from "react";
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:600px)");
   gsap.registerPlugin(ScrollTrigger);
-  const { products: filteredProducts1 } = useProduct("boca");
-  const { products: filteredProducts2 } = useProduct("river");
-  const { products: filteredProducts3 } = useProduct("argentina");
+  const { argentinaProducts, bocaProducts, riverProducts } = useProduct();
+
+
   const [productsBoca, setProductsBoca] = useState([]);
   const [productsRiver, setProductsRiver] = useState([]);
+
+
   useEffect(() => {
-    const productBoca1 = filteredProducts1.filter(
+    const productBoca1 = bocaProducts.filter(
       (e) =>
         e.slug == "boca_juniors_adidas_official_home_shirt_22-23_-_heat.rdy"
     );
-    const productBoca2 = filteredProducts1.filter(
+    const productBoca2 = bocaProducts.filter(
       (e) =>
         e.slug == "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
     );
-    const productBoca3 = filteredProducts1.filter(
+    const productBoca3 = bocaProducts.filter(
       (e) => e.slug == "boca_juniors_home_shorts_23-24_adidas_official"
     );
-    const productBoca4 = filteredProducts1.filter(
+    const productBoca4 = bocaProducts.filter(
       (e) => e.slug == "boca_juniors_third_shirt_23_24_adidas_official"
     );
 
@@ -57,19 +59,19 @@ export default function Home() {
       productBoca3[0],
       productBoca4[0],
     ]);
-  }, [filteredProducts1]);
+  }, [bocaProducts]);
 
   useEffect(() => {
-    const productRiver1 = filteredProducts2.filter(
+    const productRiver1 = riverProducts.filter(
       (e) => e.slug == "river_plate_adidas_oficial_home_shirt_23-24_-_aero.rdy"
     );
-    const productRiver2 = filteredProducts2.filter(
+    const productRiver2 = riverProducts.filter(
       (e) => e.slug == "river_plate_adidas_official_home_short_23_24"
     );
-    const productRiver3 = filteredProducts2.filter(
+    const productRiver3 = riverProducts.filter(
       (e) => e.slug == "river_plate_training_shirt_23_24_-_adidas_official"
     );
-    const productRiver4 = filteredProducts2.filter(
+    const productRiver4 = riverProducts.filter(
       (e) => e.slug == "river_plate_adidas_official_alternative_short_23_24"
     );
 
@@ -85,7 +87,8 @@ export default function Home() {
       productRiver3[0],
       productRiver4[0],
     ]);
-  }, [filteredProducts2]);
+  }, [riverProducts]);
+
 
   return (
     <>
@@ -95,7 +98,7 @@ export default function Home() {
             <Box sx={{ my: 0 }}>
               <Suspense>
                 <SectionArgentina
-                  products={filteredProducts3.slice(0, 7)}
+                  products={argentinaProducts.slice(0, 7)}
                   isMobile={isMobile}
                 />
               </Suspense>
@@ -104,7 +107,7 @@ export default function Home() {
                   products={
                     productsBoca[0] != undefined && productsBoca.length > 0
                       ? productsBoca
-                      : filteredProducts1
+                      : bocaProducts
                   }
                   isMobile={isMobile}
                 />
@@ -114,7 +117,7 @@ export default function Home() {
                   products={
                     productsRiver[0] != undefined && productsRiver.length > 0
                       ? productsRiver
-                      : filteredProducts1
+                      : bocaProducts
                   }
                   isMobile={isMobile}
                 />

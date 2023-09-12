@@ -11,65 +11,62 @@ import { Suspense, useEffect, useState } from "react";
 const FootballPage = () => {
   const [categorie, setCategorie] = useState("argentina");
   const [products, setProducts] = useState();
-  const { products: filteredProducts1 } = useProduct("boca");
-  const { products: filteredProducts2 } = useProduct("river");
-  const { products: filteredProducts3 } = useProduct("argentina");
+  const { argentinaProducts, bocaProducts, riverProducts } = useProduct();
 
   useEffect(() => {
-    setProducts(filteredProducts3);
-  }, [filteredProducts3]);
-
+    argentinaProducts && setProducts(argentinaProducts);
+  }, [argentinaProducts]);
   useEffect(() => {
     const menosUno =
-      filteredProducts2 &&
+      riverProducts &&
       sortProductsByTerm(
-        filteredProducts2,
+        riverProducts,
         "river_plate_adidas_official_home_short_23_24"
       );
     const ceroRiver =
-      filteredProducts2 &&
+      riverProducts &&
       sortProductsByTerm(
         menosUno,
-        'river_plate_adidas_oficial_home_shirt_23-24_woman_-_aero.rdy'
+        "river_plate_adidas_oficial_home_shirt_23-24_woman_-_aero.rdy"
       );
     const oneRiver =
-      filteredProducts2 &&
+      riverProducts &&
       sortProductsByTerm(
         ceroRiver,
         "river_plate_training_shirt_23_24_-_adidas_official"
       );
     const twoRiver =
-      filteredProducts2 &&
+      riverProducts &&
       sortProductsByTerm(
         oneRiver,
         "river_plate_adidas_oficial_home_shirt_23-24_-_aero.rdy"
       );
     const cero =
-      filteredProducts1 &&
+      bocaProducts &&
       sortProductsByTerm(
-        filteredProducts1,
+        bocaProducts,
         "boca_juniors_home_shorts_23-24_adidas_official"
       );
     const one =
-      filteredProducts1 &&
+      bocaProducts &&
       sortProductsByTerm(
         cero,
         "boca_juniors_training_shirt_23_24_-_adidas_official"
       );
     const two =
-      filteredProducts1 &&
+      bocaProducts &&
       sortProductsByTerm(
         one,
         "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy_woman"
       );
     const three =
-      filteredProducts1 &&
+      bocaProducts &&
       sortProductsByTerm(
         two,
         "boca_junior_downtime_short_23_24_adidas_official"
       );
     const four =
-      filteredProducts1 &&
+      bocaProducts &&
       sortProductsByTerm(
         three,
         "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
@@ -77,7 +74,7 @@ const FootballPage = () => {
 
     categorie == "boca" && setProducts(four);
     categorie == "river" && setProducts(twoRiver);
-    categorie == "argentina" && setProducts(filteredProducts3);
+    categorie == "argentina" && setProducts(argentinaProducts);
   }, [categorie]);
 
   return (
