@@ -14,8 +14,24 @@ const FootballPage = () => {
   const { argentinaProducts, bocaProducts, riverProducts } = useProduct();
 
   useEffect(() => {
-    argentinaProducts && setProducts(argentinaProducts);
+    const one =
+    argentinaProducts &&
+    sortProductsByTerm(
+      argentinaProducts,
+      "coverall_adidas_official_tiro_23_pro"
+    );
+    const two =
+    one &&
+    sortProductsByTerm(
+      argentinaProducts,
+      "condivo_22_parka_jacket_adidas_official"
+    );
+
+
+    two && setProducts(two);
   }, [argentinaProducts]);
+
+
   useEffect(() => {
     const menosUno =
       riverProducts &&
