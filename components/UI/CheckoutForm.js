@@ -44,6 +44,7 @@ export default function CheckoutForm({orderid}) {
       <Box display='flex' justifyContent={'center'} sx={{my:2}}>
         <Button
           disabled={isProcessing || !stripe || !elements}
+          sx={{fontSize:'30px'}}
           id="submit"
           type="submit"
           color="secondary"

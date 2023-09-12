@@ -77,7 +77,7 @@ export const ProductCard = ({ e, index, club }) => {
                   variant="body1"
                   sx={{
                     fontFamily: "Lato",
-                    fontSize: "12px",
+                    fontSize: asPath != '/football' ? '12px': "16px",
 fontWeight:'600',
                     color: "white",
                     // display: asPath == "/" ? "none" : "auto",

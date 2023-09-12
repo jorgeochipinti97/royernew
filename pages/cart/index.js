@@ -81,15 +81,17 @@ const CartPage = () => {
           </Card>
         </Grid>
       </Grid>
-      <Box
-        className="formContainerCart"
-        sx={{ transform: "scale(0)", mt: 10, mx: 2 }}
-      >
-        <CartList />
+      <Box display={'flex'} justifyContent={'center'}>
+        <Box
+          className="formContainerCart"
+          sx={{ transform: "scale(0)", mt: 10, mx: 2, width: isMobile? '100%': "40%" }}
+        >
+          <CartList />
+        </Box>
       </Box>
-      <Box className={"formContainerCart"} sx={{transform:'scale(0)'}} >
+      <Box className={"formContainerCart"} sx={{ transform: "scale(0)" }}>
         <CardContent>
-          <FormCheckout total={summaryValues.total} />
+          <FormCheckout isMobile={isMobile} />
         </CardContent>
       </Box>
     </ShopLayout>

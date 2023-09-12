@@ -65,9 +65,15 @@ export default function SectionBoca({ products, isMobile }) {
               </Box>{" "}
             </Box>
           </Grid>
-          <Box direction="left" style={{ display: isMobile ? "auto" : "none", scrollSnapAlign:'end' }}>
+          <Box
+            direction="left"
+            style={{
+              display: isMobile ? "auto" : "none",
+              scrollSnapAlign: "end",
+            }}
+          >
             <Marquee direction="left">
-            {products &&
+              {products &&
                 products.map((e) => (
                   <Box key={e.slug}>
                     <ProductCard e={e} />
@@ -75,23 +81,24 @@ export default function SectionBoca({ products, isMobile }) {
                 ))}
             </Marquee>
           </Box>
-
-          <Box
-            justifyContent={"center"}
-            alignItems={"center"}
-            flexWrap={"wrap"}
-            sx={{ height: "100vh" }}
-            width={"100%"}
-            display={isMobile ? "none" : "flex"}
-          >
-            {products &&
-              products.slice(0, 4).map((e, index) => (
-                <Box key={index}>
-                  <Box sx={{ mx: 1 }}>
-                    <ProductCard e={e} index={index} club={"boca"} />
+          <Box sx={{ my: 4, mx: 2, display: isMobile ? "none" : "auto" }}>
+            <Box
+              justifyContent={"center"}
+              alignItems={"center"}
+              flexWrap={"wrap"}
+              width={"100%"}
+              sx={{ height: "100vh" }}
+              display={isMobile ? "none" : "flex"}
+            >
+              {products &&
+                products.slice(0, 4).map((e, index) => (
+                  <Box key={index}>
+                    <Box sx={{ mx: 1 }}>
+                      <ProductCard e={e} index={index} club={"boca"} />
+                    </Box>
                   </Box>
-                </Box>
-              ))}
+                ))}
+            </Box>
           </Box>
         </Grid>
         <Grid

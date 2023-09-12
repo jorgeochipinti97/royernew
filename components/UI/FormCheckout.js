@@ -2,22 +2,22 @@ import React, { useContext, useEffect, useState } from "react";
 import {
   Box,
   Button,
-  FormControl,
+
   Grid,
   InputLabel,
   MenuItem,
   Select,
   TextField,
-  Typography,
+
 } from "@mui/material";
 import { CartContext } from "@/context/cart/CartContext";
 import { countries } from "@/utils/countries";
 import { CheckoutPage } from "./checkoutComponent";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
-import { Elastic, gsap, Power4, Power1, Back } from "gsap";
+import {  gsap,  } from "gsap";
 
-export const FormCheckout = ({ total }) => {
+export const FormCheckout = ({ isMobile }) => {
   gsap.registerPlugin(ScrollTrigger);
 
   const [isSend, setIsSend] = useState(false);
@@ -204,7 +204,7 @@ export const FormCheckout = ({ total }) => {
             justifyContent: "center",
           }}
         >
-          <CheckoutPage price={total_} orderid={orderid_} />
+          <CheckoutPage price={total_} orderid={orderid_} isMobile={isMobile} />
         </Box>
       </Box>
     </>

@@ -5,10 +5,10 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import CheckoutForm from "./CheckoutForm";
 import axios from "axios";
-import { Box, Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
 import { formattwo } from "@/utils/currency";
 
-export const CheckoutPage = ({ price, orderid }) => {
+export const CheckoutPage = ({ price, orderid,isMobile }) => {
   const [stripePromise, setStripePromise] = useState(null);
   const [clientSecret, setClientSecret] = useState("");
 
@@ -20,7 +20,7 @@ export const CheckoutPage = ({ price, orderid }) => {
       )
     );
   }, []);
-  
+
   useEffect(() => {
     console.log(orderid);
   }, [orderid]);
@@ -44,17 +44,55 @@ export const CheckoutPage = ({ price, orderid }) => {
   }, []);
   return (
     <>
-
-
       {clientSecret && stripePromise && (
         <Box>
-          <Typography variant='body1' textAlign={'center'} sx={{my:5,fontSize:'20px'}}>Total: {formattwo(price)}</Typography>
+          <Card>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "space-around",
+              alignItems: "center",
+            }}
+          >
+            <Typography
+              variant="body1"
+              textAlign={"center"}
+              sx={{
+
+                fontSize: "20px",
+                fontFamily: "Lato",
+                fontWeight: "700",
+              }}
+            >
+              TOTAL
+            </Typography>
+
+            <Typography
+              variant="body1"
+              textAlign={"center"}
+              sx={{
+
+                backgroundColor: "green",
+                p: 1,
+                borderRadius: "9px",
+                fontSize: "20px",
+                fontFamily: "Lato",
+                fontWeight: "700",
+                color: "white",
+              }}
+            >
+              {formattwo(price)}
+            </Typography>
+          </Box>
+            <Box display={"flex"} justifyContent={"center"}>
+              <img src="/stripe.png" alt="" style={{ width:isMobile ? '100%': "65%" }} />
+            </Box>
+            </Card>
           <Elements stripe={stripePromise} options={{ clientSecret }}>
             <CheckoutForm orderid={orderid} />
           </Elements>
         </Box>
       )}
-
     </>
   );
 };
