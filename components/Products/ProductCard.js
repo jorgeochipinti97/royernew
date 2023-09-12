@@ -51,7 +51,7 @@ export const ProductCard = ({ e, index, club }) => {
           ref={ref}
           display={"flex"}
           flexDirection={"column"}
-          sx={{transform: "scale(0)",}}
+          sx={{ transform: "scale(0)" }}
           alignItems={"center"}
           onClick={() => push(`/products/${e.slug}`)}
           className={`${club}${index}`}
@@ -61,10 +61,9 @@ export const ProductCard = ({ e, index, club }) => {
               height: "fit-content",
               width: asPath.includes("football") ? 350 : 200,
               m: 2,
-              
-              borderRadius:'40px 40px 0px 0px'
+
+              borderRadius: "40px 40px 0px 0px",
             }}
-            
           >
             <CardActionArea>
               <CardMedia sx={{ display: "flex", justifyContent: "center" }}>
@@ -91,36 +90,52 @@ export const ProductCard = ({ e, index, club }) => {
               sx={{
                 position: "relative",
                 bottom: 25,
-                cursor:'pointer',
-                width:350,
+                cursor: "pointer",
+                width: 350,
                 backgroundColor: "rgba(39,40,67,255)", // Fondo borroso con color (ajusta el color y la opacidad según tus preferencias)
                 backdropFilter: "blur(0.5)", // Ajusta el valor de desenfoque según tu preferencia
                 maxWidth: 400, // Personaliza el ancho de la tarjeta según tu preferencia
-                margin: "0 auto",borderRadius:'0px 0px 90px 90px' // Centra la tarjeta horizontalmente
+                margin: "0 auto",
+                borderRadius: "0px 0px 90px 90px", // Centra la tarjeta horizontalmente
               }}
             >
-              <CardContent sx={{ textAlign: "center" }}>
-                <Typography
-                  variant="body2"
-                  sx={{ fontFamily: "Lato", fontWeight: "700",lineHeight:'12px',color:'white',my:1 }}
-                >
-                  {e.titulo}
-                </Typography>
-                <Box display={"flex"} justifyContent={"center"}>
-                  <Box display={"flex"} justifyContent={"center"} sx={{backgroundColor:'#008020',borderRadius:'9px',mt:1}}>
-                    <Typography
-                      variant="body1"
+              <CardActionArea>
+                <CardContent sx={{ textAlign: "center" }}>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontFamily: "Lato",
+                      fontWeight: "700",
+                      lineHeight: "12px",
+                      color: "white",
+                      my: 1,
+                    }}
+                  >
+                    {e.titulo}
+                  </Typography>
+                  <Box display={"flex"} justifyContent={"center"}>
+                    <Box
+                      display={"flex"}
+                      justifyContent={"center"}
                       sx={{
-
-
-                        color: "white",px:2, 
+                        backgroundColor: "#008020",
+                        borderRadius: "9px",
+                        mt: 1,
                       }}
                     >
-                      {formattwo(e.precio)}
-                    </Typography>
+                      <Typography
+                        variant="body1"
+                        sx={{
+                          color: "white",
+                          px: 2,
+                        }}
+                      >
+                        {formattwo(e.precio)}
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
-              </CardContent>
+                </CardContent>
+              </CardActionArea>
             </Card>
 
             {/* <Box sx={{ filter: "blur(4px)" }}>
