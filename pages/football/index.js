@@ -28,7 +28,7 @@ const FootballPage = () => {
       gsap.to(".degrade", {
         background: background,
         ease: Power4.easeIn,
-        duration: 0.3,delay:.2
+        duration: 0.5,delay:.2
       });
     } catch (err) {
       console.log(err);
@@ -117,9 +117,9 @@ const FootballPage = () => {
   }, [categorie]);
 
   const white = `linear-gradient(90deg,  #ffffff,  #ffffff  )`;
-  const estiloBoca = `linear-gradient(90deg,  #103f79,  #f3b229  )`;
-  const estiloRiver = `linear-gradient(to top left,  #eb192e,#eb192e,#ffffff )`;
-  const estiloArgentina = `linear-gradient(to top right,   #ffffff , #75aadb  )`;
+  const estiloBoca = `linear-gradient(  #ffffff,#f3b229,#f3b229,#f3b229  )`;
+  const estiloRiver = `linear-gradient(  #ffffff, #eb192e,#eb192e,#eb192e )`;
+  const estiloArgentina = `linear-gradient(    #ffffff , #75aadb ,#75aadb,#75aadb  )`;
 
   return (
     <>
