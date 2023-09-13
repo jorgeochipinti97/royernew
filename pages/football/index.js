@@ -12,8 +12,28 @@ const FootballPage = () => {
   const [categorie, setCategorie] = useState("argentina");
   const [products, setProducts] = useState();
   const [backgroundcolorClub, setBackgroundcolorClub] = useState();
+  const [counter, setCounter] = useState(0);
+
   const { argentinaProducts, bocaProducts, riverProducts } = useProduct();
   gsap.registerPlugin(ScrollTrigger);
+
+  const changeBackground = (background) => {
+    try {
+      gsap.to(
+        ".degrade",
+        {
+          background: "white",
+          duration:.1
+        })
+      gsap.to(".degrade", {
+        background: background,
+        ease: Power4.easeIn,
+        duration: 0.3,delay:.2
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   useEffect(() => {
     const one =
@@ -89,34 +109,18 @@ const FootballPage = () => {
       );
 
     categorie == "boca" && setProducts(four);
-    categorie == "boca" &&
-      gsap.to(".degrade", {
-        background: estiloBoca,
-        ease: Power4.easeIn,
-        duration: 1,
-      });
-
+    categorie == "boca" && changeBackground(estiloBoca);
     categorie == "river" && setProducts(twoRiver);
-    categorie == "river" &&
-      gsap.to(".degrade", {
-        background: estiloRiver,
-        ease: Power4.easeIn,
-        duration: 1,
-      });
-
+    categorie == "river" && changeBackground(estiloRiver);
     categorie == "argentina" && setProducts(argentinaProducts);
-    categorie == "argentina" &&
-      gsap.to(".degrade", {
-        background: estiloArgentina,
-        ease: Power4.easeIn,
-        duration: 1,
-      });
+    categorie == "argentina" && changeBackground(estiloArgentina);
   }, [categorie]);
+
+  const white = `linear-gradient(90deg,  #ffffff,  #ffffff  )`;
   const estiloBoca = `linear-gradient(90deg,  #103f79,  #f3b229  )`;
-
   const estiloRiver = `linear-gradient(to top left,  #eb192e,#eb192e,#ffffff )`;
-
   const estiloArgentina = `linear-gradient(to top right,   #ffffff , #75aadb  )`;
+
   return (
     <>
       <ShopLayout title={"Royer - Football"}>
