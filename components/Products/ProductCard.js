@@ -24,15 +24,6 @@ export const ProductCard = ({ e, index, club }) => {
     threshold: 0.1,
     triggerOnce: true,
   });
-  const BlurredBackground = styled(Box)(({ theme }) => ({
-    filter: "blur(10px)", // Ajusta el valor de desenfoque según tu preferencia
-    height: "100%",
-    width: "100%",
-    position: "absolute",
-    zIndex: -1,
-    top: 0,
-    left: 0,
-  }));
 
   useEffect(() => {
     inView &&
@@ -64,7 +55,7 @@ export const ProductCard = ({ e, index, club }) => {
               m: 2,
               backgroundColor: "rgba(39,40,67,255)",
               borderRadius:
-                asPath == "/" ? "40px 40px 60px 60px" : "40px 40px 90px 90px",
+                asPath == "/" ? "40px 40px 60px 60px" : "40px 40px 9px 9px",
             }}
           >
             <CardActionArea>

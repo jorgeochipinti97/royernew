@@ -19,15 +19,14 @@ export const ProductSlideshow = ({ images, isMobile }) => {
     },
   });
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
-      <div>
+    <div style={{ display: "flex", justifyContent: "center",backgroundColor:'white' }}>
         <div
           ref={sliderRef}
           className="keen-slider shadow"
           style={{
             width: isMobile ? "100vw" : "30vw",
-
-            height: "min-content",
+            borderRadius: "5px",
+            height: "100%",
 
             marginBottom: 30,
           }}
@@ -39,19 +38,19 @@ export const ProductSlideshow = ({ images, isMobile }) => {
                   <div
                     className="keen-slider__slide "
                     style={{
-                      marginLeft: 0.2,
-                      marginRight: 0.2,
-marginTop:5,borderRadius:'30px'
+                      backgroundColor: "#f0ecec",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
                     }}
                   >
                     <img
                       src={image}
                       style={{
                         maxWidth: isMobile ? "100%" : "500px",
-                        borderRadius: "30px",
+                        height: isMobile ? "100%" : "min-content",
                         marginRight: 5,
                         marginLeft: 5,
-
                       }}
                     />
                   </div>
@@ -59,7 +58,7 @@ marginTop:5,borderRadius:'30px'
               );
             })}
         </div>
-      </div>
+
     </div>
   );
 };

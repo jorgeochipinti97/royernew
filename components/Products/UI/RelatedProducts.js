@@ -1,15 +1,9 @@
 import Marquee from "react-fast-marquee";
-import { useEffect, useState } from "react";
 import {
   Box,
-  Button,
-  Card,
-  CardActionArea,
-  CardMedia,
   Typography,
 } from "@mui/material";
-import Image from "next/image";
-import Link from "next/link";
+
 import { ProductCard } from "../ProductCard";
 
 export const RelatedProducts = ({ products }) => {
