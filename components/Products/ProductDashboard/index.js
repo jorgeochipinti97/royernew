@@ -130,24 +130,10 @@ export const ProductDashboard = ({
       <Box sx={{ my: 10 }} className="productdash">
         <Grid container>
           <Grid item md={7} lg={7} xl={7} xs={12}>
-            <Box
-              sx={{
-                display: isMobile ? "auto" : "flex",
-                justifyContent: isMobile ? "" : "center",
-              }}
-            >
-              <Box sx={{ width: isMobile ? "300" : "500px" }}>
-                <ProductSlideshow
-                  images={product.images}
-                  height={isMobile ? "300" : "500"}
-                  width={isMobile ? "300" : "500"}
-                  seconds={1200}
-                />
-              </Box>
-            </Box>
+            <ProductSlideshow images={product.images} isMobile={isMobile} />
           </Grid>
           <Grid item md={5} lg={5} xl={5} xs={12}>
-            <Box display={"flex"} justifyContent={"center"}>
+            <Box display={"flex"} justifyContent={"center"} sx={{zIndex:1000}}>
               <Box sx={{ width: 500 }}>
                 <Typography
                   variant="subtitle1"

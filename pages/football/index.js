@@ -48,8 +48,14 @@ const FootballPage = () => {
         argentinaProducts,
         "condivo_22_parka_jacket_adidas_official"
       );
+    const three =
+      one &&
+      sortProductsByTerm(
+        argentinaProducts,
+        "argentina_authentic_home_shirt_22_3-star_adidas_official-heat.rdy_(gc4397)"
+      );
 
-    two && setProducts(two);
+    three && setProducts(three);
   }, [argentinaProducts]);
 
   useEffect(() => {
