@@ -55,7 +55,7 @@ export const ProductSlideshow = ({ images, isMobile }) => {
                         borderRadius: "30px",
                         marginRight: 5,
                         marginLeft: 5,
-                        height:'100%'
+
                       }}
                     />
                   </div>
