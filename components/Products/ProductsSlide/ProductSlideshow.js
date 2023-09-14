@@ -31,8 +31,9 @@ export const ProductSlideshow = ({ images, isMobile }) => {
           style={{
             width: isMobile ? "80vw" : "30vw",
             borderRadius: "30px",
-            border: "1px solid black",
-marginBottom:30
+            height: "content-fit",
+
+            marginBottom: 30,
           }}
         >
           {images &&
@@ -42,15 +43,20 @@ marginBottom:30
                   <div
                     className="keen-slider__slide "
                     style={{
-
                       marginLeft: 0.2,
                       marginRight: 0.2,
-                      borderRadius: "30px",
+
                     }}
                   >
                     <img
                       src={image}
-                      style={{ maxWidth: isMobile ? '100%':  "500px", borderRadius: "30px" }}
+                      style={{
+                        maxWidth: isMobile ? "100%" : "500px",
+                        borderRadius: "30px",
+                        marginRight: 5,
+                        marginLeft: 5,
+                        height:'100%'
+                      }}
                     />
                   </div>
                 </>
