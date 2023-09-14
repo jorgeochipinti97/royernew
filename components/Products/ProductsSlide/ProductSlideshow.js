@@ -48,7 +48,7 @@ export const ProductSlideshow = ({ images, isMobile }) => {
                       src={image}
                       style={{
                         maxWidth: isMobile ? "100%" : "500px",
-                        height: isMobile ? "100%" : "min-content",
+
                         marginRight: 5,
                         marginLeft: 5,
                       }}
