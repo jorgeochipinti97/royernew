@@ -45,7 +45,7 @@ export const ProductSlideshow = ({ images, isMobile }) => {
                     style={{
                       marginLeft: 0.2,
                       marginRight: 0.2,
-marginTop:5
+marginTop:5,borderRadius:'30px'
                     }}
                   >
                     <img
