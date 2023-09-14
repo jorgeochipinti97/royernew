@@ -124,7 +124,7 @@ export default function SectionArgentina({ products, isMobile }) {
           }}
         ></Box>
         <Box
-          sx={{ minHeight: "300px", opacity: 0, scrollSnapAlign:'end',mt:10 }}
+          sx={{ minHeight: "300px", opacity: 0, scrollSnapAlign:'end',mt: isMobile ? 4:10 }}
           ref={ref}
           className="divmerque"
         >
