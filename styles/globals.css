@@ -20,9 +20,6 @@ body {
   box-sizing: border-box;
 }
 
-.keen-slider__slide img{
-  border-radius: 30px;
-}
 
 .shadow {
   -webkit-box-shadow: 69px 3px 300px -10px rgba(39,40,67,0.56);
