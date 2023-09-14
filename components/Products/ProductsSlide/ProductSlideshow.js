@@ -19,46 +19,52 @@ export const ProductSlideshow = ({ images, isMobile }) => {
     },
   });
   return (
-    <div style={{ display: "flex", justifyContent: "center",backgroundColor:'white' }}>
-        <div
-          ref={sliderRef}
-          className="keen-slider shadow"
-          style={{
-            width: isMobile ? "100vw" : "30vw",
-            borderRadius: "5px",
-            height: "100%",
+    <div
+      style={{
+        display: "flex",
+        justifyContent: "center",
+        backgroundColor: "white",
+        alignItems: isMobile ? "start" : "center",
+      }}
+    >
+      <div
+        ref={sliderRef}
+        className="keen-slider shadow"
+        style={{
+          width: isMobile ? "100vw" : "30vw",
+          borderRadius: "5px",
+          height: "100%",
 
-            marginBottom: 30,
-          }}
-        >
-          {images &&
-            images.map((image) => {
-              return (
-                <>
-                  <div
-                    className="keen-slider__slide "
+          marginBottom: 30,
+        }}
+      >
+        {images &&
+          images.map((image) => {
+            return (
+              <>
+                <div
+                  className="keen-slider__slide "
+                  style={{
+                    backgroundColor: "#f0ecec",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <img
+                    src={image}
                     style={{
-                      backgroundColor: "#f0ecec",
-                      display: "flex",
-                      justifyContent: "center",
-                      alignItems: "center",
+                      maxWidth: isMobile ? "100%" : "500px",
+
+                      marginRight: 5,
+                      marginLeft: 5,
                     }}
-                  >
-                    <img
-                      src={image}
-                      style={{
-                        maxWidth: isMobile ? "100%" : "500px",
-
-                        marginRight: 5,
-                        marginLeft: 5,
-                      }}
-                    />
-                  </div>
-                </>
-              );
-            })}
-        </div>
-
+                  />
+                </div>
+              </>
+            );
+          })}
+      </div>
     </div>
   );
 };
