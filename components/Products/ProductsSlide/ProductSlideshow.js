@@ -1,10 +1,6 @@
-import { Box, Grid, Link } from "@mui/material";
-import { useState } from "react";
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
 import "react-slideshow-image/dist/styles.css";
-import Image from "next/image";
-
 export const ProductSlideshow = ({ images, isMobile }) => {
   const animation = { duration: 20000, easing: (t) => t };
 
