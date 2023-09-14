@@ -31,7 +31,7 @@ export const ProductSlideshow = ({ images, isMobile }) => {
           style={{
             width: isMobile ? "80vw" : "30vw",
             borderRadius: "30px",
-            height: "content-fit",
+            height: "min-content",
 
             marginBottom: 30,
           }}
@@ -45,7 +45,7 @@ export const ProductSlideshow = ({ images, isMobile }) => {
                     style={{
                       marginLeft: 0.2,
                       marginRight: 0.2,
-
+marginTop:5
                     }}
                   >
                     <img
