@@ -29,8 +29,8 @@ export const ProductSlideshow = ({ images, isMobile }) => {
           ref={sliderRef}
           className="keen-slider shadow"
           style={{
-            width: isMobile ? "80vw" : "30vw",
-            borderRadius: "30px",
+            width: isMobile ? "100vw" : "30vw",
+
             height: "min-content",
 
             marginBottom: 30,
