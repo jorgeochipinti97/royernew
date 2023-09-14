@@ -1,6 +1,6 @@
 import { useKeenSlider } from "keen-slider/react";
 import "keen-slider/keen-slider.min.css";
-import "react-slideshow-image/dist/styles.css";
+
 export const ProductSlideshow = ({ images, isMobile }) => {
   const animation = { duration: 20000, easing: (t) => t };
 

@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import groovyWalkAnimation from "../../../animations/shippingtwo.json";
 import Lottie from "lottie-react";
 import { Box, Button, Divider, Typography } from "@mui/material";
-import { Slide } from "react-awesome-reveal";
+
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { useInView } from "react-intersection-observer";
@@ -68,7 +68,7 @@ export default function SectionShipping({ isMobile }) {
         // className="divshipping"
       >
         <Box sx={{ scrollSnapAlign: "start" }}>
-          <Slide triggerOnce>
+
             <Typography
               variant="body1"
               sx={{
@@ -84,7 +84,7 @@ export default function SectionShipping({ isMobile }) {
             >
               Discover Us on
             </Typography>
-          </Slide>
+
         </Box>
         <Box className="divebay" ref={ref6} sx={{ opacity: 0 }}>
           <Box sx={{ display: "flex", justifyContent: "center" }}>
@@ -153,7 +153,7 @@ export default function SectionShipping({ isMobile }) {
           flexDirection={"column"}
            sx={{scrollSnapAlign: "start",scrollMarginTop:'50px'}}
         >
-          <Slide triggerOnce>
+
             <Typography
               variant="body1"
               sx={{
@@ -167,7 +167,6 @@ export default function SectionShipping({ isMobile }) {
             >
               Worldwide Free Shipping
             </Typography>
-          </Slide>
 
           <Typography
             variant="subtitle1"

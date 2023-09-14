@@ -1,11 +1,11 @@
 import { Box, Typography } from "@mui/material";
-import { Fade } from "react-awesome-reveal";
+
 
 export const TextReveal = ({ textReveal, color }) => {
   return (
     <>
       <Box>
-        <Fade triggerOnce	>
+
           <Typography
             variant="body1"
             id="my-text"
@@ -21,7 +21,7 @@ export const TextReveal = ({ textReveal, color }) => {
           >
             {textReveal}
           </Typography>
-        </Fade>
+
       </Box>
     </>
   );
