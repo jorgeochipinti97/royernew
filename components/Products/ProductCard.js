@@ -56,6 +56,7 @@ export const ProductCard = ({ e, index, club }) => {
               backgroundColor: "rgba(39,40,67,255)",
               borderRadius:
                 asPath == "/" ? "40px 40px 60px 60px" : "40px 40px 9px 9px",
+                border:'2px solid rgba(39,40,67,255)'
             }}
           >
             <CardActionArea>
