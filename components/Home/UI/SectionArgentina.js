@@ -61,8 +61,8 @@ export default function SectionArgentina({ products, isMobile }) {
                 loop
                 playsInline
                 style={{
-                  height: "60%",
-                  width: "60%",
+                  height: "80%",
+                  width: "80%",
                   borderRadius: "90px 90px",
                   filter: "grayscale(100%)",
                 }}
@@ -89,8 +89,8 @@ export default function SectionArgentina({ products, isMobile }) {
               playsInline
               style={{
                 display: isMobile ? "none" : "auto",
-                height: "90%",
-                width: "90%",
+                height: "100%",
+                width: "100%",
                 borderRadius: "90px 90px",
               }}
             />
@@ -105,8 +105,8 @@ export default function SectionArgentina({ products, isMobile }) {
                 loop
                 playsInline
                 style={{
-                  height: "60%",
-                  width: "60%",
+                  height: "80%",
+                  width: "80%",
                   borderRadius: "90px 90px",
                   filter: "grayscale(100%)",
                 }}
