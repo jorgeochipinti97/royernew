@@ -50,7 +50,7 @@ export default function SectionArgentina({ products, isMobile }) {
           scrollSnapAlign: "start",
         }}
       >
-        <Grid container justifyContent={"center"}>
+        <Grid container justifyContent={"center"} sx={{scrollSnapAlign:'start'}}>
           <Grid item md={3} sx={{ display: isMobile ? "none" : "auto" }}>
             <Box display={"flex"} justifyContent={"center"}>
               <video
@@ -61,8 +61,8 @@ export default function SectionArgentina({ products, isMobile }) {
                 loop
                 playsInline
                 style={{
-                  height: "80%",
-                  width: "80%",
+                  height: "60%",
+                  width: "60%",
                   borderRadius: "90px 90px",
                   filter: "grayscale(100%)",
                 }}
@@ -89,8 +89,8 @@ export default function SectionArgentina({ products, isMobile }) {
               playsInline
               style={{
                 display: isMobile ? "none" : "auto",
-                height: "100%",
-                width: "100%",
+                height: "90%",
+                width: "90%",
                 borderRadius: "90px 90px",
               }}
             />
@@ -105,8 +105,8 @@ export default function SectionArgentina({ products, isMobile }) {
                 loop
                 playsInline
                 style={{
-                  height: "80%",
-                  width: "80%",
+                  height: "60%",
+                  width: "60%",
                   borderRadius: "90px 90px",
                   filter: "grayscale(100%)",
                 }}
@@ -117,14 +117,14 @@ export default function SectionArgentina({ products, isMobile }) {
 
         <Box
           sx={{
-            my: 2,
+            mb: 2,
             display: "flex",
             justifyContent: "center",
             width: "100vw",
           }}
         ></Box>
         <Box
-          sx={{ minHeight: "300px", opacity: 0, scrollSnapAlign:'end',mt: isMobile ? 4:10 }}
+          sx={{ minHeight: "300px", opacity: 0,mt: isMobile ? 4:0,scrollSnapAlign:'end' }}
           ref={ref}
           className="divmerque"
         >
