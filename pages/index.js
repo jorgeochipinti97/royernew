@@ -43,7 +43,7 @@ export default function Home() {
       (e) => e.slug == "boca_juniors_home_shorts_23-24_adidas_official"
     );
     const productBoca4 = bocaProducts.filter(
-      (e) => e.slug == "boca_juniors_third_shirt_23_24_adidas_official"
+      (e) => e.slug == "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy_-_woman"
     );
 
     console.log(
