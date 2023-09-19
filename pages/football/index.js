@@ -51,11 +51,17 @@ const FootballPage = () => {
     const three =
       one &&
       sortProductsByTerm(
-        argentinaProducts,
+        two,
         "argentina_authentic_home_shirt_22_3-star_adidas_official-heat.rdy_(gc4397)"
       );
+    const four =
+      one &&
+      sortProductsByTerm(
+        three,
+        "argentina_thermic_top_adidas_official"
+      );
 
-    three && setProducts(three);
+      four && setProducts(three);
   }, [argentinaProducts]);
 
   useEffect(() => {
