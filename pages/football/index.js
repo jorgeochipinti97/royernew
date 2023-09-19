@@ -116,14 +116,26 @@ const FootballPage = () => {
         three,
         "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
       );
-    const five =
+    const short =
       bocaProducts &&
       sortProductsByTerm(
         four,
+       "boca_juniors_adidas_official_alternative_short_23_24"
+      )
+    const five =
+      bocaProducts &&
+      sortProductsByTerm(
+        short,
+       "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy"
+      )
+    const six =
+      bocaProducts &&
+      sortProductsByTerm(
+        five,
         "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy_-_woman"
       );
 
-    categorie == "boca" && setProducts(five);
+    categorie == "boca" && setProducts(six);
     categorie == "boca" && changeBackground(estiloBoca);
     categorie == "river" && setProducts(twoRiver);
     categorie == "river" && changeBackground(estiloRiver);
