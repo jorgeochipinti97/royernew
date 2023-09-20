@@ -138,7 +138,7 @@ const FootballPage = () => {
       bocaProducts &&
       sortProductsByTerm(
         five,
-        "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy_-_woman"
+        "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy"
       );
 
     categorie == "boca" && setProducts(six);
