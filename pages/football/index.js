@@ -89,6 +89,24 @@ const FootballPage = () => {
         oneRiver,
         "river_plate_adidas_oficial_home_shirt_23-24_-_aero.rdy"
       );
+    const threeriver =
+      riverProducts &&
+      sortProductsByTerm(
+        twoRiver,
+        "river_plate_adidas_alternative_short_23_24"
+      );
+    const fourriver =
+      riverProducts &&
+      sortProductsByTerm(
+        threeriver,
+        "river_plate_adidas_official_alternative_shirt_23_24_woman"
+      );
+    const fiveriver =
+      riverProducts &&
+      sortProductsByTerm(
+        fourriver,
+        "river_plate_adidas_alternative_shirt_23_24"
+      );
 
 
 
@@ -143,7 +161,7 @@ const FootballPage = () => {
 
     categorie == "boca" && setProducts(six);
     categorie == "boca" && changeBackground(estiloBoca);
-    categorie == "river" && setProducts(twoRiver);
+    categorie == "river" && setProducts(fiveriver);
     categorie == "river" && changeBackground(estiloRiver);
     categorie == "argentina" && setProducts(argentinaProducts);
     categorie == "argentina" && changeBackground(estiloArgentina);
