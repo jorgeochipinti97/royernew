@@ -32,7 +32,7 @@ export const ProductDashboard = ({
   const [isInStock, setIsInStock] = useState();
   const [maxValueSize, setMaxValueSize] = useState();
   const [quantity_, setQuantity_] = useState();
-  const [selectedPlayer, setSelectedPlayer] = useState("");
+  const [selectedPlayer, setSelectedPlayer] = useState(null);
   const [jugadores, setJugadores] = useState([]);
   const { addProductToCart } = useContext(CartContext);
   const { push } = useRouter();
@@ -74,6 +74,7 @@ export const ProductDashboard = ({
     setTempCartProduct((currentProduct) => ({
       ...currentProduct,
       personalization: selectedPlayer,
+      precio: product.precio + 20,
     }));
   }, [selectedPlayer]);
 
@@ -133,7 +134,11 @@ export const ProductDashboard = ({
             <ProductSlideshow images={product.images} isMobile={isMobile} />
           </Grid>
           <Grid item md={5} lg={5} xl={5} xs={12}>
-            <Box display={"flex"} justifyContent={"center"} sx={{zIndex:1000}}>
+            <Box
+              display={"flex"}
+              justifyContent={"center"}
+              sx={{ zIndex: 1000 }}
+            >
               <Box sx={{ width: 500 }}>
                 <Typography
                   variant="subtitle1"
@@ -165,9 +170,9 @@ export const ProductDashboard = ({
                   fontSize={"20px"}
                   sx={{ fontWeight: "500" }}
                 >
-                  {selectedPlayer.length < 3
-                    ? formattwo(product.precio)
-                    : formattwo(product.precio + 20)}
+                  {selectedPlayer
+                    ? formattwo(product.precio + 20)
+                    : formattwo(product.precio)}
                 </Typography>
               </Box>
             </Box>
@@ -360,10 +365,7 @@ export const ProductDashboard = ({
             {
               _id: product._id,
               image: product.images[0],
-              precio:
-                selectedPlayer.length > 3
-                  ? product.precio + 20
-                  : product.precio,
+              precio: selectedPlayer ? product.precio + 20 : product.precio,
               size: size,
               personalization: selectedPlayer,
               slug: product.slug,
