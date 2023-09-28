@@ -107,6 +107,12 @@ const FootballPage = () => {
         fourriver,
         "river_plate_adidas_alternative_shirt_23_24"
       );
+    const sixriver =
+      riverProducts &&
+      sortProductsByTerm(
+        fiveriver,
+        "river_plate_adidas_official_annyversary_fans_day_shirt_23-24_-_aero.rdy"
+      );
 
 
 
@@ -161,7 +167,7 @@ const FootballPage = () => {
 
     categorie == "boca" && setProducts(six);
     categorie == "boca" && changeBackground(estiloBoca);
-    categorie == "river" && setProducts(fiveriver);
+    categorie == "river" && setProducts(sixriver);
     categorie == "river" && changeBackground(estiloRiver);
     categorie == "argentina" && setProducts(argentinaProducts);
     categorie == "argentina" && changeBackground(estiloArgentina);
