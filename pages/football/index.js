@@ -60,6 +60,18 @@ const FootballPage = () => {
         three,
         "argentina_thermic_top_adidas_official"
       );
+    const five =
+      one &&
+      sortProductsByTerm(
+        four,
+        "argentina_authentic_alternative_shirt_22_3-star_adidas_official-heat.rdy"
+      );
+    const sixArgentina =
+      one &&
+      sortProductsByTerm(
+        five,
+        "argentina_heat.rdy_2022_2-star_adidas_official"
+      );
 
       four && setProducts(three);
   }, [argentinaProducts]);
