@@ -91,7 +91,7 @@ export const ProductDashboard = ({
     isBuyNow &&
       gsap.to(".formcheckoutslug", {
         display: "block",
-        delay: 1,
+        delay: 1, 
       });
     isBuyNow &&
       gsap.to(".formcheckoutslug", {
