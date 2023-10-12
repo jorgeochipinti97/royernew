@@ -80,7 +80,11 @@ export default function SectionRiver({ products, isMobile }) {
         <Grid item md={6} lg={6} xl={6}>
           <Box
             direction="left"
-            style={{ display: isMobile ? "auto" : "none", maxWidth: "100vw",scrollSnapAlign:'end' }}
+            style={{
+              display: isMobile ? "auto" : "none",
+              maxWidth: "100vw",
+              scrollSnapAlign: "end",
+            }}
           >
             <Marquee direction="right">
               {products &&
@@ -91,25 +95,22 @@ export default function SectionRiver({ products, isMobile }) {
                 ))}
             </Marquee>
           </Box>
-          <Box sx={{ my: 4, mx: 2, display: isMobile ? "none" : "auto" }}>
-            {
-              <Box
-                display={"flex"}
-                justifyContent={"center"}
-                alignItems={"center"}
-                flexWrap={"wrap"}
-                width={"100%"}
-                sx={{ height: "100vh" }}
-              >
-                {products &&
-                  products.slice(0, 4).map((e, index) => (
-                    <Box key={index}>
-                      <ProductCard e={e} index={index} club="river" />
-                    </Box>
-                  ))}
-              </Box>
-            }
-          </Box>
+          <Grid
+            container
+            display={isMobile ? "none" : "flex"}
+            spacing={12}
+            justifyContent={"center"}
+            style={{marginTop:'20px'}}
+          >
+            {products &&
+              products.slice(0, 4).map((e, index) => (
+                <Grid item key={index}>
+                  <Box sx={{ mx: 1 }}>
+                    <ProductCard e={e} index={index} club={"river"} />
+                  </Box>
+                </Grid>
+              ))}
+          </Grid>
         </Grid>
       </Grid>
     </>

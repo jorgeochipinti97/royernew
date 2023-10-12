@@ -33,30 +33,25 @@ export default function Home() {
   useEffect(() => {
     const productBoca1 = bocaProducts.filter(
       (e) =>
-        e.slug == "boca_juniors_adidas_official_home_shirt_22-23_-_heat.rdy"
+        e.slug == "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy"
     );
-    const productBoca2 = bocaProducts.filter(
+    const bocaJerseySuplente = bocaProducts.filter(
       (e) =>
         e.slug == "boca_juniors_home_jersey_23_24_adidas_official_-_aero.rdy"
     );
     const productBoca3 = bocaProducts.filter(
       (e) => e.slug == "boca_juniors_home_shorts_23-24_adidas_official"
     );
-    const productBoca4 = bocaProducts.filter(
-      (e) => e.slug == "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy"
+    const bocaShorAlternative = bocaProducts.filter(
+      (e) => e.slug == "boca_juniors_adidas_official_alternative_short_23_24"
     );
 
-    console.log(
-      productBoca1[0],
-      productBoca2[0],
-      productBoca3[0],
-      productBoca4[0]
-    );
+
     setProductsBoca([
       productBoca1[0],
-      productBoca2[0],
+      bocaJerseySuplente[0],
+      bocaShorAlternative[0],
       productBoca3[0],
-      productBoca4[0],
     ]);
   }, [bocaProducts]);
 
@@ -65,21 +60,16 @@ export default function Home() {
       (e) => e.slug == "river_plate_adidas_oficial_home_shirt_23-24_-_aero.rdy"
     );
     const productRiver2 = riverProducts.filter(
-      (e) => e.slug == "river_plate_adidas_official_home_short_23_24"
+      (e) => e.slug == "river_plate_adidas_alternative_shirt_23_24"
     );
     const productRiver3 = riverProducts.filter(
-      (e) => e.slug == "river_plate_training_shirt_23_24_-_adidas_official"
+      (e) => e.slug == "river_plate_adidas_official_home_short_23_24"
     );
     const productRiver4 = riverProducts.filter(
       (e) => e.slug == "river_plate_adidas_official_alternative_short_23_24"
     );
 
-    console.log(
-      productRiver1[0],
-      productRiver2[0],
-      productRiver3[0],
-      productRiver4[0]
-    );
+
     setProductsRiver([
       productRiver1[0],
       productRiver2[0],

@@ -82,24 +82,26 @@ export default function SectionBoca({ products, isMobile }) {
             </Marquee>
           </Box>
           <Box sx={{ my: 4, mx: 2, display: isMobile ? "none" : "auto" }}>
-            <Box
+            {/* <Box
               justifyContent={"center"}
               alignItems={"center"}
               flexWrap={"wrap"}
               width={"100%"}
               sx={{ height: "100vh" }}
               display={isMobile ? "none" : "flex"}
-            >
+            > */}
+            <Grid container display={isMobile ? "none" : "flex"} spacing={6}  justifyContent={'center'} style={{marginTop:'20px'}}>
               {products &&
                 products.slice(0, 4).map((e, index) => (
-                  <Box key={index}>
+                  <Grid item key={index}>
                     <Box sx={{ mx: 1 }}>
                       <ProductCard e={e} index={index} club={"boca"} />
                     </Box>
-                  </Box>
+                  </Grid>
                 ))}
-            </Box>
+            </Grid>
           </Box>
+          {/* </Box> */}
         </Grid>
         <Grid
           item
