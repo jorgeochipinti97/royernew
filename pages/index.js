@@ -24,6 +24,7 @@ import Image from "next/image";
 
 export default function Home() {
   const isMobile = useMediaQuery("(max-width:600px)");
+  const isTablet = useMediaQuery("(max-width:1103px)");
   gsap.registerPlugin(ScrollTrigger);
   const { argentinaProducts, bocaProducts, riverProducts } = useProduct();
 
@@ -124,15 +125,16 @@ export default function Home() {
           </div>
         </Box>
         <Box sx={{ my: 0 }}>
-          <Suspense>
+
             <SectionArgentina
               products={argentinaProducts.slice(0, 7)}
               isMobile={isMobile}
             />
-          </Suspense>
 
-          <Suspense>
+
+
             <SectionBoca
+            isTablet={isTablet}
               products={
                 productsBoca[0] != undefined && productsBoca.length > 0
                   ? productsBoca
@@ -140,9 +142,9 @@ export default function Home() {
               }
               isMobile={isMobile}
             />
-          </Suspense>
 
-          <Suspense>
+
+
             <SectionRiver
               products={
                 productsRiver[0] != undefined && productsRiver.length > 0
@@ -151,11 +153,11 @@ export default function Home() {
               }
               isMobile={isMobile}
             />
-          </Suspense>
 
-          <Suspense>
+
+
             <SectionShipping isMobile={isMobile} />
-          </Suspense>
+
         </Box>
       </ShopLayout>
     </>

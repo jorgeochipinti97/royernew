@@ -7,7 +7,7 @@ import { useInView } from "react-intersection-observer";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
-export default function SectionBoca({ products, isMobile }) {
+export default function SectionBoca({ products, isMobile, isTablet }) {
   const refVideo = useRef();
 
   useEffect(() => {
@@ -32,39 +32,39 @@ export default function SectionBoca({ products, isMobile }) {
           backgroundSize: "cover",
         }}
       >
-        <Grid item md={6} lg={6} xl={6} xs={12}>
-          <Grid
-            item
-            md={6}
-            lg={6}
-            xl={6}
-            xs={12}
-            sx={{ display: isMobile ? "auto" : "none" }}
+        <Grid
+          item
+          md={6}
+          lg={6}
+          xl={6}
+          xs={12}
+          sx={{ display: isMobile ? "auto" : "none" }}
+        >
+          <Box
+            sx={{ height: "100%", width: "100%" }}
+            display={"flex"}
+            justifyContent={"center"}
+            alignItems={"center"}
           >
             <Box
-              sx={{ height: "100%", width: "100%" }}
               display={"flex"}
               justifyContent={"center"}
-              alignItems={"center"}
+              sx={{ width: "100vw" }}
             >
-              <Box
-                display={"flex"}
-                justifyContent={"center"}
-                sx={{ width: "100vw" }}
-              >
-                <Image
-                  src="https://res.cloudinary.com/djk4q3tys/image/upload/v1694010205/leccbzqjmrgppp8qu2ny.jpg"
-                  width={500}
-                  height={500}
-                  style={{
-                    display: isMobile ? "auto" : "none",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                />
-              </Box>{" "}
-            </Box>
-          </Grid>
+              <Image
+                src="https://res.cloudinary.com/djk4q3tys/image/upload/v1694010205/leccbzqjmrgppp8qu2ny.jpg"
+                width={500}
+                height={500}
+                style={{
+                  display: isMobile ? "auto" : "none",
+                  width: "100%",
+                  height: "100%",
+                }}
+              />
+            </Box>{" "}
+          </Box>
+        </Grid>
+        <Grid item  xs={12}>
           <Box
             direction="left"
             style={{
@@ -81,19 +81,17 @@ export default function SectionBoca({ products, isMobile }) {
                 ))}
             </Marquee>
           </Box>
-          <Box sx={{ my: 4, mx: 2, display: isMobile ? "none" : "auto" }}>
-            {/* <Box
-              justifyContent={"center"}
-              alignItems={"center"}
-              flexWrap={"wrap"}
-              width={"100%"}
-              sx={{ height: "100vh" }}
-              display={isMobile ? "none" : "flex"}
-            > */}
-            <Grid container display={isMobile ? "none" : "flex"} spacing={6}  justifyContent={'center'} style={{marginTop:'20px'}}>
+          <Box
+            sx={{
+              my: 4,
+              mx: 2,
+              display: isMobile ? "none" : "auto",
+            }}
+          >
+            <Grid container spacing={2}>
               {products &&
                 products.slice(0, 4).map((e, index) => (
-                  <Grid item key={index}>
+                  <Grid item key={index} md={3} lg={6} xl={6} xs={6}>
                     <Box sx={{ mx: 1 }}>
                       <ProductCard e={e} index={index} club={"boca"} />
                     </Box>
@@ -101,16 +99,8 @@ export default function SectionBoca({ products, isMobile }) {
                 ))}
             </Grid>
           </Box>
-          {/* </Box> */}
         </Grid>
-        <Grid
-          item
-          md={6}
-          lg={6}
-          xl={6}
-          xs={12}
-          sx={{ display: isMobile ? "none" : "auto" }}
-        >
+        <Grid item md={6} lg={6} xl={6} xs={12}>
           <Box
             sx={{ height: "content-fit", width: "100%" }}
             display={"flex"}

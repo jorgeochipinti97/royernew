@@ -98,14 +98,14 @@ export default function SectionRiver({ products, isMobile }) {
           <Grid
             container
             display={isMobile ? "none" : "flex"}
-            spacing={12}
+            spacing={6}
             justifyContent={"center"}
-            style={{marginTop:'20px'}}
+
           >
             {products &&
               products.slice(0, 4).map((e, index) => (
                 <Grid item key={index}>
-                  <Box sx={{ mx: 1 }}>
+                  <Box sx={{ mx: 1,transform:'scale(0.8)' }}>
                     <ProductCard e={e} index={index} club={"river"} />
                   </Box>
                 </Grid>
