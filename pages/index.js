@@ -123,6 +123,7 @@ export default function Home() {
 <Typography variant='h5' sx={{color:'white',textAlign:'center'}}>Site Under Maintenance</Typography>
 <Typography variant='subtitle1' sx={{color:'white',textAlign:'center',mt:1}}>We apologize for the inconvenience.<br/> We are currently performing scheduled maintenance on our website to enhance your experience.</Typography>
 <Typography variant='subtitle1' sx={{color:'white',textAlign:'center',mt:3}}>We will be back shortly. Thank you for your patience.</Typography>
+<Typography variant='subtitle1' sx={{color:'white',textAlign:'center',mt:3}}>In the meantime, you can continue to shop online on our <a href="https://www.ebay.com/str/royerstorellc" target="_blank">eBay store</a>.</Typography>
               {/* <LinearProgress value={50} color="secondary" /> */}
             </div>
           </div>
