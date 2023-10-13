@@ -17,7 +17,7 @@ const SectionShipping = lazy(
   async () => await import("../components/Home/UI/SectionShipping")
 );
 
-import { Box, LinearProgress, useMediaQuery } from "@mui/material";
+import { Box, LinearProgress, Typography, useMediaQuery } from "@mui/material";
 import { Loading } from "@/components/Loading";
 import { Suspense, lazy, useEffect, useState } from "react";
 import Image from "next/image";
@@ -93,7 +93,7 @@ export default function Home() {
     <>
       <ShopLayout imageFullUrl={'/logoroyer.jpg"'} title={"Royer Store"}>
         <Box
-          className="intro"
+          // className="intro"
           sx={{
             height: "100vh",
             width: "100vw",
@@ -119,8 +119,11 @@ export default function Home() {
               justifyContent: "center",
             }}
           >
-            <div style={{ width: "50vw" }}>
-              <LinearProgress value={50} color="secondary" />
+            <div style={{ width: "80vw" }}>
+<Typography variant='h5' sx={{color:'white',textAlign:'center'}}>Site Under Maintenance</Typography>
+<Typography variant='subtitle1' sx={{color:'white',textAlign:'center',mt:1}}>We apologize for the inconvenience.<br/> We are currently performing scheduled maintenance on our website to enhance your experience.</Typography>
+<Typography variant='subtitle1' sx={{color:'white',textAlign:'center',mt:3}}>We will be back shortly. Thank you for your patience.</Typography>
+              {/* <LinearProgress value={50} color="secondary" /> */}
             </div>
           </div>
         </Box>
