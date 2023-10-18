@@ -36,9 +36,9 @@ export const ShopLayout = ({
           }
         />
       </Head>
-      {/* <nav>
+      <nav>
         <Navbar isMobile={isMobile} />
-      </nav> */}
+      </nav>
       <SideMenu />
       <main
         style={{

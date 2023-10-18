@@ -31,7 +31,62 @@ export default function SectionRiver({ products, isMobile }) {
 
         // className="divriver"
       >
-        <Grid item md={6} lg={6} xl={6}>
+
+<Grid item sx={{       }}>
+          <Box
+            border={"1px solid black"}
+            sx={{ height: "100vh", width: "100vw", display: "flex",justifyContent:'center' }}
+          >
+              <Box  sx={{ borderRadius: "90px 90px",                          display: isMobile ? "none" : "flex", justifyContent:'center',  width:'50%',marginTop:'50px',           
+ }}>
+              <video
+                ref={refVideo}
+                src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010230/lqer9bgw76llmk5a4ujl.webm"
+                autoPlay
+                muted
+                loop
+                playsInline
+                style={{
+                  height: "90%" ,
+                  width: '90%',
+                  borderRadius: "90px 90px",
+                  paddingTop: "10px",
+                  paddingBottom: "10px",
+                }}
+              />
+            </Box>
+              <Box
+              sx={{
+                mt:10,
+                mx: 2,
+
+              }}
+            >
+              <Grid container spacing={0}>
+                {products &&
+                  products.slice(0, 4).map((e, index) => (
+                    <Grid
+                      item
+                      key={index}
+                      md={6}
+                      lg={6}
+                      xl={6}
+                      xs={6}
+                      sx={{ transform: {xs:'scale(0.8)', sm:'scale(0.7)', md:'scale(0.7)',lg:'scale(1)', xl:'scale(1)'} }}
+                    >
+                      <Box sx={{ mx: 1 }}>
+                        <ProductCard e={e} index={index} club={"boca"} />
+                      </Box>
+                    </Grid>
+                  ))}
+              </Grid>
+            </Box>
+          
+          </Box>
+        </Grid>
+
+
+        {/* <Grid item md={6} lg={6} xl={6}>
           <Box
             sx={{ height: "content-fit", width: "100%" }}
             display={"flex"}
@@ -111,7 +166,7 @@ export default function SectionRiver({ products, isMobile }) {
                 </Grid>
               ))}
           </Grid>
-        </Grid>
+        </Grid> */}
       </Grid>
     </>
   );

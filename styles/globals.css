@@ -27,3 +27,9 @@ body {
   box-shadow: 69px 3px 300px -10px rgba(39,40,67,0.56);
 }
 
+.shadow2 {
+  -webkit-box-shadow: 10px 10px 0px 30px rgba(0,0,0,1);
+  -moz-box-shadow: 10px 10px 0px 30px rgba(0,0,0,1);
+  box-shadow: 10px 10px 0px 30px rgba(0,0,0,1);
+}
+

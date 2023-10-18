@@ -34,7 +34,8 @@ export default function Home() {
   useEffect(() => {
     const productBoca1 = bocaProducts.filter(
       (e) =>
-        e.slug == "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy"
+        e.slug ==
+        "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy"
     );
     const bocaJerseySuplente = bocaProducts.filter(
       (e) =>
@@ -46,7 +47,6 @@ export default function Home() {
     const bocaShorAlternative = bocaProducts.filter(
       (e) => e.slug == "boca_juniors_adidas_official_alternative_short_23_24"
     );
-
 
     setProductsBoca([
       productBoca1[0],
@@ -70,7 +70,6 @@ export default function Home() {
       (e) => e.slug == "river_plate_adidas_official_alternative_short_23_24"
     );
 
-
     setProductsRiver([
       productRiver1[0],
       productRiver2[0],
@@ -93,7 +92,7 @@ export default function Home() {
     <>
       <ShopLayout imageFullUrl={'/logoroyer.jpg"'} title={"Royer Store"}>
         <Box
-          // className="intro"
+          className="intro"
           sx={{
             height: "100vh",
             width: "100vw",
@@ -108,8 +107,8 @@ export default function Home() {
         >
           <Image
             src="/royerpwa.png"
-            width={200}
-            height={200}
+            width={isMobile ? 200 : 400}
+            height={isMobile ? 200 : 400}
             style={{ marginTop: 100 }}
           />
           <div
@@ -120,48 +119,37 @@ export default function Home() {
             }}
           >
             <div style={{ width: "80vw" }}>
-<Typography variant='h5' sx={{color:'white',textAlign:'center'}}>Site Under Maintenance</Typography>
-<Typography variant='subtitle1' sx={{color:'white',textAlign:'center',mt:1}}>We apologize for the inconvenience.<br/> We are currently performing scheduled maintenance on our website to enhance your experience.</Typography>
-<Typography variant='subtitle1' sx={{color:'white',textAlign:'center',mt:3}}>We will be back shortly. Thank you for your patience.</Typography>
-<Typography variant='subtitle1' sx={{color:'white',textAlign:'center',mt:3}}>In the meantime, you can continue to shop online on our <a style={{color:'white', textDecoration:'underline'}} href="https://www.ebay.com/str/royerstorellc" target="_blank">eBay store</a>.</Typography>
-              {/* <LinearProgress value={50} color="secondary" /> */}
+             
+              <LinearProgress value={50} color="secondary" />
             </div>
           </div>
         </Box>
         <Box sx={{ my: 0 }}>
+          <SectionArgentina
+            products={argentinaProducts.slice(0, 7)}
+            isMobile={isMobile}
+          />
 
-            <SectionArgentina
-              products={argentinaProducts.slice(0, 7)}
-              isMobile={isMobile}
-            />
-
-
-
-            <SectionBoca
+          <SectionBoca
             isTablet={isTablet}
-              products={
-                productsBoca[0] != undefined && productsBoca.length > 0
-                  ? productsBoca
-                  : bocaProducts
-              }
-              isMobile={isMobile}
-            />
+            products={
+              productsBoca[0] != undefined && productsBoca.length > 0
+                ? productsBoca
+                : bocaProducts
+            }
+            isMobile={isMobile}
+          />
 
+          <SectionRiver
+            products={
+              productsRiver[0] != undefined && productsRiver.length > 0
+                ? productsRiver
+                : bocaProducts
+            }
+            isMobile={isMobile}
+          />
 
-
-            <SectionRiver
-              products={
-                productsRiver[0] != undefined && productsRiver.length > 0
-                  ? productsRiver
-                  : bocaProducts
-              }
-              isMobile={isMobile}
-            />
-
-
-
-            <SectionShipping isMobile={isMobile} />
-
+          <SectionShipping isMobile={isMobile} />
         </Box>
       </ShopLayout>
     </>

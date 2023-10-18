@@ -70,16 +70,8 @@ export default function SectionArgentina({ products, isMobile }) {
             </Box>
           </Grid>
           <Grid item md={3} xs={12} sm={12}>
-            <Image
-              src="/argentina.jpeg"
-              width={500}
-              height={8000}
-              style={{
-                display: isMobile ? "auto" : "none",
-                width: "100%",
-                height: "100%",
-              }}
-            />
+            <Box sx={{display:'flex', justifyContent:'center'}}>
+
             <video
               ref={refVideo}
               src="https://res.cloudinary.com/djk4q3tys/video/upload/v1694010225/upfejeayumrfn6omerom.webm"
@@ -88,12 +80,12 @@ export default function SectionArgentina({ products, isMobile }) {
               loop
               playsInline
               style={{
-                display: isMobile ? "none" : "auto",
-                height: "100%",
-                width: "100%",
+                height: isMobile ? '90%':"100%",
+                width: isMobile ? '90%':"100%",
                 borderRadius: "90px 90px",
               }}
-            />
+              />
+              </Box>
           </Grid>
           <Grid item md={3} sx={{ display: isMobile ? "none" : "auto" }}>
             <Box display={"flex"} justifyContent={"center"}>
