@@ -63,7 +63,7 @@ export default function SectionRiver({ products, isMobile }) {
 
               }}
             >
-              <Grid container spacing={0}>
+              <Grid container spacing={0} height={'10vh'}>
                 {products &&
                   products.slice(0, 4).map((e, index) => (
                     <Grid

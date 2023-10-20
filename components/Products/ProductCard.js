@@ -51,7 +51,7 @@ export const ProductCard = ({ e, index, club }) => {
           <Card
             sx={{
               height: "fit-content",
-              width: asPath.includes("football") ? 350 : 200,
+              width: asPath.includes("football") ? 350 : 150,
               m: 2,
               backgroundColor: "rgba(39,40,67,255)",
               borderRadius:
@@ -64,8 +64,8 @@ export const ProductCard = ({ e, index, club }) => {
                 <Image
                   src={e.images[0]}
                   alt=""
-                  width={asPath.includes("football") ? 350 : 200}
-                  height={asPath.includes("football") ? 350 : 200}
+                  width={asPath.includes("football") ? 350 : 150}
+                  height={asPath.includes("football") ? 350 : 150}
                 />
               </CardMedia>
               <CardContent>
@@ -80,7 +80,7 @@ fontWeight:'600',
                     textAlign: "center",
                   }}
                 >
-                  {e.titulo}
+                  {e.titulo.slice(0,30)}...
                 </Typography>
                 <Box display={"flex"} justifyContent={"center"}>
                   <Box
