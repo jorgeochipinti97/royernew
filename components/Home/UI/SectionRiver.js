@@ -27,6 +27,7 @@ export default function SectionRiver({ products, isMobile }) {
             rgba(233, 22, 43, 0.5),
             rgba(255, 255, 255, 0.5)
           ), url('/river.avif');`,
+
         }}
 
         // className="divriver"
@@ -57,7 +58,7 @@ export default function SectionRiver({ products, isMobile }) {
             </Box>
               <Box
               sx={{
-                mt:10,
+                mt:5,
                 mx: 2,
 
               }}
