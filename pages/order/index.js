@@ -32,17 +32,16 @@ const OrdersPage = ({ orders }) => {
         },
       });
       setOrder(data);
-
+router.reload()
     } catch (err) {
       console.log(err);
     }
   };
-
+  useEffect(() => {}, []);
   useEffect(() => {
-   order && !order.isPaid && redirect_status == "succeeded" && updateOrder();
-   order && order.isPaid && redirect_status == "succeeded" && router.push(`/order?id=${order._id}`);
-    console.log(order)
+    order && !order.isPaid && redirect_status == "succeeded" && updateOrder();
   }, [order]);
+
   return (
     <ShopLayout title="order">
       <Box sx={{ mx: 2, my: 10 }}>
