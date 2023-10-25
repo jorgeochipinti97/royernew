@@ -7,16 +7,16 @@ export const ProductSlideshow = ({ images, isMobile }) => {
   const [sliderRef] = useKeenSlider({
     loop: true,
     renderMode: "performance",
-    drag: false,
-    created(s) {
-      s.moveToIdx(5, true, animation);
-    },
-    updated(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation);
-    },
-    animationEnded(s) {
-      s.moveToIdx(s.track.details.abs + 5, true, animation);
-    },
+    drag: true,
+    // created(s) {
+    //   s.moveToIdx(5, true, animation);
+    // },
+    // updated(s) {
+    //   s.moveToIdx(s.track.details.abs + 5, true, animation);
+    // },
+    // animationEnded(s) {
+    //   s.moveToIdx(s.track.details.abs + 5, true, animation);
+    // },
   });
   return (
     <div
