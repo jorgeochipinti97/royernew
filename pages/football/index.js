@@ -19,16 +19,15 @@ const FootballPage = () => {
 
   const changeBackground = (background) => {
     try {
-      gsap.to(
-        ".degrade",
-        {
-          background: "white",
-          duration:.1
-        })
+      gsap.to(".degrade", {
+        background: "white",
+        duration: 0.1,
+      });
       gsap.to(".degrade", {
         background: background,
         ease: Power4.easeIn,
-        duration: 0.5,delay:.2
+        duration: 0.5,
+        delay: 0.2,
       });
     } catch (err) {
       console.log(err);
@@ -48,13 +47,9 @@ const FootballPage = () => {
         argentinaProducts,
         "condivo_22_parka_jacket_adidas_official"
       );
- 
+
     const three =
-      one &&
-      sortProductsByTerm(
-        two,
-        "argentina_thermic_top_adidas_official"
-      );
+      one && sortProductsByTerm(two, "argentina_thermic_top_adidas_official");
     const four =
       one &&
       sortProductsByTerm(
@@ -67,14 +62,14 @@ const FootballPage = () => {
         four,
         "argentina_heat.rdy_2022_2-star_adidas_official"
       );
-      const six =
+    const six =
       one &&
       sortProductsByTerm(
         five,
         "argentina_authentic_home_shirt_22_3-star_adidas_official-heat.rdy_(gc4397)"
       );
-      
-      four && setProducts(six);
+
+    four && setProducts(six);
   }, [argentinaProducts]);
 
   useEffect(() => {
@@ -127,8 +122,6 @@ const FootballPage = () => {
         "river_plate_adidas_official_annyversary_fans_day_shirt_23-24_-_aero.rdy"
       );
 
-
-
     const cero =
       bocaProducts &&
       sortProductsByTerm(
@@ -163,22 +156,35 @@ const FootballPage = () => {
       bocaProducts &&
       sortProductsByTerm(
         four,
-       "boca_juniors_adidas_official_alternative_short_23_24"
-      )
+        "boca_juniors_adidas_official_alternative_short_23_24"
+      );
     const five =
       bocaProducts &&
       sortProductsByTerm(
         short,
-       "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy"
-      )
+        "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy"
+      );
     const six =
       bocaProducts &&
       sortProductsByTerm(
         five,
         "boca_juniors_adidas_official_alternative_shirt_23-24_-_aero.rdy"
       );
+    const seven = bocaProducts && sortProductsByTerm(six, "xeneize_boca_shirt");
+    const eight =
+      bocaProducts &&
+      sortProductsByTerm(
+        seven,
+        "boca_juniors_blue_hooded_sweatshirt"
+      );
+    const nine =
+      bocaProducts &&
+      sortProductsByTerm(
+        eight,
+        "boca_juniors_yellow_hooded_sweatshirt"
+      );
 
-    categorie == "boca" && setProducts(six);
+    categorie == "boca" && setProducts(nine);
     categorie == "boca" && changeBackground(estiloBoca);
     categorie == "river" && setProducts(sixriver);
     categorie == "river" && changeBackground(estiloRiver);
